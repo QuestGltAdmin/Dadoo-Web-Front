@@ -2330,7 +2330,8 @@ label {
   background-color: #2e2e2e;
 }
 .bg-blackish{
-  background-color: #ddd;
+  background-color: #f1efef;
+  padding: 2px;
 }
 .cs_contact_form .form-control:focus{
   box-shadow: none;
