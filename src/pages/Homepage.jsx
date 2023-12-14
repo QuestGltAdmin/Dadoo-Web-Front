@@ -29,13 +29,10 @@ const Homepage = () => {
                     This Week Only for World Premier
                   </h2> */}
                   <h1 className="text-white cs_mb_16 cs_fs_60 cs_fs_lg_46">
-                  Pioneering Ultramodern Architectural Innovation
+                  Pioneering Ultramodern <br></br>Architectural Innovation
                   </h1>
                   <p className="text-white cs_mb_20">
-                    I have been a loyal customer of this auto parts company for
-                    years and I cannot <br />
-                    recommend them enough. Their extensive selection of
-                    high-quality parts and <br /> accessories.
+                  We stay abreast of cutting-edge technological advancements to ensure that our<br></br> building epitomizes ultramodern design in this era.
                   </p>
                   <div className="cs_hero_btn">
                     <a
