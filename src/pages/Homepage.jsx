@@ -1044,7 +1044,7 @@ const Homepage = () => {
                style={{backgroundImage:"url('/assets/img/home/portfolio_1.png')"}}
             />
             <h3 className="text-left cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4">
-              <a >Marketing Webdesign</a>
+              <a >Apollo Sage Hospital,Bhopal</a>
             </h3>
           </div>
         </div>
@@ -1059,7 +1059,7 @@ const Homepage = () => {
               style={{backgroundImage:"url('/assets/img/home/portfolio_2.png')"}}
             />
             <h3 className="text-left cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4">
-              <a >Marketing Webdesign</a>
+              <a >Vishesh Jupiter Hospital, Indore</a>
             </h3>
           </div>
         </div>
@@ -1074,7 +1074,7 @@ const Homepage = () => {
               style={{backgroundImage:"url('/assets/img/home/portfolio_3.png')"}}
             />
             <h3 className="text-left cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4">
-              <a >Marketing Webdesign</a>
+              <a >Golden Leaves, Indore</a>
             </h3>
           </div>
         </div>
@@ -1089,7 +1089,7 @@ const Homepage = () => {
               style={{backgroundImage:"url('/assets/img/home/portfolio_4.png')"}}
             />
             <h3 className="text-left cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4">
-              <a >Marketing Webdesign</a>
+              <a >Hotel Wow, Indore</a>
             </h3>
           </div>
         </div>
@@ -1104,7 +1104,7 @@ const Homepage = () => {
               style={{backgroundImage:"url('/assets/img/home/portfolio_5.png')"}}
             />
             <h3 className="text-left cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4">
-              <a >Marketing Webdesign</a>
+              <a >The Emporio, Indore</a>
             </h3>
           </div>
         </div>
@@ -1119,7 +1119,7 @@ const Homepage = () => {
               style={{backgroundImage:"url('/assets/img/home/portfolio_6.png')"}}
             />
             <h3 className="text-left cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4">
-              <a >Marketing Webdesign</a>
+              <a >Berlocher, Dewas</a>
             </h3>
           </div>
         </div>
@@ -1134,7 +1134,7 @@ const Homepage = () => {
               style={{backgroundImage:"url('/assets/img/home/portfolio_7.png')"}}
             />
             <h3 className="text-left cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4">
-              <a >Marketing Webdesign</a>
+              <a >SRF Ltd.,Baghdoon DTA1, DTA2, Altech Jetapur</a>
             </h3>
           </div>
         </div>
@@ -1149,7 +1149,7 @@ const Homepage = () => {
               style={{backgroundImage:"url('/assets/img/home/portfolio_8.png')"}}
             />
             <h3 className="text-left cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4">
-              <a >Marketing Webdesign</a>
+              <a >Indore Institute of Law</a>
             </h3>
           </div>
         </div>
@@ -1530,17 +1530,17 @@ const Homepage = () => {
                   <div className="cs_testimonial_in bg-white shadow-sm cs_pl_30 cs_pr_30 cs_pb_27 cs_pt_1 cs_rounded_10">
                     <div className="cs_testimonial_img cs_mb_15">
                       <img
-                        src="assets/img/avatar_1.png"
+                        src="assets/img/home/team.png"
                         alt="Avatar"
                         className="cs_height_75 cs_width_75 rounded-circle"
                       />
                     </div>
-                    <div
+                    {/* <div
                       className="cs_rating text-accent cs_mb_15"
                       data-rating="4.5"
                     >
                       <div className="cs_rating_percentage" />
-                    </div>
+                    </div> */}
                     <p className="cs_mb_14">
                       I've been using [business name] for the past year and I'm
                       so glad I did. Their products and services are top-notch
@@ -1559,17 +1559,17 @@ const Homepage = () => {
                   <div className="cs_testimonial_in bg-white shadow-sm cs_pl_30 cs_pr_30 cs_pb_27 cs_pt_1 cs_rounded_10">
                     <div className="cs_testimonial_img cs_mb_15">
                       <img
-                        src="assets/img/avatar_2.png"
+                        src="assets/img/home/team.png"
                         alt="Avatar"
                         className="cs_height_75 cs_width_75 rounded-circle"
                       />
                     </div>
-                    <div
+                    {/* <div
                       className="cs_rating text-accent cs_mb_15"
                       data-rating={5}
                     >
                       <div className="cs_rating_percentage" />
-                    </div>
+                    </div> */}
                     <p className="cs_mb_14">
                       I've been using [business name] for the past year and I'm
                       so glad I did. Their products and services are top-notch
@@ -1588,7 +1588,7 @@ const Homepage = () => {
                   <div className="cs_testimonial_in bg-white shadow-sm cs_pl_30 cs_pr_30 cs_pb_27 cs_pt_1 cs_rounded_10">
                     <div className="cs_testimonial_img cs_mb_15">
                       <img
-                        src="assets/img/avatar_3.png"
+                        src="assets/img/home/team.png"
                         alt="Avatar"
                         className="cs_height_75 cs_width_75 rounded-circle"
                       />
@@ -1617,7 +1617,7 @@ const Homepage = () => {
                   <div className="cs_testimonial_in bg-white shadow-sm cs_pl_30 cs_pr_30 cs_pb_27 cs_pt_1 cs_rounded_10">
                     <div className="cs_testimonial_img cs_mb_15">
                       <img
-                        src="assets/img/avatar_4.png"
+                        src="assets/img/home/team.png"
                         alt="Avatar"
                         className="cs_height_75 cs_width_75 rounded-circle"
                       />
@@ -1646,7 +1646,7 @@ const Homepage = () => {
                   <div className="cs_testimonial_in bg-white shadow-sm cs_pl_30 cs_pr_30 cs_pb_27 cs_pt_1 cs_rounded_10">
                     <div className="cs_testimonial_img cs_mb_15">
                       <img
-                        src="assets/img/avatar_1.png"
+                        src="assets/img/home/team.png"
                         alt="Avatar"
                         className="cs_height_75 cs_width_75 rounded-circle"
                       />
@@ -1675,7 +1675,7 @@ const Homepage = () => {
                   <div className="cs_testimonial_in bg-white shadow-sm cs_pl_30 cs_pr_30 cs_pb_27 cs_pt_1 cs_rounded_10">
                     <div className="cs_testimonial_img cs_mb_15">
                       <img
-                        src="assets/img/avatar_2.png"
+                        src="assets/img/home/team.png"
                         alt="Avatar"
                         className="cs_height_75 cs_width_75 rounded-circle"
                       />
@@ -1704,7 +1704,7 @@ const Homepage = () => {
                   <div className="cs_testimonial_in bg-white shadow-sm cs_pl_30 cs_pr_30 cs_pb_27 cs_pt_1 cs_rounded_10">
                     <div className="cs_testimonial_img cs_mb_15">
                       <img
-                        src="assets/img/avatar_3.png"
+                        src="assets/img/home/team.png"
                         alt="Avatar"
                         className="cs_height_75 cs_width_75 rounded-circle"
                       />
@@ -1733,7 +1733,7 @@ const Homepage = () => {
                   <div className="cs_testimonial_in bg-white shadow-sm cs_pl_30 cs_pr_30 cs_pb_27 cs_pt_1 cs_rounded_10">
                     <div className="cs_testimonial_img cs_mb_15">
                       <img
-                        src="assets/img/avatar_4.png"
+                        src="assets/img/home/team.png"
                         alt="Avatar"
                         className="cs_height_75 cs_width_75 rounded-circle"
                       />
@@ -1993,7 +1993,8 @@ const Homepage = () => {
             <div>
               <p className="text-accent text-left cs_mb_7">Address</p>
               <h2 className="text-white m-0 fw-medium cs_fs_22 cs_fs_lg_18 cs_lh_base text-left">
-              7 Sampat Hills Bicholi Mardana, Indore<br />
+              7 Sampat Hills Bicholi Mardana, Near Hotel President Park By pass, 452016 ,
+Indore MP India
                
               </h2>
             </div>

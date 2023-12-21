@@ -23,7 +23,7 @@ const Footer = () => {
           // data-wow-duration="0.8s"
           // data-wow-delay="0.2s"
         >
-          <img src="assets/img/dadoo-logo.png" className='img-fluid' alt="Logo" />
+          <img src="assets/img/dadoo-full-logo.png" className='img-fluid' alt="Logo" />
         </div>
         <div className="cs_footer_contact_info">
           <h3 className="text-accent fw-normal cs_mb_4 cs_fs_16 cs_lh_lg">

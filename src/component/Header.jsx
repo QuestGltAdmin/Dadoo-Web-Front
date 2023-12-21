@@ -18,7 +18,8 @@ const Header = () => {
                 <div className="cs_top_header_left">
                   <ul className="cs_top_nav d-flex flex-wrap align-items-center cs_fs_12 text-white m-0 p-0">
                     <li>
-                      <b className="fw-medium text-white">Address:</b> 7 Sampat Hills Bicholi Mardana, Indore
+                      <b className="fw-medium text-white">Address:</b> 7 Sampat Hills Bicholi Mardana Near Hotel President Park By pass 452016 
+Indore MP India
                     </li>
                     <li>
                       <a href="mailto:secpl.indore@gmail.com">secpl.indore@gmail.com</a>
@@ -46,7 +47,7 @@ const Header = () => {
               <div className="cs_main_header_in">
                 <div className="cs_main_header_left">
                   <a className="cs_site_branding" href="index.html">
-                    <img src="assets/img/dadoo-logo.png" className='img-fluid' alt="Logo" />
+                    <img src="assets/img/dadoo-full-logo.png" className='img-fluid' alt="Logo" />
                   </a>
                   <div className="cs_nav cs_primary_font fw-medium">
                     <ul className="cs_nav_list fw-medium text-uppercase">

@@ -207,7 +207,8 @@ const Contact = () => {
                                         <div>
                                             <p className="text-accent cs_mb_7 text-left">Address</p>
                                             <h2 className="m-0 fw-medium cs_fs_22 cs_fs_lg_18 cs_lh_base text-left">
-                                                7 Sampat Hills Bicholi Mardana, Indore
+                                            7 Sampat Hills Bicholi Mardana, Near Hotel President Park By pass, 452016 ,
+Indore MP India
                                             </h2>
                                         </div>
                                     </div>
