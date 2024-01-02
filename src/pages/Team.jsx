@@ -55,7 +55,7 @@ const Team = () => {
     </section>
     {/* End Page Header */}
     {/* Start Our Latest Project */}
-    <section className="cs_pt_140 cs_pt_lg_80 cs_pb_140 cs_pb_lg_80">
+    <section className="cs_pt_100 cs_pt_lg_80 cs_pb_80 cs_pb_lg_80">
       <div className="container">
         <div className="row">
           <div className="col-lg-4">
@@ -158,7 +158,7 @@ const Team = () => {
                 </div> */}
               </div>
               <div className="cs_team_info cs_pt_127 cs_pl_15 cs_pr_15 cs_pb_25 cs_transition_4">
-                <h2 className="text-white m-0 cs_fs_26 cs_mb_3">Mayank Dadu</h2>
+                <h2 className="text-white m-0 cs_fs_26 cs_mb_3">Mayanka Dadu</h2>
                 <p className="text-white m-0">Partner - Design & Technical</p>
               </div>
             </div>

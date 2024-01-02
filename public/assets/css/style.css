@@ -454,7 +454,7 @@ label {
 
 .cs_moving_wrap {
   background-color: #17191d;
-  height: 200px;
+  height: 140px;
 }
 .cs_moving_wrap:hover .cs_moving_text {
   -webkit-animation-play-state: paused;
@@ -475,7 +475,7 @@ label {
 }
 @media (max-width: 991px) {
   .cs_moving_text > * {
-    padding: 10px 20px;
+    padding: 10px 30px;
   }
 }
 
@@ -2324,7 +2324,7 @@ label {
   color: #000;
 }
 .background-filled .cs_service .cs_mb_24{
-  min-height: 100px;
+  min-height: 195px;
 }
 .background-filled.bg-blackish{
   background-color: #2e2e2e;
@@ -2563,7 +2563,15 @@ label {
     margin-right: 35px;
   }
 }
+@media screen and (max-width:1400px){
+  .background-filled .cs_service .cs_mb_24{
+    min-height: 242px;
+  }
+}
 @media screen and (max-width: 1199px) {
+  .background-filled .cs_service .cs_mb_24{
+    min-height: 166px;
+  }
   .cs_nav .cs_nav_list > li {
     margin-right: 0;
   }
@@ -2738,6 +2746,9 @@ label {
   }
 }
 @media screen and (max-width: 767px) {
+  .background-filled .cs_service .cs_mb_24{
+    min-height: auto;
+  }
   .cs_site_header.cs_style_1 .cs_top_header_in {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -3127,6 +3138,10 @@ label {
           box-shadow: 0px 0px 8.7714px 4.3857px rgba(192, 186, 186, 0.25);
 }
 @media (max-width: 575px) {
+  .cs_experience.cs_style_1 .cs_experience_box{
+    height: 260px;
+    width: 240px;
+  }
   .cs_experience.cs_style_1.cs_type_1 .cs_experience_box {
     position: relative !important;
     top: 0;

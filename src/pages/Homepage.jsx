@@ -1,5 +1,6 @@
 import React from 'react'
 import Layout from '../component/Layout'
+import Countup from '../component/Countup'
 
 const Homepage = () => {
   return (
@@ -28,7 +29,7 @@ const Homepage = () => {
                   {/* <h2 className="text-white cs_mb_5 fw-normal cs_fs_18">
                     This Week Only for World Premier
                   </h2> */}
-                  <h1 className="text-white cs_mb_16 cs_fs_60 cs_fs_lg_46">
+                  <h1 className="text-white cs_mb_16 cs_fs_60 cs_fs_lg_34">
                   Pioneering Ultramodern <br></br>Architectural Innovation
                   </h1>
                   <p className="text-white cs_mb_20">
@@ -64,7 +65,7 @@ const Homepage = () => {
                   <h2 className="text-white cs_mb_5 fw-normal cs_fs_18">
                     This Week Only for World Premier
                   </h2>
-                  <h1 className="text-white cs_mb_16 cs_fs_60 cs_fs_lg_46">
+                  <h1 className="text-white cs_mb_16 cs_fs_60 cs_fs_lg_34">
                     Inventive and interested <br />
                     in innovation
                   </h1>
@@ -104,7 +105,7 @@ const Homepage = () => {
                   <h2 className="text-white cs_mb_5 fw-normal cs_fs_18">
                     This Week Only for World Premier
                   </h2>
-                  <h1 className="text-white cs_mb_16 cs_fs_60 cs_fs_lg_46">
+                  <h1 className="text-white cs_mb_16 cs_fs_60 cs_fs_lg_34">
                     Inventive and interested <br />
                     in innovation
                   </h1>
@@ -263,19 +264,19 @@ const Homepage = () => {
     className="cs_moving_wrap background-filled text-uppercase text-white d-flex align-items-center"
     src="assets/img/moving_text_shape.png"
   >
-    <div className="cs_moving_text cs_fs_30 cs_fs_lg_26 d-flex align-items-center text-nowrap">
+    <div className="cs_moving_text cs_fs_30 cs_fs_lg_24 d-flex align-items-center text-nowrap">
       <span>Design</span>
       <span>Planning</span>
       <span>System Integrators </span>
       <span>Audits</span>
     </div>
-    <div className="cs_moving_text cs_fs_30 d-flex align-items-center text-nowrap">
+    <div className="cs_moving_text cs_fs_30 cs_fs_lg_24 d-flex align-items-center text-nowrap">
       <span>Trainings</span>
       <span>Design</span>
       <span>Planning</span>
       <span>System Integrators </span>
     </div>
-    <div className="cs_moving_text cs_fs_30 d-flex align-items-center text-nowrap">
+    <div className="cs_moving_text cs_fs_30 cs_fs_lg_24 d-flex align-items-center text-nowrap">
     <span>Trainings</span>
       <span>Design</span>
       <span>Planning</span>
@@ -285,20 +286,20 @@ const Homepage = () => {
   {/* End Animated Text */}
   {/* Start Service Section */}
   <section
-    className="background-filled cs_pt_133 cs_pt_lg_75 cs_pb_140 cs_pb_lg_80 cs_gray_bg"
+    className="background-filled cs_pt_80 cs_pt_lg_75 cs_pb_100 cs_pb_lg_60 cs_gray_bg"
     src="assets/img/services_bg.png"
   >
     <div className="container">
       <div className="cs_section_heading cs_style_1 d-flex align-items-center cs_mb_60 cs_mb_lg_40 cs_column_gap_15 cs_row_gap_15">
         <div className="cs_section_heading_in">
           <h3
-            className="cs_fs_20 cs_fs_lg_18 text-accent fw-normal cs_lh_base cs_mb_10 "
+            className="cs_fs_20 cs_fs_lg_16 text-accent fw-normal cs_lh_base cs_mb_10 "
             // data-wow-duration="0.8s"
             // data-wow-delay="0.2s"
           >
             Our Service List
           </h3>
-          <h2 className="cs_fs_48 cs_fs_lg_36 m-0">
+          <h2 className="cs_fs_48 cs_fs_lg_28 m-0">
             We Provide The Solution <br />
             For Our Clients
           </h2>
@@ -312,8 +313,8 @@ const Homepage = () => {
         </div>
       </div>
       <div className="row">
-        <div className="col-xl-3 col-md-6">
-          <div className="cs_service cs_style_1 cs_pt_25 cs_pl_25 cs_pr_25 cs_pb_15 bg-white cs_transition_4 shadow cs_mb_25">
+        <div className="col-xl-3 col-lg-6 col-md-6">
+          <div className="cs_service cs_style_1 cs_pt_25 cs_pl_20 cs_pr_20 cs_pb_15 bg-white cs_transition_4 shadow cs_mb_25">
             <div className="cs_service_iconbox d-flex align-items-center cs_mb_20">
               <div className="cs_service_icon d-flex align-items-center justify-content-center cs_rounded_5 cs_mr_15 cs_transition_4 flex-none">
                 {/* <svg
@@ -362,15 +363,17 @@ const Homepage = () => {
                 </svg> */}
                 <img src='assets/img/home/service_icon1.svg' className='img-fluid'/>
               </div>
-              <h2 className="cs_lh_base cs_fs_20 cs_fs_lg_18 m-0">
+              <h2 className="cs_lh_base cs_fs_18 cs_fs_lg_16 m-0">
                 <a  className="inline-block">
-                  Fire Protection
+                  Fire Protection & Life Safety Engineering
                 </a>
               </h2>
             </div>
-            <p className="cs_mb_24">
+            {/* <p className="cs_mb_24">
             Fire protection has many aspects, including fire suppression, monitoring, inspections, and maintenance.
-            </p>
+            </p> */}
+            <p className="cs_mb_24">Fire Protection & life safety engineers design the premises to detect the risk of fire hazard, to evacuate the building/
+occupancy the early stage of any risk. Also to protect the building property and control loss of life.</p>
             <div className="cs_service_thumb position-relative cs_rounded_5">
               {/* <a
                 href="services-details.html"
@@ -396,8 +399,8 @@ const Homepage = () => {
             </div>
           </div>
         </div>
-        <div className="col-xl-3 col-md-6">
-          <div className="cs_service cs_style_1 cs_pt_25 cs_pl_25 cs_pr_25 cs_pb_15 bg-white cs_transition_4 shadow cs_mb_25">
+        <div className="col-xl-3 col-lg-6 col-md-6">
+          <div className="cs_service cs_style_1 cs_pt_25 cs_pl_20 cs_pr_20 cs_pb_15 bg-white cs_transition_4 shadow cs_mb_25">
             <div className="cs_service_iconbox d-flex align-items-center cs_mb_20">
               <div className="cs_service_icon d-flex align-items-center justify-content-center cs_rounded_5 cs_mr_15 cs_transition_4 flex-none">
                 {/* <svg
@@ -442,15 +445,16 @@ const Homepage = () => {
                 <img src='assets/img/home/service_icon2.svg' className='img-fluid'/>
 
               </div>
-              <h2 className="cs_lh_base cs_fs_20 cs_fs_lg_18 m-0">
+              <h2 className="cs_lh_base cs_fs_18 cs_fs_lg_16 m-0">
                 <a className="inline-block">
                   Domestic Plumbing
                 </a>
               </h2>
             </div>
-            <p className="cs_mb_24">
+            {/* <p className="cs_mb_24">
             Plastic pipe is in wide use for domestic water supply and drain-waste-vent (DWV) pipe. 
-            </p>
+            </p> */}
+            <p  className="cs_mb_24">Plumbing engineers focus on the design of water supply, drainage, and sewage systems. They ensure that water is distributed efficiently throughout the building while also managing waste disposal systems.</p>
             <div className="cs_service_thumb position-relative cs_rounded_5">
               {/* <a
                 href="services-details.html"
@@ -476,41 +480,15 @@ const Homepage = () => {
             </div>
           </div>
         </div>
-        <div className="col-xl-3 col-md-6">
-          <div className="cs_service cs_style_1 cs_pt_25 cs_pl_25 cs_pr_25 cs_pb_15 bg-white cs_transition_4 shadow cs_mb_25">
+        {/* <div className="col-xl-3 col-md-6">
+          <div className="cs_service cs_style_1 cs_pt_25 cs_pl_20 cs_pr_20 cs_pb_15 bg-white cs_transition_4 shadow cs_mb_25">
             <div className="cs_service_iconbox d-flex align-items-center cs_mb_20">
               <div className="cs_service_icon d-flex align-items-center justify-content-center cs_rounded_5 cs_mr_15 cs_transition_4 flex-none">
-                {/* <svg
-                  width={40}
-                  height={40}
-                  viewBox="0 0 40 40"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g clipPath="url(#clip0_81_360)">
-                    <path
-                      d="M8.75 26.875C6.3375 26.875 4.375 28.8375 4.375 31.25C4.375 33.6625 6.3375 35.625 8.75 35.625C11.1625 35.625 13.125 33.6625 13.125 31.25C13.125 28.8375 11.1625 26.875 8.75 26.875ZM8.75 34.375C7.02688 34.375 5.625 32.9731 5.625 31.25C5.625 29.5269 7.02688 28.125 8.75 28.125C10.4731 28.125 11.875 29.5269 11.875 31.25C11.875 32.9731 10.4731 34.375 8.75 34.375Z"
-                      fill="white"
-                    />
-                    <path
-                      d="M8.75 29.375C7.71625 29.375 6.875 30.2162 6.875 31.25C6.875 32.2838 7.71625 33.125 8.75 33.125C9.78375 33.125 10.625 32.2838 10.625 31.25C10.625 30.2162 9.78375 29.375 8.75 29.375ZM8.75 31.875C8.40562 31.875 8.125 31.5944 8.125 31.25C8.125 30.9056 8.40562 30.625 8.75 30.625C9.09437 30.625 9.375 30.9056 9.375 31.25C9.375 31.5944 9.09437 31.875 8.75 31.875Z"
-                      fill="white"
-                    />
-                    <path
-                      d="M36.8662 12.7744L38.1488 11.4956L38.1475 11.2344C38.1325 8.83063 36.1656 6.875 33.75 6.875H33.4912L32.23 8.13625C30.6225 7.09375 28.8144 6.33438 26.875 5.93937V4.375C27.9088 4.375 28.75 3.53375 28.75 2.5C28.75 1.46625 27.9088 0.625 26.875 0.625H20.625C19.5912 0.625 18.75 1.46625 18.75 2.5C18.75 3.53375 19.5912 4.375 20.625 4.375V5.93937C18.6906 6.33375 16.8875 7.08938 15.2838 8.12813L14.2138 7.05813L14.0188 6.875H13.76C11.3563 6.875 9.38937 8.83063 9.375 11.2344L9.37375 11.4956L10.6425 12.7612C9.0525 15.2075 8.125 18.1213 8.125 21.25C8.125 21.8738 8.1775 22.5069 8.255 23.1394C7.50125 23.2119 6.85375 23.7156 6.61313 24.4475C6.55125 24.6363 6.41562 24.7838 6.24062 24.8512C6.15875 24.8831 6.0775 24.9163 5.99625 24.9519C5.82562 25.0256 5.62687 25.0175 5.45062 24.9281C4.70812 24.5525 3.81375 24.6956 3.225 25.2844L2.785 25.725C2.19625 26.3131 2.05312 27.2081 2.42875 27.9506C2.51812 28.1269 2.52625 28.3256 2.4525 28.4969C2.4175 28.5775 2.38375 28.6594 2.35188 28.7406C2.28437 28.9156 2.13625 29.0513 1.94687 29.1131C1.15625 29.3731 0.625 30.1069 0.625 30.9387V31.5613C0.625 32.3931 1.15625 33.1269 1.9475 33.3869C2.13625 33.4487 2.28375 33.5844 2.35125 33.7581C2.38313 33.8406 2.41625 33.9225 2.45188 34.0037C2.52563 34.1744 2.51688 34.3731 2.42813 34.5494C2.0525 35.2919 2.19562 36.1869 2.78437 36.775L3.22438 37.2156C3.81312 37.8044 4.7075 37.9469 5.45 37.5719C5.62563 37.4825 5.82437 37.4738 5.99625 37.5481C6.07687 37.5831 6.15875 37.6169 6.24 37.6488C6.415 37.7162 6.55062 37.8644 6.6125 38.0537C6.87313 38.8438 7.60687 39.375 8.43875 39.375H9.06125C9.89313 39.375 10.6269 38.8438 10.8869 38.0525C10.9488 37.8638 11.0844 37.7162 11.2581 37.6488C11.3406 37.6169 11.4225 37.5838 11.5037 37.5481C11.6737 37.4738 11.8731 37.4825 12.0494 37.5719C12.7919 37.9469 13.6869 37.8044 14.275 37.2156L14.7156 36.7756C15.3044 36.1875 15.4475 35.2925 15.0719 34.55C15.0138 34.435 15.0031 34.3119 15.0144 34.1919C17.5994 35.9425 20.5994 36.875 23.75 36.875C32.3656 36.875 39.375 29.8656 39.375 21.25C39.375 18.1275 38.4506 15.2181 36.8662 12.7744ZM34 8.13375C35.525 8.24937 36.7544 9.46688 36.8856 10.99L36.135 11.7387C35.3063 10.6625 34.3412 9.6975 33.2656 8.86875L34 8.13375ZM20 2.5C20 2.15562 20.2806 1.875 20.625 1.875H26.875C27.2194 1.875 27.5 2.15562 27.5 2.5C27.5 2.84437 27.2194 3.125 26.875 3.125H20.625C20.2806 3.125 20 2.84437 20 2.5ZM25.625 4.375V5.74125C25.01 5.6675 24.385 5.625 23.75 5.625C23.115 5.625 22.49 5.6675 21.875 5.74125V4.375H25.625ZM10.6369 10.99C10.7675 9.47 11.9919 8.255 13.5231 8.135L14.2475 8.85938C13.1706 9.68688 12.205 10.6519 11.3756 11.7269L10.6369 10.99ZM15.625 31.5613C15.625 31.8519 15.4394 32.1081 15.1625 32.1994C14.6175 32.3781 14.1875 32.7819 13.9838 33.3069C13.9575 33.3737 13.93 33.4406 13.9019 33.5056C13.6794 34.0181 13.6987 34.6037 13.9563 35.1131C14.0875 35.3725 14.0375 35.685 13.8319 35.8906L13.3913 36.3312C13.1856 36.5375 12.8731 36.5869 12.6137 36.4556C12.1044 36.1981 11.5188 36.1794 11.0069 36.4012C10.9412 36.4294 10.8744 36.4569 10.8063 36.4837C10.2819 36.6875 9.87875 37.1175 9.69938 37.6631C9.60875 37.9394 9.35188 38.125 9.06125 38.125H8.43875C8.14812 38.125 7.89187 37.9394 7.80062 37.6625C7.62187 37.1175 7.21812 36.6875 6.69312 36.4837C6.62625 36.4575 6.55937 36.43 6.49437 36.4019C6.25812 36.2988 6.00625 36.2475 5.75313 36.2475C5.4575 36.2475 5.16125 36.3175 4.88687 36.4556C4.62625 36.5869 4.315 36.5369 4.10938 36.3312L3.66875 35.8906C3.46312 35.685 3.41313 35.3725 3.54437 35.1131C3.80188 34.6037 3.82125 34.0181 3.59875 33.5062C3.57062 33.4406 3.54312 33.3738 3.51625 33.3056C3.3125 32.7812 2.8825 32.3781 2.33688 32.1988C2.06063 32.1088 1.875 31.8519 1.875 31.5613V30.9387C1.875 30.6481 2.06063 30.3919 2.33688 30.3006C2.8825 30.1219 3.3125 29.7181 3.51625 29.1931C3.5425 29.1262 3.57 29.0594 3.59812 28.9944C3.82063 28.4819 3.80125 27.8962 3.54375 27.3869C3.4125 27.1275 3.4625 26.8144 3.66812 26.6088L4.10812 26.1687C4.31375 25.9625 4.62563 25.9125 4.88625 26.0444C5.39563 26.3019 5.9825 26.3212 6.49312 26.0987C6.55937 26.07 6.62625 26.0425 6.69312 26.0169C7.2175 25.8125 7.62125 25.3825 7.80062 24.8375C7.89125 24.5606 8.14812 24.375 8.43875 24.375H9.06125C9.35188 24.375 9.60812 24.5606 9.69938 24.8375C9.87875 25.3825 10.2819 25.8125 10.8063 26.0163C10.8731 26.0425 10.94 26.07 11.0056 26.0981C11.5175 26.3206 12.1038 26.3006 12.6131 26.0437C12.8725 25.9119 13.185 25.9625 13.3913 26.1681L13.8312 26.6081C14.0369 26.8138 14.0869 27.1269 13.9556 27.3862C13.6981 27.8956 13.6788 28.4813 13.9013 28.9931C13.9294 29.0588 13.9569 29.1256 13.9838 29.1937C14.1875 29.7181 14.6175 30.1213 15.1631 30.3006C15.4394 30.3912 15.625 30.6481 15.625 30.9387V31.5613ZM11.9069 20.625C12.0538 17.8225 13.1719 15.2794 14.9363 13.32L16.6794 15.0631L17.5631 14.1794L15.82 12.4363C17.7794 10.6713 20.3225 9.55375 23.125 9.40687V11.875H24.375V9.40687C27.1775 9.55375 29.7206 10.6719 31.68 12.4363L29.9369 14.1794L30.8206 15.0631L32.5638 13.32C34.3288 15.2794 35.4463 17.8225 35.5931 20.625H33.125V21.875H35.5931C35.4463 24.6775 34.3281 27.2206 32.5638 29.18L30.8206 27.4369L29.9369 28.3206L31.68 30.0638C29.7206 31.8288 27.1775 32.9463 24.375 33.0931V30.625H23.125V33.1C20.8713 32.9825 18.7275 32.2306 16.8725 30.9044C16.8631 30.3931 16.655 29.9212 16.3081 29.5762L17.5631 28.3212L16.6794 27.4375L15.2413 28.8756C15.2087 28.8319 15.1694 28.7925 15.1494 28.7419C15.1175 28.6594 15.0844 28.5775 15.0487 28.4963C14.975 28.3256 14.9837 28.1269 15.0725 27.9506C15.4481 27.2081 15.305 26.3131 14.7162 25.725L14.6156 25.625H33.125V24.375H30.625V18.125H26.875V24.375H25.625V14.375H21.875V24.375H20.625V16.875H16.875V24.375H14.375V25.3844L14.275 25.2844C13.7856 24.795 13.0863 24.6187 12.4369 24.7869C12.135 23.83 11.9563 22.8556 11.9031 21.8744H14.375V20.6244L11.9069 20.625ZM18.125 24.375V18.125H19.375V24.375H18.125ZM23.125 24.375V15.625H24.375V24.375H23.125ZM28.125 24.375V19.375H29.375V24.375H28.125ZM23.75 35.625C20.91 35.625 18.2019 34.8037 15.8569 33.2556C16.2469 33.0481 16.5456 32.7131 16.7156 32.315C18.8244 33.665 21.2356 34.375 23.75 34.375C30.9875 34.375 36.875 28.4875 36.875 21.25C36.875 14.0125 30.9875 8.125 23.75 8.125C16.5125 8.125 10.625 14.0125 10.625 21.25C10.625 22.4281 10.7906 23.6013 11.1131 24.7513C11.0138 24.6731 10.9288 24.5756 10.8869 24.4462C10.6763 23.8056 10.1525 23.3412 9.52 23.1862C9.43125 22.5375 9.375 21.8881 9.375 21.25C9.375 13.3237 15.8237 6.875 23.75 6.875C31.6763 6.875 38.125 13.3237 38.125 21.25C38.125 29.1763 31.6763 35.625 23.75 35.625Z"
-                      fill="white"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_81_360">
-                      <rect width={40} height={40} fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg> */}
+               
                 <img src='assets/img/home/service_icon3.svg' className='img-fluid'/>
 
               </div>
-              <h2 className="cs_lh_base cs_fs_20 cs_fs_lg_18 m-0">
+              <h2 className="cs_lh_base cs_fs_18 cs_fs_lg_16 m-0">
                 <a  className="inline-block">
                  Water Solutions
                 </a>
@@ -520,32 +498,16 @@ const Homepage = () => {
             Water purification is the process of removing undesirable chemicals, biological contaminants, suspended solids, and gases from water.
             </p>
             <div className="cs_service_thumb position-relative cs_rounded_5">
-              {/* <a
-                href="services-details.html"
-                className="cs_service_btn d-flex align-items-center justify-content-center rounded-circle position-absolute text-white"
-              >
-                <svg
-                  width={22}
-                  height={22}
-                  viewBox="0 0 22 22"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M20.8491 11.347C20.855 11.3381 20.8602 11.3289 20.8656 11.3198C20.8706 11.3114 20.8759 11.3032 20.8805 11.2946C20.8855 11.2853 20.8897 11.2757 20.8942 11.2663C20.8984 11.2573 20.9029 11.2484 20.9067 11.2392C20.9105 11.23 20.9136 11.2206 20.9169 11.2113C20.9205 11.2014 20.9243 11.1916 20.9274 11.1814C20.9302 11.1721 20.9322 11.1626 20.9346 11.1532C20.9372 11.1429 20.9401 11.1327 20.9422 11.1222C20.9444 11.1113 20.9456 11.1003 20.9472 11.0894C20.9485 11.0801 20.9503 11.0711 20.9512 11.0617C20.9532 11.0415 20.9543 11.0213 20.9543 11.001C20.9543 11.0007 20.9543 11.0004 20.9543 11.0001C20.9543 10.9998 20.9543 10.9994 20.9543 10.9991C20.9542 10.9789 20.9532 10.9586 20.9512 10.9384C20.9503 10.929 20.9485 10.92 20.9472 10.9108C20.9456 10.8998 20.9444 10.8888 20.9422 10.8779C20.9401 10.8674 20.9372 10.8572 20.9346 10.8469C20.9322 10.8375 20.9302 10.828 20.9274 10.8187C20.9243 10.8086 20.9205 10.7988 20.9169 10.7889C20.9136 10.7795 20.9105 10.7701 20.9067 10.7609C20.9029 10.7517 20.8984 10.7428 20.8941 10.7338C20.8897 10.7244 20.8855 10.7148 20.8805 10.7055C20.8759 10.6969 20.8706 10.6887 20.8656 10.6803C20.8602 10.6712 20.855 10.662 20.8491 10.6531C20.8428 10.6438 20.8359 10.635 20.8292 10.6261C20.8237 10.6187 20.8186 10.6112 20.8127 10.604C20.7996 10.588 20.7858 10.5727 20.7713 10.5581L15.026 4.81285C14.7819 4.56877 14.3862 4.56877 14.1421 4.81285C13.898 5.05692 13.898 5.45264 14.1421 5.69672L18.8204 10.375L0.88388 10.375C0.53871 10.375 0.258878 10.6548 0.258878 11C0.258878 11.3452 0.53871 11.625 0.88388 11.625L18.8204 11.625L14.1421 16.3033C13.8981 16.5474 13.8981 16.9431 14.1421 17.1872C14.3862 17.4312 14.7819 17.4313 15.026 17.1872L20.7713 11.442C20.7858 11.4274 20.7996 11.4121 20.8127 11.3962C20.8186 11.389 20.8237 11.3814 20.8292 11.374C20.8359 11.3651 20.8428 11.3563 20.8491 11.347Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </a> */}
+              
               <div
                 className="cs_service_thumb-in position-relative-in background-filled h-100"
                 style={{backgroundImage:"url('/assets/img/home/service_img3.png')"}}
               />
             </div>
           </div>
-        </div>
-        <div className="col-xl-3 col-md-6">
-          <div className="cs_service cs_style_1 cs_pt_25 cs_pl_25 cs_pr_25 cs_pb_15 bg-white cs_transition_4 shadow cs_mb_25">
+        </div> */}
+        <div className="col-xl-3 col-lg-6 col-md-6">
+          <div className="cs_service cs_style_1 cs_pt_25 cs_pl_20 cs_pr_20 cs_pb_15 bg-white cs_transition_4 shadow cs_mb_25">
             <div className="cs_service_iconbox d-flex align-items-center cs_mb_20">
               <div className="cs_service_icon d-flex align-items-center justify-content-center cs_rounded_5 cs_mr_15 cs_transition_4 flex-none">
                 {/* <svg
@@ -571,15 +533,16 @@ const Homepage = () => {
                 <img src='assets/img/home/service_icon4.svg' className='img-fluid'/>
 
               </div>
-              <h2 className="cs_lh_base cs_fs_20 cs_fs_lg_18 m-0">
+              <h2 className="cs_lh_base cs_fs_18 cs_fs_lg_16 m-0">
                 <a href="services-details.html" className="inline-block">
                   Electrical
                 </a>
               </h2>
             </div>
-            <p className="cs_mb_24">
+            {/* <p className="cs_mb_24">
             Electrical Content Portal (ECP) is where you can download content,manufacturer parts, cable references, and files for 2D layouts.
-            </p>
+            </p> */}
+            <p className="cs_mb_24">Electrical engineers handle the design, installation, and maintenance of electrical systems within buildings. This includes lighting, power distribution, communication systems, security systems, and more.</p>
             <div className="cs_service_thumb position-relative cs_rounded_5">
               {/* <a
                 href="services-details.html"
@@ -605,8 +568,8 @@ const Homepage = () => {
             </div>
           </div>
         </div>
-        <div className="col-xl-3 col-md-6">
-          <div className="cs_service cs_style_1 cs_pt_25 cs_pl_25 cs_pr_25 cs_pb_15 bg-white cs_transition_4 shadow cs_mb_25">
+        <div className="col-xl-3 col-lg-6 col-md-6">
+          <div className="cs_service cs_style_1 cs_pt_25 cs_pl_20 cs_pr_20 cs_pb_15 bg-white cs_transition_4 shadow cs_mb_25">
             <div className="cs_service_iconbox d-flex align-items-center cs_mb_20">
               <div className="cs_service_icon d-flex align-items-center justify-content-center cs_rounded_5 cs_mr_15 cs_transition_4 flex-none">
                 {/* <svg
@@ -632,15 +595,16 @@ const Homepage = () => {
                 <img src='assets/img/home/service_icon5.svg' className='img-fluid'/>
 
               </div>
-              <h2 className="cs_lh_base cs_fs_20 cs_fs_lg_18 m-0">
+              <h2 className="cs_lh_base cs_fs_18 cs_fs_lg_16 m-0">
                 <a  className="inline-block">
                   Hvac
                 </a>
               </h2>
             </div>
-            <p className="cs_mb_24">
+            {/* <p className="cs_mb_24">
             This system is responsible for heating and cooling your home and includes products like thermostats and other home comfort controls.
-            </p>
+            </p> */}
+            <p className='cs_mb_24'>This involves the design and management of heating, ventilation, and air conditioning (HVAC) systems. Mechanical engineers ensure that the indoor environment is comfortable and safe, with proper temperature control, humidity regulation, and air quality.</p>
             <div className="cs_service_thumb position-relative cs_rounded_5">
               {/* <a
                 href="services-details.html"
@@ -666,34 +630,15 @@ const Homepage = () => {
             </div>
           </div>
         </div>
-        <div className="col-xl-3 col-md-6">
-          <div className="cs_service cs_style_1 cs_pt_25 cs_pl_25 cs_pr_25 cs_pb_15 bg-white cs_transition_4 shadow cs_mb_25">
+        {/* <div className="col-xl-3 col-md-6">
+          <div className="cs_service cs_style_1 cs_pt_25 cs_pl_20 cs_pr_20 cs_pb_15 bg-white cs_transition_4 shadow cs_mb_25">
             <div className="cs_service_iconbox d-flex align-items-center cs_mb_20">
               <div className="cs_service_icon d-flex align-items-center justify-content-center cs_rounded_5 cs_mr_15 cs_transition_4 flex-none">
-                {/* <svg
-                  width={41}
-                  height={41}
-                  viewBox="0 0 41 41"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M18.014 36.1123C21.6634 36.1157 25.2268 35.0038 28.2267 32.9256L34.4602 39.159C35.7357 40.4216 37.7917 40.4164 39.0608 39.1473C40.3299 37.8782 40.3351 35.8222 39.0726 34.5466L32.8391 28.3132C37.5336 21.49 36.9678 12.3444 31.4681 6.15192C25.9684 -0.040542 16.9535 -1.68226 9.62368 2.17377C2.2939 6.02979 -1.45976 14.3887 0.527933 22.4288C2.51562 30.4689 9.7318 36.1159 18.014 36.1123ZM38.1292 35.4899C38.8805 36.2429 38.8805 37.462 38.1292 38.215C37.3669 38.944 36.1658 38.944 35.4034 38.215L29.3061 32.1177C30.3088 31.3083 31.2226 30.3946 32.0319 29.3919L38.1292 35.4899ZM18.014 1.42286C27.2248 1.42286 34.6917 8.88972 34.6917 18.1005C34.6917 27.3112 27.2248 34.7781 18.014 34.7781C8.80319 34.7781 1.33633 27.3113 1.33633 18.1005C1.34664 8.89395 8.80742 1.43317 18.014 1.42286Z"
-                    fill="white"
-                  />
-                  <path
-                    d="M18.0144 33.4437C26.4883 33.4437 33.3578 26.5742 33.3578 18.1003C33.3578 9.62638 26.4883 2.75684 18.0144 2.75684C9.54044 2.75684 2.6709 9.62631 2.6709 18.1003C2.68048 26.5703 9.54434 33.4341 18.0144 33.4437ZM11.3433 30.4164C10.8832 30.1629 10.4378 29.8839 10.0091 29.5805V27.4397H11.3433V30.4164ZM16.6802 32.0427C16.2285 31.9994 15.7843 31.9334 15.346 31.848V26.7726H16.6802V32.0427ZM22.017 31.5204C21.5807 31.6508 21.1359 31.76 20.6828 31.848V22.1029H22.017V31.5204ZM27.3538 28.5131C26.9311 28.8956 26.4856 29.252 26.0196 29.5805V20.1016H27.3538V28.5131ZM18.0144 4.09104C23.4728 4.08469 28.4368 7.253 30.7295 12.2066C33.0223 17.1603 32.2253 22.9949 28.688 27.1522V20.1016C28.688 19.3647 28.0907 18.7674 27.3538 18.7674H26.0196C25.2828 18.7674 24.6854 19.3648 24.6854 20.1016V30.4164C24.2522 30.6503 23.8069 30.8609 23.3512 31.0474V22.1029C23.3512 21.366 22.7539 20.7687 22.017 20.7687H20.6828C19.9459 20.7687 19.3486 21.3661 19.3486 22.1029V32.0427C18.909 32.0841 18.4647 32.1094 18.0144 32.1094V26.7726C18.0144 26.0357 17.417 25.4384 16.6802 25.4384H15.346C14.6091 25.4384 14.0118 26.0358 14.0118 26.7726V31.5197C13.5594 31.3849 13.1141 31.2273 12.6776 31.0474V27.4397C12.6776 26.7028 12.0802 26.1055 11.3434 26.1055H10.0092C9.27232 26.1055 8.67501 26.7028 8.67501 27.4397V28.5123C8.18152 28.0738 7.71943 27.6012 7.2921 27.0981L11.3434 23.0481L12.3988 24.1041C12.9286 24.6079 13.7603 24.6079 14.2901 24.1041L20.6829 17.7113L21.4027 18.4318C21.9324 18.9356 22.7642 18.9356 23.2939 18.4318L26.6868 15.0409V16.0989C26.6868 16.4674 26.9855 16.766 27.3539 16.766C27.7224 16.766 28.021 16.4674 28.021 16.0989V13.4305C28.021 13.0621 27.7224 12.7634 27.3539 12.7634H24.6855C24.3171 12.7634 24.0184 13.0621 24.0184 13.4305C24.0184 13.799 24.3171 14.0976 24.6855 14.0976H25.7429L22.3507 17.4885L21.6288 16.766C21.0991 16.2622 20.2673 16.2622 19.7376 16.766L13.3447 23.1589L12.2893 22.1028C11.7596 21.599 10.9278 21.599 10.3981 22.1028L6.47352 26.0274C3.52219 21.7429 3.19089 16.175 5.61318 11.5707C8.03547 6.96643 12.8117 4.08569 18.0144 4.09104Z"
-                    fill="white"
-                  />
-                  <path
-                    d="M11.3425 16.0992C11.3425 15.7307 11.0438 15.4321 10.6754 15.4321C10.3069 15.4321 10.0083 15.7307 10.0083 16.0992C10.0102 17.6836 11.1247 19.0489 12.6767 19.368V19.4347C12.6767 19.8031 12.9753 20.1018 13.3438 20.1018C13.7122 20.1018 14.0109 19.8031 14.0109 19.4347V19.368C15.5654 19.0524 16.6826 17.6855 16.6826 16.0992C16.6826 14.5129 15.5655 13.1461 14.0109 12.8304V8.8838C14.8076 9.16547 15.3416 9.9173 15.3451 10.7624C15.3451 11.1308 15.6437 11.4295 16.0122 11.4295C16.3806 11.4295 16.6793 11.1308 16.6793 10.7624C16.6773 9.17796 15.5628 7.81269 14.0109 7.49355V7.42687C14.0109 7.05842 13.7122 6.75977 13.3438 6.75977C12.9753 6.75977 12.6767 7.05842 12.6767 7.42687V7.49355C11.1221 7.80919 10.0049 9.17604 10.0049 10.7624C10.0049 12.3487 11.122 13.7155 12.6767 14.0312V17.9785C11.8797 17.6967 11.3457 16.9445 11.3425 16.0992ZM15.3451 16.0992C15.3416 16.9443 14.8077 17.6961 14.0109 17.9778V14.2206C14.8076 14.5023 15.3416 15.2541 15.3451 16.0992ZM11.3425 10.7624C11.346 9.9173 11.8799 9.16547 12.6767 8.8838V12.641C11.8799 12.3593 11.346 11.6075 11.3425 10.7624Z"
-                    fill="white"
-                  />
-                </svg> */}
+              
                 <img src='assets/img/home/service_icon6.svg' className='img-fluid'/>
 
               </div>
-              <h2 className="cs_lh_base cs_fs_20 cs_fs_lg_18 m-0">
+              <h2 className="cs_lh_base cs_fs_18 cs_fs_lg_16 m-0">
                 <a className="inline-block">
                   Life Safety System
                 </a>
@@ -703,58 +648,23 @@ const Homepage = () => {
             The Life Safety Code is the most widely used source for strategies to protect people based on building construction,.
             </p>
             <div className="cs_service_thumb position-relative cs_rounded_5">
-              {/* <a
-                href="services-details.html"
-                className="cs_service_btn d-flex align-items-center justify-content-center rounded-circle position-absolute text-white"
-              >
-                <svg
-                  width={22}
-                  height={22}
-                  viewBox="0 0 22 22"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M20.8491 11.347C20.855 11.3381 20.8602 11.3289 20.8656 11.3198C20.8706 11.3114 20.8759 11.3032 20.8805 11.2946C20.8855 11.2853 20.8897 11.2757 20.8942 11.2663C20.8984 11.2573 20.9029 11.2484 20.9067 11.2392C20.9105 11.23 20.9136 11.2206 20.9169 11.2113C20.9205 11.2014 20.9243 11.1916 20.9274 11.1814C20.9302 11.1721 20.9322 11.1626 20.9346 11.1532C20.9372 11.1429 20.9401 11.1327 20.9422 11.1222C20.9444 11.1113 20.9456 11.1003 20.9472 11.0894C20.9485 11.0801 20.9503 11.0711 20.9512 11.0617C20.9532 11.0415 20.9543 11.0213 20.9543 11.001C20.9543 11.0007 20.9543 11.0004 20.9543 11.0001C20.9543 10.9998 20.9543 10.9994 20.9543 10.9991C20.9542 10.9789 20.9532 10.9586 20.9512 10.9384C20.9503 10.929 20.9485 10.92 20.9472 10.9108C20.9456 10.8998 20.9444 10.8888 20.9422 10.8779C20.9401 10.8674 20.9372 10.8572 20.9346 10.8469C20.9322 10.8375 20.9302 10.828 20.9274 10.8187C20.9243 10.8086 20.9205 10.7988 20.9169 10.7889C20.9136 10.7795 20.9105 10.7701 20.9067 10.7609C20.9029 10.7517 20.8984 10.7428 20.8941 10.7338C20.8897 10.7244 20.8855 10.7148 20.8805 10.7055C20.8759 10.6969 20.8706 10.6887 20.8656 10.6803C20.8602 10.6712 20.855 10.662 20.8491 10.6531C20.8428 10.6438 20.8359 10.635 20.8292 10.6261C20.8237 10.6187 20.8186 10.6112 20.8127 10.604C20.7996 10.588 20.7858 10.5727 20.7713 10.5581L15.026 4.81285C14.7819 4.56877 14.3862 4.56877 14.1421 4.81285C13.898 5.05692 13.898 5.45264 14.1421 5.69672L18.8204 10.375L0.88388 10.375C0.53871 10.375 0.258878 10.6548 0.258878 11C0.258878 11.3452 0.53871 11.625 0.88388 11.625L18.8204 11.625L14.1421 16.3033C13.8981 16.5474 13.8981 16.9431 14.1421 17.1872C14.3862 17.4312 14.7819 17.4313 15.026 17.1872L20.7713 11.442C20.7858 11.4274 20.7996 11.4121 20.8127 11.3962C20.8186 11.389 20.8237 11.3814 20.8292 11.374C20.8359 11.3651 20.8428 11.3563 20.8491 11.347Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </a> */}
+              
               <div
                 className="cs_service_thumb-in position-relative-in background-filled h-100"
                 style={{backgroundImage:"url('/assets/img/home/service_img6.png')"}}
               />
             </div>
           </div>
-        </div>
-        <div className="col-xl-3 col-md-6">
-          <div className="cs_service cs_style_1 cs_pt_25 cs_pl_25 cs_pr_25 cs_pb_15 bg-white cs_transition_4 shadow cs_mb_25">
+        </div> */}
+        {/* <div className="col-xl-3 col-md-6">
+          <div className="cs_service cs_style_1 cs_pt_25 cs_pl_20 cs_pr_20 cs_pb_15 bg-white cs_transition_4 shadow cs_mb_25">
             <div className="cs_service_iconbox d-flex align-items-center cs_mb_20">
               <div className="cs_service_icon d-flex align-items-center justify-content-center cs_rounded_5 cs_mr_15 cs_transition_4 flex-none">
-                {/* <svg
-                  width={41}
-                  height={41}
-                  viewBox="0 0 41 41"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M18.014 36.1123C21.6634 36.1157 25.2268 35.0038 28.2267 32.9256L34.4602 39.159C35.7357 40.4216 37.7917 40.4164 39.0608 39.1473C40.3299 37.8782 40.3351 35.8222 39.0726 34.5466L32.8391 28.3132C37.5336 21.49 36.9678 12.3444 31.4681 6.15192C25.9684 -0.040542 16.9535 -1.68226 9.62368 2.17377C2.2939 6.02979 -1.45976 14.3887 0.527933 22.4288C2.51562 30.4689 9.7318 36.1159 18.014 36.1123ZM38.1292 35.4899C38.8805 36.2429 38.8805 37.462 38.1292 38.215C37.3669 38.944 36.1658 38.944 35.4034 38.215L29.3061 32.1177C30.3088 31.3083 31.2226 30.3946 32.0319 29.3919L38.1292 35.4899ZM18.014 1.42286C27.2248 1.42286 34.6917 8.88972 34.6917 18.1005C34.6917 27.3112 27.2248 34.7781 18.014 34.7781C8.80319 34.7781 1.33633 27.3113 1.33633 18.1005C1.34664 8.89395 8.80742 1.43317 18.014 1.42286Z"
-                    fill="white"
-                  />
-                  <path
-                    d="M18.0144 33.4437C26.4883 33.4437 33.3578 26.5742 33.3578 18.1003C33.3578 9.62638 26.4883 2.75684 18.0144 2.75684C9.54044 2.75684 2.6709 9.62631 2.6709 18.1003C2.68048 26.5703 9.54434 33.4341 18.0144 33.4437ZM11.3433 30.4164C10.8832 30.1629 10.4378 29.8839 10.0091 29.5805V27.4397H11.3433V30.4164ZM16.6802 32.0427C16.2285 31.9994 15.7843 31.9334 15.346 31.848V26.7726H16.6802V32.0427ZM22.017 31.5204C21.5807 31.6508 21.1359 31.76 20.6828 31.848V22.1029H22.017V31.5204ZM27.3538 28.5131C26.9311 28.8956 26.4856 29.252 26.0196 29.5805V20.1016H27.3538V28.5131ZM18.0144 4.09104C23.4728 4.08469 28.4368 7.253 30.7295 12.2066C33.0223 17.1603 32.2253 22.9949 28.688 27.1522V20.1016C28.688 19.3647 28.0907 18.7674 27.3538 18.7674H26.0196C25.2828 18.7674 24.6854 19.3648 24.6854 20.1016V30.4164C24.2522 30.6503 23.8069 30.8609 23.3512 31.0474V22.1029C23.3512 21.366 22.7539 20.7687 22.017 20.7687H20.6828C19.9459 20.7687 19.3486 21.3661 19.3486 22.1029V32.0427C18.909 32.0841 18.4647 32.1094 18.0144 32.1094V26.7726C18.0144 26.0357 17.417 25.4384 16.6802 25.4384H15.346C14.6091 25.4384 14.0118 26.0358 14.0118 26.7726V31.5197C13.5594 31.3849 13.1141 31.2273 12.6776 31.0474V27.4397C12.6776 26.7028 12.0802 26.1055 11.3434 26.1055H10.0092C9.27232 26.1055 8.67501 26.7028 8.67501 27.4397V28.5123C8.18152 28.0738 7.71943 27.6012 7.2921 27.0981L11.3434 23.0481L12.3988 24.1041C12.9286 24.6079 13.7603 24.6079 14.2901 24.1041L20.6829 17.7113L21.4027 18.4318C21.9324 18.9356 22.7642 18.9356 23.2939 18.4318L26.6868 15.0409V16.0989C26.6868 16.4674 26.9855 16.766 27.3539 16.766C27.7224 16.766 28.021 16.4674 28.021 16.0989V13.4305C28.021 13.0621 27.7224 12.7634 27.3539 12.7634H24.6855C24.3171 12.7634 24.0184 13.0621 24.0184 13.4305C24.0184 13.799 24.3171 14.0976 24.6855 14.0976H25.7429L22.3507 17.4885L21.6288 16.766C21.0991 16.2622 20.2673 16.2622 19.7376 16.766L13.3447 23.1589L12.2893 22.1028C11.7596 21.599 10.9278 21.599 10.3981 22.1028L6.47352 26.0274C3.52219 21.7429 3.19089 16.175 5.61318 11.5707C8.03547 6.96643 12.8117 4.08569 18.0144 4.09104Z"
-                    fill="white"
-                  />
-                  <path
-                    d="M11.3425 16.0992C11.3425 15.7307 11.0438 15.4321 10.6754 15.4321C10.3069 15.4321 10.0083 15.7307 10.0083 16.0992C10.0102 17.6836 11.1247 19.0489 12.6767 19.368V19.4347C12.6767 19.8031 12.9753 20.1018 13.3438 20.1018C13.7122 20.1018 14.0109 19.8031 14.0109 19.4347V19.368C15.5654 19.0524 16.6826 17.6855 16.6826 16.0992C16.6826 14.5129 15.5655 13.1461 14.0109 12.8304V8.8838C14.8076 9.16547 15.3416 9.9173 15.3451 10.7624C15.3451 11.1308 15.6437 11.4295 16.0122 11.4295C16.3806 11.4295 16.6793 11.1308 16.6793 10.7624C16.6773 9.17796 15.5628 7.81269 14.0109 7.49355V7.42687C14.0109 7.05842 13.7122 6.75977 13.3438 6.75977C12.9753 6.75977 12.6767 7.05842 12.6767 7.42687V7.49355C11.1221 7.80919 10.0049 9.17604 10.0049 10.7624C10.0049 12.3487 11.122 13.7155 12.6767 14.0312V17.9785C11.8797 17.6967 11.3457 16.9445 11.3425 16.0992ZM15.3451 16.0992C15.3416 16.9443 14.8077 17.6961 14.0109 17.9778V14.2206C14.8076 14.5023 15.3416 15.2541 15.3451 16.0992ZM11.3425 10.7624C11.346 9.9173 11.8799 9.16547 12.6767 8.8838V12.641C11.8799 12.3593 11.346 11.6075 11.3425 10.7624Z"
-                    fill="white"
-                  />
-                </svg> */}
+          
                 <img src='assets/img/home/service_icon7.svg' className='img-fluid'/>
 
               </div>
-              <h2 className="cs_lh_base cs_fs_20 cs_fs_lg_18 m-0">
+              <h2 className="cs_lh_base cs_fs_18 cs_fs_lg_16 m-0">
                 <a  className="inline-block">
                   Passive Protection
                 </a>
@@ -764,31 +674,14 @@ const Homepage = () => {
             Passive fire protection (PFP) is components or systems of a building or structure that slows  the spread of the effects of fire .
             </p>
             <div className="cs_service_thumb position-relative cs_rounded_5">
-              
-              {/* <a
-                href="services-details.html"
-                className="cs_service_btn d-flex align-items-center justify-content-center rounded-circle position-absolute text-white"
-              >
-                <svg
-                  width={22}
-                  height={22}
-                  viewBox="0 0 22 22"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M20.8491 11.347C20.855 11.3381 20.8602 11.3289 20.8656 11.3198C20.8706 11.3114 20.8759 11.3032 20.8805 11.2946C20.8855 11.2853 20.8897 11.2757 20.8942 11.2663C20.8984 11.2573 20.9029 11.2484 20.9067 11.2392C20.9105 11.23 20.9136 11.2206 20.9169 11.2113C20.9205 11.2014 20.9243 11.1916 20.9274 11.1814C20.9302 11.1721 20.9322 11.1626 20.9346 11.1532C20.9372 11.1429 20.9401 11.1327 20.9422 11.1222C20.9444 11.1113 20.9456 11.1003 20.9472 11.0894C20.9485 11.0801 20.9503 11.0711 20.9512 11.0617C20.9532 11.0415 20.9543 11.0213 20.9543 11.001C20.9543 11.0007 20.9543 11.0004 20.9543 11.0001C20.9543 10.9998 20.9543 10.9994 20.9543 10.9991C20.9542 10.9789 20.9532 10.9586 20.9512 10.9384C20.9503 10.929 20.9485 10.92 20.9472 10.9108C20.9456 10.8998 20.9444 10.8888 20.9422 10.8779C20.9401 10.8674 20.9372 10.8572 20.9346 10.8469C20.9322 10.8375 20.9302 10.828 20.9274 10.8187C20.9243 10.8086 20.9205 10.7988 20.9169 10.7889C20.9136 10.7795 20.9105 10.7701 20.9067 10.7609C20.9029 10.7517 20.8984 10.7428 20.8941 10.7338C20.8897 10.7244 20.8855 10.7148 20.8805 10.7055C20.8759 10.6969 20.8706 10.6887 20.8656 10.6803C20.8602 10.6712 20.855 10.662 20.8491 10.6531C20.8428 10.6438 20.8359 10.635 20.8292 10.6261C20.8237 10.6187 20.8186 10.6112 20.8127 10.604C20.7996 10.588 20.7858 10.5727 20.7713 10.5581L15.026 4.81285C14.7819 4.56877 14.3862 4.56877 14.1421 4.81285C13.898 5.05692 13.898 5.45264 14.1421 5.69672L18.8204 10.375L0.88388 10.375C0.53871 10.375 0.258878 10.6548 0.258878 11C0.258878 11.3452 0.53871 11.625 0.88388 11.625L18.8204 11.625L14.1421 16.3033C13.8981 16.5474 13.8981 16.9431 14.1421 17.1872C14.3862 17.4312 14.7819 17.4313 15.026 17.1872L20.7713 11.442C20.7858 11.4274 20.7996 11.4121 20.8127 11.3962C20.8186 11.389 20.8237 11.3814 20.8292 11.374C20.8359 11.3651 20.8428 11.3563 20.8491 11.347Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </a> */}
+             
               <div
                 className="cs_service_thumb-in position-relative-in background-filled h-100"
                 style={{backgroundImage:"url('/assets/img/home/service_img7.png')"}}
               />
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="cs_service_1-info  text-center cs_mt_40 d-flex justify-content-center align-items-center flex-wrap d-none">
         <h4 className="fw-normal m-0">
@@ -797,8 +690,8 @@ const Homepage = () => {
         <a
           
           className="cs_btn cs_style_1 cs_fs_16  overflow-hidden cs_fs_16 cs_rounded_25 cs_pl_20 cs_pr_20 cs_pt_7 cs_pb_7 wow zoomIn"
-        //   data-wow-duration="0.8s"
-        //   data-wow-delay="0.2s"
+          data-wow-duration="0.8s"
+          data-wow-delay="0.2s"
         >
           <span>Find More Services</span>
         </a>
@@ -807,7 +700,7 @@ const Homepage = () => {
   </section>
   {/* End Service Section */}
   {/* Start About Section */}
-  <section className="cs_pt_135 cs_pt_lg_75 cs_pb_140 cs_pb_lg_80 position-relative">
+  <section className="cs_pt_80 cs_pt_lg_75 cs_pb_100 cs_pb_lg_60 position-relative">
     <div className="container">
       <div className="row align-items-center">
         <div className="col-lg-6 cs_mb_lg_55">
@@ -836,7 +729,7 @@ const Homepage = () => {
                 alt="Icon"
                 className="cs_mb_5"
               />
-              <h3 className="text-white cs_fs_60 cs_fs_lg_46 fw-bold lh_1 mb-0 d-flex justify-content-between">
+              <h3 className="text-white cs_fs_60 cs_fs_lg_34 fw-bold lh_1 mb-0 d-flex justify-content-between">
                 <span data-count-to={30} className="odometer" />
                 <span className="fw-light">+</span>
               </h3>
@@ -851,13 +744,13 @@ const Homepage = () => {
             <div className="cs_section_heading cs_style_1 d-flex align-items-center cs_mb_15">
               <div className="cs_section_heading_in">
                 <h3
-                  className="text-left cs_fs_20 cs_fs_lg_18 text-accent fw-normal cs_lh_base cs_mb_10 wow fadeInLeft"
+                  className="text-left cs_fs_20 cs_fs_lg_16 text-accent fw-normal cs_lh_base cs_mb_10 wow fadeInLeft"
                 //   data-wow-duration="0.8s"
                 //   data-wow-delay="0.2s"
                 >
                   About Us
                 </h3>
-                <h2 className="cs_fs_48 cs_fs_lg_36 cs_mb_20 text-left ">
+                <h2 className="cs_fs_48 cs_fs_lg_28 cs_mb_20 text-left ">
                   Get Ready for Success with{" "}
                   <span className="text-accent">The Dadoo Group</span> Your Path to
                   Growth.
@@ -866,6 +759,9 @@ const Homepage = () => {
                  We follow the new trends of technology and make sure that the building becomes ultra modern in the age. The perfect foundation creates longitivity and efficient planning saves resources.<br></br>
                  We connect with Architect at the start of the building design to plan the services as per the need of the occupancy. Over the 30 years of experiences and having worked with finest of the projects WE mark ourseves as the leader of the central India.
                 </p>
+              </div>
+              <div>
+                <Countup/>
               </div>
             </div>
             {/* <div className="cs_progressbar cs_style_1 cs_mb_20">
@@ -973,19 +869,19 @@ const Homepage = () => {
   </section>
   {/* End About Section */}
   {/* Start Latest Project */}
-  <section className="bg-gray cs_pt_135">
+  <section className="bg-gray cs_pt_100  cs_pt_lg_70 ">
     <div className="cs_project_slider">
       <div className="container">
         <div className="cs_section_heading cs_style_1 d-flex align-items-center cs_mb_60 cs_mb_lg_40 cs_column_gap_15 cs_row_gap_15 cs_mb_60 cs_mb_lg_40">
           <div className="cs_section_heading_in">
             <h3
-              className="cs_fs_20 cs_fs_lg_18 text-accent fw-normal cs_lh_base cs_mb_10 wow fadeInLeft text-left"
+              className="cs_fs_20 cs_fs_lg_16 text-accent fw-normal cs_lh_base cs_mb_10 wow fadeInLeft text-left"
             //   data-wow-duration="0.8s"
             //   data-wow-delay="0.2s"
             >
               Our Latest Project
             </h3>
-            <h2 className="cs_fs_48 cs_fs_lg_36 m-0 text-left">
+            <h2 className="cs_fs_48 cs_fs_lg_28 m-0 text-left">
               Take a look our <br />
               Completed Projects
             </h2>
@@ -1166,13 +1062,13 @@ const Homepage = () => {
             <div className="cs_section_heading cs_style_1 d-flex align-items-center cs_mb_60 cs_mb_lg_40 cs_column_gap_15 cs_row_gap_15">
               <div className="cs_section_heading_in">
                 <h3
-                  className="cs_fs_20 cs_fs_lg_18 text-accent fw-normal cs_lh_base cs_mb_10 wow fadeInLeft text-left"
+                  className="cs_fs_20 cs_fs_lg_16 text-accent fw-normal cs_lh_base cs_mb_10 wow fadeInLeft text-left"
                 //   data-wow-duration="0.8s"
                 //   data-wow-delay="0.2s"
                 >
                   Why Choose Us
                 </h3>
-                <h2 className="cs_fs_48 cs_fs_lg_36 cs_mb_20 text-white text-left">
+                {/* <h2 className="cs_fs_48 cs_fs_lg_28 cs_mb_20 text-white text-left">
                   Developing a{" "}
                   <span className="text-accent">
                     design that <br />
@@ -1180,7 +1076,15 @@ const Homepage = () => {
                   </span>{" "}
                   to use and <br />
                   navigate
+                </h2> */}
+                <h2 className="cs_fs_48 cs_fs_lg_28 cs_mb_20 text-white text-left">
+                 We <span className="text-accent">plan & Design  </span> the systems which are cost effective and minimise the operation Cost.
+                  {/* <span className="text-accent">
+                    design that <br />
+                    is easy
+                  </span> */}
                 </h2>
+                
                 <p className="text-white m-0 text-left">
                   {/* Providing legal advice, contract drafting, compliance
                   assistance, intellectual <br /> property protection, and other
@@ -1251,7 +1155,7 @@ const Homepage = () => {
                     
                   </div>
                   <div>
-                    <h2 className="text-white m-0 cs_fs_20 cs_fs_lg_18 cs_lh_base text-left">
+                    <h2 className="text-white m-0 cs_fs_20 cs_fs_lg_16 cs_lh_base text-left">
                       Building Safety Audit
                     </h2>
                   </div>
@@ -1287,7 +1191,7 @@ const Homepage = () => {
 
                   </div>
                   <div>
-                    <h2 className="text-white m-0 cs_fs_20 cs_fs_lg_18 cs_lh_base text-left">
+                    <h2 className="text-white m-0 cs_fs_20 cs_fs_lg_16 cs_lh_base text-left">
                       Process Safety Audit
                     </h2>
                   </div>
@@ -1376,7 +1280,7 @@ const Homepage = () => {
 
                   </div>
                   <div>
-                    <h2 className="text-white m-0 cs_fs_20 cs_fs_lg_18 cs_lh_base text-left">
+                    <h2 className="text-white m-0 cs_fs_20 cs_fs_lg_16 cs_lh_base text-left">
                       Recommendations & Findings
                     </h2>
                   </div>
@@ -1409,7 +1313,7 @@ const Homepage = () => {
                     
                   </div>
                   <div>
-                    <h2 className="text-white m-0 cs_fs_20 cs_fs_lg_18 cs_lh_base text-left">
+                    <h2 className="text-white m-0 cs_fs_20 cs_fs_lg_16 cs_lh_base text-left">
                       Rectification and Analysis Report
                     </h2>
                   </div>
@@ -1457,7 +1361,7 @@ const Homepage = () => {
   </section>
   {/* End Why Choose Us */}
   {/* Start Testimonial Section */}
-  <section
+  {/* <section
     className="background-filled cs_pt_140 cs_pt_lg_75 cs_pb_135 cs_pb_lg_75"
     style={{backgroundImage:"url('/assets/img/testimonial_bg.jpeg')"}}
   >
@@ -1468,19 +1372,16 @@ const Homepage = () => {
             <div className="cs_section_heading cs_style_1 d-flex align-items-center cs_mb_30">
               <div className="cs_section_heading_in">
                 <h3
-                  className="cs_fs_20 cs_fs_lg_18 text-accent fw-normal cs_lh_base cs_mb_10"
-                //   data-wow-duration="0.8s"
-                //   data-wow-delay="0.2s"
+                  className="cs_fs_20 cs_fs_lg_16 text-accent fw-normal cs_lh_base cs_mb_10"
+                
                 >
                   Testimonial
                 </h3>
-                <h2 className="cs_fs_48 cs_fs_lg_36 cs_mb_20">
+                <h2 className="cs_fs_48 cs_fs_lg_28 cs_mb_20">
                   What They’re Saying?
                 </h2>
                 <p className="m-0">
-                  {/* Providing legal advice, contract drafting, compliance
-                  assistance, intellectual property protection, and other legal
-                  support for businesses. */}
+                 
                 </p>
               </div>
             </div>
@@ -1535,12 +1436,6 @@ const Homepage = () => {
                         className="cs_height_75 cs_width_75 rounded-circle"
                       />
                     </div>
-                    {/* <div
-                      className="cs_rating text-accent cs_mb_15"
-                      data-rating="4.5"
-                    >
-                      <div className="cs_rating_percentage" />
-                    </div> */}
                     <p className="cs_mb_14">
                       I've been using [business name] for the past year and I'm
                       so glad I did. Their products and services are top-notch
@@ -1564,12 +1459,6 @@ const Homepage = () => {
                         className="cs_height_75 cs_width_75 rounded-circle"
                       />
                     </div>
-                    {/* <div
-                      className="cs_rating text-accent cs_mb_15"
-                      data-rating={5}
-                    >
-                      <div className="cs_rating_percentage" />
-                    </div> */}
                     <p className="cs_mb_14">
                       I've been using [business name] for the past year and I'm
                       so glad I did. Their products and services are top-notch
@@ -1762,28 +1651,28 @@ const Homepage = () => {
         </div>
       </div>
     </div>
-  </section>
+  </section> */}
   {/* End Testimonial Section */}
   {/* Start Team Section */}
-  <section className="cs_pb_115 cs_pb_lg_55">
+  <section className="cs_pb_80 cs_pb_lg_55 cs_pt_80">
     <div className="container">
       <div className="cs_section_heading cs_style_1 d-flex align-items-center text-center cs_mb_60 cs_mb_lg_40">
         <div className="cs_section_heading_in">
           <h3
-            className="cs_fs_20 cs_fs_lg_18 text-accent fw-normal cs_lh_base cs_mb_10"
+            className="cs_fs_20 cs_fs_lg_16 text-accent fw-normal cs_lh_base cs_mb_10"
             // data-wow-duration="0.8s"
             // data-wow-delay="0.2s"
           >
             Meet Our Team Member
           </h3>
-          <h2 className="cs_fs_48 cs_fs_lg_36 m-0">
+          <h2 className="cs_fs_48 cs_fs_lg_28 m-0">
             Meet the professional team <br />
             behind the success
           </h2>
         </div>
       </div>
-      <div className="row">
-        <div className="col-lg-4">
+      <div className="row justify-content-center">
+        <div className="col-lg-4 col-md-6">
           <div className="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
             <div className="cs_team_member position-relative cs_rounded_50">
               <img
@@ -1791,7 +1680,7 @@ const Homepage = () => {
                 src="assets/img/home/team.png"
                 alt="Member"
               />
-              {/* <div className="cs_social_btns d-flex flex-wrap cs_column_gap_15 cs_row_gap_15 cs_transition_5 cs_fs_20 cs_fs_lg_18 position-absolute">
+              {/* <div className="cs_social_btns d-flex flex-wrap cs_column_gap_15 cs_row_gap_15 cs_transition_5 cs_fs_20 cs_fs_lg_16 position-absolute">
                 <a
                   href="#"
                   className="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"
@@ -1818,7 +1707,7 @@ const Homepage = () => {
             </div>
           </div>
         </div>
-        <div className="col-lg-4">
+        {/* <div className="col-lg-4">
           <div className="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
             <div className="cs_team_member position-relative cs_rounded_50">
               <img
@@ -1826,34 +1715,15 @@ const Homepage = () => {
                 src="assets/img/home/team.png"
                 alt="Member"
               />
-              {/* <div className="cs_social_btns d-flex flex-wrap cs_column_gap_15 cs_row_gap_15 cs_transition_5 cs_fs_20 cs_fs_lg_18 position-absolute">
-                <a
-                  href="#"
-                  className="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"
-                >
-                  <i className="fa-brands fa-facebook-f" />
-                </a>
-                <a
-                  href="#"
-                  className="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"
-                >
-                  <i className="fa-brands fa-twitter" />
-                </a>
-                <a
-                  href="#"
-                  className="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"
-                >
-                  <i className="fa-brands fa-dribbble" />
-                </a>
-              </div> */}
+              
             </div>
             <div className="cs_team_info cs_pt_127 cs_pl_15 cs_pr_15 cs_pb_25 cs_transition_4">
               <h2 className="text-white m-0 cs_fs_26 cs_mb_3">Ritu Dadoo</h2>
               <p className="text-white m-0">Partner - Finance</p>
             </div>
           </div>
-        </div>
-        <div className="col-lg-4">
+        </div> */}
+        <div className="col-lg-4 col-md-6">
           <div className="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
             <div className="cs_team_member position-relative cs_rounded_50">
               <img
@@ -1861,7 +1731,7 @@ const Homepage = () => {
                 src="assets/img/home/team.png"
                 alt="Member"
               />
-              {/* <div className="cs_social_btns d-flex flex-wrap cs_column_gap_15 cs_row_gap_15 cs_transition_5 cs_fs_20 cs_fs_lg_18 position-absolute">
+              {/* <div className="cs_social_btns d-flex flex-wrap cs_column_gap_15 cs_row_gap_15 cs_transition_5 cs_fs_20 cs_fs_lg_16 position-absolute">
                 <a
                   href="#"
                   className="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"
@@ -1883,7 +1753,7 @@ const Homepage = () => {
               </div> */}
             </div>
             <div className="cs_team_info cs_pt_127 cs_pl_15 cs_pr_15 cs_pb_25 cs_transition_4">
-              <h2 className="text-white m-0 cs_fs_26 cs_mb_3">Mayank Dadoo</h2>
+              <h2 className="text-white m-0 cs_fs_26 cs_mb_3">Mayanka Dadu</h2>
               <p className="text-white m-0">Partner - Design & Technical</p>
             </div>
           </div>
@@ -1894,7 +1764,7 @@ const Homepage = () => {
   {/* End Team Section */}
   {/* Start Contact Section  */}
   <section
-    className="background-filled bg-blackish overflow-hidden cs_pt_133 cs_pt_lg_75 cs_pb_140 cs_pb_lg_80"
+    className="background-filled bg-blackish overflow-hidden cs_pt_100  cs_pt_lg_70  cs_pt_lg_75 cs_pb_100 cs_pb_lg_60"
     src="assets/img/cta_bg.jpeg"
   >
     <div className="container">
@@ -1903,13 +1773,13 @@ const Homepage = () => {
           <div className="cs_section_heading cs_style_1 d-flex align-items-center cs_mb_40">
             <div className="cs_section_heading_in">
               <h3
-                className="cs_fs_20 cs_fs_lg_18 text-accent fw-normal cs_lh_base cs_mb_10 "
+                className="cs_fs_20 cs_fs_lg_16 text-accent fw-normal cs_lh_base cs_mb_10 "
                 // data-wow-duration="0.8s"
                 // data-wow-delay="0.2s"
               >
                 Contact With Us
               </h3>
-              <h2 className="cs_fs_48 cs_fs_lg_36 cs_mb_20 text-white">
+              <h2 className="cs_fs_48 cs_fs_lg_28 cs_mb_20 text-white">
                 Let’s Work Together?
               </h2>
               <p className="text-white m-0 text-left">
@@ -1920,7 +1790,7 @@ const Homepage = () => {
             </div>
           </div>
           <div className="d-flex align-items-center cs_mb_30">
-            <div className="d-flex align-items-center justify-content-center cs_height_90 cs_width_90 cs_height_lg_80 cs_width_lg-80 cs_rounded_10 flex-none cs_mr_20 bg-accent">
+            <div className="d-flex align-items-center justify-content-center cs_height_90 cs_width_90 cs_height_lg_70  cs_width_lg_70 cs_width_lg-80 cs_rounded_10 flex-none cs_mr_20 bg-accent">
               <svg
                 width={40}
                 height={40}
@@ -1944,13 +1814,13 @@ const Homepage = () => {
             </div>
             <div>
               <p className="text-accent cs_mb_7 text-left">Have Any Question?</p>
-              <h2 className="text-white m-0 fw-medium cs_fs_22 cs_fs_lg_18 cs_lh_base text-left">
+              <h2 className="text-white m-0 fw-medium cs_fs_20 cs_fs_lg_16 cs_lh_base text-left">
               + 91 9425900068
               </h2>
             </div>
           </div>
           <div className="d-flex align-items-center cs_mb_30">
-            <div className="d-flex align-items-center justify-content-center cs_height_90 cs_width_90 cs_height_lg_80 cs_width_lg-80 cs_rounded_10 flex-none cs_mr_20 bg-accent">
+            <div className="d-flex align-items-center justify-content-center cs_height_90 cs_width_90 cs_height_lg_70  cs_width_lg_70 cs_width_lg-80 cs_rounded_10 flex-none cs_mr_20 bg-accent">
               <svg
                 width={40}
                 height={40}
@@ -1966,13 +1836,13 @@ const Homepage = () => {
             </div>
             <div>
               <p className="text-accent cs_mb_7 text-left">Send Email</p>
-              <h2 className="text-white m-0 fw-medium cs_fs_22 cs_fs_lg_18 cs_lh_base text-left">
+              <h2 className="text-white m-0 fw-medium cs_fs_20 cs_fs_lg_16 cs_lh_base text-left">
               secpl.indore@gmail.com
               </h2>
             </div>
           </div>
           <div className="d-flex align-items-center">
-            <div className="d-flex align-items-center justify-content-center cs_height_90 cs_width_90 cs_height_lg_80 cs_width_lg-80 cs_rounded_10 flex-none cs_mr_20 bg-accent">
+            <div className="d-flex align-items-center justify-content-center cs_height_90 cs_width_90 cs_height_lg_70  cs_width_lg_70 cs_width_lg-80 cs_rounded_10 flex-none cs_mr_20 bg-accent">
               <svg
                 width={40}
                 height={40}
@@ -1992,7 +1862,7 @@ const Homepage = () => {
             </div>
             <div>
               <p className="text-accent text-left cs_mb_7">Address</p>
-              <h2 className="text-white m-0 fw-medium cs_fs_22 cs_fs_lg_18 cs_lh_base text-left">
+              <h2 className="text-white m-0 fw-medium cs_fs_20 cs_fs_lg_16 cs_lh_base text-left">
               7 Sampat Hills Bicholi Mardana, Near Hotel President Park By pass, 452016 ,
 Indore MP India
                
@@ -2004,12 +1874,12 @@ Indore MP India
           <div className="cs_contact_wrap position-relative">
             <form
               action="#"
-              className="cs_contact_form bg-white cs_pt_64 cs_pl_80 cs_pr_80 cs_pb_80 cs_pl_lg_30 cs_pr_lg_30 position-relative cs_rounded_20"
+              className="cs_contact_form bg-white cs_pt_54 cs_pl_50 cs_pr_50 cs_pb_50 cs_pl_lg_30 cs_pr_lg_30 position-relative cs_rounded_20"
               src="assets/img/contact_bg_pattern.svg"
             >
               <div className="cs_section_heading cs_style_1 d-flex align-items-center text-center cs_mb_30">
                 <div className="cs_section_heading_in">
-                  <h2 className="cs_fs_48 cs_fs_lg_36 m-0">Contact Us</h2>
+                  <h2 className="cs_fs_48 cs_fs_lg_28 m-0">Contact Us</h2>
                 </div>
               </div>
               <input
@@ -2075,13 +1945,13 @@ Indore MP India
       <div className="cs_section_heading cs_style_1 d-flex align-items-center text-center cs_mb_60 cs_mb_lg_40">
         <div className="cs_section_heading_in">
           <h3
-            className="cs_fs_20 cs_fs_lg_18 text-accent fw-normal cs_lh_base cs_mb_10 "
+            className="cs_fs_20 cs_fs_lg_16 text-accent fw-normal cs_lh_base cs_mb_10 "
             // data-wow-duration="0.8s"
             // data-wow-delay="0.2s"
           >
             Find The Blogs
           </h3>
-          <h2 className="cs_fs_48 cs_fs_lg_36 m-0">
+          <h2 className="cs_fs_48 cs_fs_lg_28 m-0">
             Find Out Latest News <br />
             and Articles
           </h2>
@@ -2115,7 +1985,7 @@ Indore MP India
                     <a href="">3 comments</a>
                   </li>
                 </ul>
-                <h2 className="cs_post_title cs_lh_base cs_fs_20 cs_fs_lg_18 cs_mb_10">
+                <h2 className="cs_post_title cs_lh_base cs_fs_20 cs_fs_lg_16 cs_mb_10">
                   <a >
                     What services does your business provide?
                   </a>
@@ -2175,7 +2045,7 @@ Indore MP India
                     <a href="">3 comments</a>
                   </li>
                 </ul>
-                <h2 className="cs_post_title cs_lh_base cs_fs_20 cs_fs_lg_18 cs_mb_10">
+                <h2 className="cs_post_title cs_lh_base cs_fs_20 cs_fs_lg_16 cs_mb_10">
                   <a >
                     Introducing the latest tech features for you
                   </a>
@@ -2235,7 +2105,7 @@ Indore MP India
                     <a href="">3 comments</a>
                   </li>
                 </ul>
-                <h2 className="cs_post_title cs_lh_base cs_fs_20 cs_fs_lg_18 cs_mb_10">
+                <h2 className="cs_post_title cs_lh_base cs_fs_20 cs_fs_lg_16 cs_mb_10">
                   <a >
                     The creative studio programm coming soon
                   </a>
