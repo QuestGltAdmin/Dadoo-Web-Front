@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '../component/Layout'
 import Countup from '../component/Countup'
+import CountUp from 'react-countup'
 
 const Homepage = () => {
   return (
@@ -284,6 +285,17 @@ const Homepage = () => {
     </div>
   </div>
   {/* End Animated Text */}
+  <div
+    className="cs_moving_wrap background-filled  text-white "
+  >
+    <div className='area-covered'>
+                <p className='area-text'>Total area covered till now</p>
+                 <p className='counter-number'>
+
+                <CountUp end={23556000}/> sqft
+                </p> 
+              </div>
+    </div>
   {/* Start Service Section */}
   <section
     className="background-filled cs_pt_80 cs_pt_lg_75 cs_pb_100 cs_pb_lg_60 cs_gray_bg"
@@ -340,8 +352,8 @@ const Homepage = () => {
                 <img src='assets/img/home/service_icon5.svg' className='img-fluid'/>
 
               </div>
-              <h2 className="cs_lh_base cs_fs_18 cs_fs_lg_16 m-0">
-                <a  className="inline-block">
+              <h2 className="cs_lh_base cs_fs_16  cs_fs_lg_16 m-0">
+                <a  className="inline-block fw-bold">
                   Mechanical Engineering
                 </a>
               </h2>
@@ -402,8 +414,8 @@ const Homepage = () => {
                 <img src='assets/img/home/service_icon4.svg' className='img-fluid'/>
 
               </div>
-              <h2 className="cs_lh_base cs_fs_18 cs_fs_lg_16 m-0">
-                <a href="services-details.html" className="inline-block">
+              <h2 className="cs_lh_base cs_fs_16 cs_fs_lg_16 m-0">
+                <a href="" className="inline-block fw-bold">
                   Electrical Engineering
                 </a>
               </h2>
@@ -483,8 +495,8 @@ const Homepage = () => {
                 <img src='assets/img/home/service_icon2.svg' className='img-fluid'/>
 
               </div>
-              <h2 className="cs_lh_base cs_fs_18 cs_fs_lg_16 m-0">
-                <a className="inline-block">
+              <h2 className="cs_lh_base cs_fs_16 cs_fs_lg_16 m-0">
+                <a className="inline-block fw-bold">
                   Plumbing Engineering
                 </a>
               </h2>
@@ -648,8 +660,8 @@ const Homepage = () => {
                 </svg> */}
                 <img src='assets/img/home/service_icon1.svg' className='img-fluid'/>
               </div>
-              <h2 className="cs_lh_base cs_fs_18 cs_fs_lg_16 m-0">
-                <a  className="inline-block">
+              <h2 className="cs_lh_base cs_fs_16 cs_fs_lg_16 m-0">
+                <a  className="inline-block fw-bold">
                   Fire Protection & Life Safety Engineering
                 </a>
               </h2>
@@ -743,6 +755,7 @@ occupancy the early stage of any risk. Also to protect the building property and
         </div>
         <div className="col-lg-6">
           <div className="cs_about cs_style_1">
+             
             <div className="cs_section_heading cs_style_1 d-flex align-items-center cs_mb_15">
               <div className="cs_section_heading_in">
                 <h3
@@ -757,18 +770,20 @@ occupancy the early stage of any risk. Also to protect the building property and
                   <span className="text-accent">The Dadoo Group</span> Your Path to
                   Growth.
                 </h2>
+                {/* <div className='area-covered'>
+                <p className='area-text'>Total area covered till now</p>
+                 <p className='counter-number'>
+
+                <Countup animationTime={1} targetNumber={23556000} />sqft
+                </p> 
+              </div> */}
                 <p className="m-0 text-left ">
                  We follow the new trends of technology and make sure that the building becomes ultra modern in the age. The perfect foundation creates longitivity and efficient planning saves resources.<br></br>
                  We connect with Architect at the start of the building design to plan the services as per the need of the occupancy. Over the 30 years of experiences and having worked with finest of the projects WE mark ourseves as the leader of the central India.
                 </p>
               </div>
-              <div>
-                {/* <p>
-
-                <Countup animationTime={50} targetNummber={23556000} />
-                </p> */}
-              </div>
             </div>
+             
             {/* <div className="cs_progressbar cs_style_1 cs_mb_20">
               <div className="cs_progressbar_heading d-flex justify-content-between align-items-center cs_mb_8">
                 <h3 className="fw-medium m-0 cs_fs_18">Web development</h3>
@@ -887,7 +902,7 @@ occupancy the early stage of any risk. Also to protect the building property and
               Our Latest Project
             </h3>
             <h2 className="cs_fs_48 cs_fs_lg_28 m-0 text-left">
-              Take a look our <br />
+              Take a look our at <br />
               Completed Projects
             </h2>
           </div>
@@ -1083,7 +1098,7 @@ occupancy the early stage of any risk. Also to protect the building property and
                   navigate
                 </h2> */}
                 <h2 className="cs_fs_48 cs_fs_lg_28 cs_mb_20 text-white text-left">
-                 We <span className="text-accent">plan & Design  </span> the systems which are cost effective and minimise the operation Cost.
+                 We <span className="text-accent">Plan & Design  </span> the systems which are cost effective and minimise the operation Cost.
                   {/* <span className="text-accent">
                     design that <br />
                     is easy
@@ -1868,7 +1883,7 @@ occupancy the early stage of any risk. Also to protect the building property and
             <div>
               <p className="text-accent text-left cs_mb_7">Address</p>
               <h2 className="text-white m-0 fw-medium cs_fs_20 cs_fs_lg_16 cs_lh_base text-left">
-              7 Sampat Hills Bicholi Mardana, Near Hotel President Park By pass, 452016 ,
+              7 Sampat Hills Bicholi Mardana, Near Hotel President Park By pass, 452016,
 Indore MP India
                
               </h2>

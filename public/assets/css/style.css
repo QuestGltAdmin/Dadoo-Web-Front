@@ -5363,3 +5363,25 @@ html .ui-button.ui-state-disabled:active {
 .cs_product_slider:hover .cs_slider_next {
   opacity: 1;
 }/*# sourceMappingURL=style.css.map */
+.area-covered {
+  text-align: center;
+}
+.area-covered .area-text{
+  font-size: 22px;
+  color: #e9a132 ;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.area-covered .counter-number{
+  font-size: 52px;
+  color: #fff;
+  font-weight: 700;
+}
+@media (max-width:768px){
+.area-covered .area-text{
+  font-size:18px;
+}
+.area-covered .counter-number{
+  font-size: 42px;
+}
+}
