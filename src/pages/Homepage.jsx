@@ -761,7 +761,7 @@ occupancy the early stage of any risk. Also to protect the building property and
                 </p>
               </div>
               <div>
-                <Countup/>
+                {/* <Countup/> */}
               </div>
             </div>
             {/* <div className="cs_progressbar cs_style_1 cs_mb_20">
