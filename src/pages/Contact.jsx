@@ -21,7 +21,7 @@ const Contact = () => {
                                 <li className="breadcrumb-item active">Contact</li>
                             </ol>
                         </nav>
-                        <h1 className="cs_fs_48 cs_fs_lg_36 text-white m-0">Contact</h1>
+                        <h1 className="cs_fs_48 cs_fs_lg_28 text-white m-0">Contact</h1>
                     </div>
                     <div className="position-absolute end-0 bottom-0">
                         <svg
@@ -62,40 +62,40 @@ const Contact = () => {
                                 <div className="cs_section_heading cs_style_1 d-flex align-items-center cs_mb_30">
                                     <div className="cs_section_heading_in">
                                         <h3
-                                            className="cs_fs_20 cs_fs_lg_18 text-accent fw-normal cs_lh_base cs_mb_10 wow fadeInLeft "
+                                            className="cs_fs_20 cs_fs_lg_16 text-accent fw-normal cs_lh_base cs_mb_10 wow fadeInLeft "
                                             data-wow-duration="0.8s"
                                             data-wow-delay="0.2s"
                                         >
                                             Have any question?
                                         </h3>
-                                        <h2 className="cs_fs_48 cs_fs_lg_36 m-0">Write a Message</h2>
+                                        <h2 className="cs_fs_48 cs_fs_lg_28 m-0">Write a Message</h2>
                                     </div>
                                 </div>
                                 <form className="row">
                                     <div className="col-lg-6">
                                         <input
-                                            className="form-control cs_fs_14 cs_rounded_5 border-0 cs_mb_35 bg-gray"
+                                            className="form-control cs_fs_14 cs_rounded_5 border-0 cs_mb_35 cs_mb_lg_25 bg-gray"
                                             type="text"
                                             placeholder="Your Name"
                                         />
                                     </div>
                                     <div className="col-lg-6">
                                         <input
-                                            className="form-control cs_fs_14 cs_rounded_5 border-0 cs_mb_35 bg-gray"
+                                            className="form-control cs_fs_14 cs_rounded_5 border-0 cs_mb_35 cs_mb_lg_25 bg-gray"
                                             type="text"
                                             placeholder="Email Address"
                                         />
                                     </div>
                                     <div className="col-lg-6">
                                         <input
-                                            className="form-control cs_fs_14 cs_rounded_5 border-0 cs_mb_35 bg-gray"
+                                            className="form-control cs_fs_14 cs_rounded_5 border-0 cs_mb_35 cs_mb_lg_25 bg-gray"
                                             type="text"
                                             placeholder="Phone"
                                         />
                                     </div>
                                     <div className="col-lg-6">
                                         <input
-                                            className="form-control cs_fs_14 cs_rounded_5 border-0 cs_mb_35 bg-gray"
+                                            className="form-control cs_fs_14 cs_rounded_5 border-0 cs_mb_35 cs_mb_lg_25 bg-gray"
                                             type="text"
                                             placeholder="Subject"
                                         />
@@ -120,10 +120,10 @@ const Contact = () => {
                                 <div className="cs_pl_60 cs_pl_lg_0 cs_pt_lg_60">
                                     <div className="cs_section_heading cs_style_1 d-flex align-items-center cs_mb_40">
                                         <div className="cs_section_heading_in">
-                                            <h3 className="cs_fs_20 cs_fs_lg_18 text-accent fw-normal cs_lh_base cs_mb_10">
+                                            <h3 className="cs_fs_20 cs_fs_lg_16 text-accent fw-normal cs_lh_base cs_mb_10">
                                                 Contact With Us
                                             </h3>
-                                            <h2 className="cs_fs_48 cs_fs_lg_36 cs_mb_20">
+                                            <h2 className="cs_fs_48 cs_fs_lg_28 cs_mb_20">
                                                 Let’s work together
                                             </h2>
                                             <p className=" m-0 text-left">
@@ -134,7 +134,7 @@ const Contact = () => {
                                         </div>
                                     </div>
                                     <div className="d-flex align-items-center cs_mb_30">
-                                        <div className="d-flex align-items-center justify-content-center cs_height_90 cs_width_90 cs_height_lg_80 cs_width_lg-80 cs_rounded_10 flex-none cs_mr_20 bg-accent">
+                                        <div className="d-flex align-items-center justify-content-center cs_height_90 cs_width_90  cs_width_lg_70 cs_height_lg_70  cs_rounded_10 flex-none cs_mr_20 bg-accent">
                                             <svg
                                                 width={40}
                                                 height={40}
@@ -158,13 +158,13 @@ const Contact = () => {
                                         </div>
                                         <div>
                                             <p className="text-accent cs_mb_7 text-left">Have Any Question?</p>
-                                            <h2 className="m-0 fw-medium cs_fs_22 cs_fs_lg_18 cs_lh_base text-left">
+                                            <h2 className="m-0 fw-medium cs_fs_22 cs_fs_lg_16 cs_lh_base text-left">
                                             + 91 9425900068
                                             </h2>
                                         </div>
                                     </div>
                                     <div className="d-flex align-items-center cs_mb_30">
-                                        <div className="d-flex align-items-center justify-content-center cs_height_90 cs_width_90 cs_height_lg_80 cs_width_lg-80 cs_rounded_10 flex-none cs_mr_20 bg-accent">
+                                        <div className="d-flex align-items-center justify-content-center cs_height_90 cs_width_90 cs_width_lg_70 cs_height_lg_70 cs_rounded_10 flex-none cs_mr_20 bg-accent">
                                             <svg
                                                 width={40}
                                                 height={40}
@@ -180,13 +180,13 @@ const Contact = () => {
                                         </div>
                                         <div>
                                             <p className="text-accent cs_mb_7 text-left">Send Email</p>
-                                            <h2 className="m-0 fw-medium cs_fs_22 cs_fs_lg_18 cs_lh_base text-left">
+                                            <h2 className="m-0 fw-medium cs_fs_22 cs_fs_lg_16 cs_lh_base text-left">
                                             secpl.indore@gmail.com
                                             </h2>
                                         </div>
                                     </div>
                                     <div className="d-flex align-items-center">
-                                        <div className="d-flex align-items-center justify-content-center cs_height_90 cs_width_90 cs_height_lg_80 cs_width_lg-80 cs_rounded_10 flex-none cs_mr_20 bg-accent">
+                                        <div className="d-flex align-items-center justify-content-center cs_height_90 cs_width_90  cs_width_lg_70 cs_height_lg_70  cs_rounded_10 flex-none cs_mr_20 bg-accent">
                                             <svg
                                                 width={40}
                                                 height={40}
@@ -206,7 +206,7 @@ const Contact = () => {
                                         </div>
                                         <div>
                                             <p className="text-accent cs_mb_7 text-left">Address</p>
-                                            <h2 className="m-0 fw-medium cs_fs_22 cs_fs_lg_18 cs_lh_base text-left">
+                                            <h2 className="m-0 fw-medium cs_fs_22 cs_fs_lg_16 cs_lh_base text-left">
                                             7 Sampat Hills Bicholi Mardana, Near Hotel President Park By pass, 452016 ,
 Indore MP India
                                             </h2>

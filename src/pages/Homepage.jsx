@@ -30,7 +30,7 @@ const Homepage = () => {
                   {/* <h2 className="text-white cs_mb_5 fw-normal cs_fs_18">
                     This Week Only for World Premier
                   </h2> */}
-                  <h1 className="text-white cs_mb_16 cs_fs_60 cs_fs_lg_34">
+                  <h1 className="text-white cs_mb_16 cs_fs_60 cs_fs_lg_32">
                   Pioneering Ultramodern <br></br>Architectural Innovation
                   </h1>
                   <p className="text-white cs_mb_20">
@@ -66,7 +66,7 @@ const Homepage = () => {
                   <h2 className="text-white cs_mb_5 fw-normal cs_fs_18">
                     This Week Only for World Premier
                   </h2>
-                  <h1 className="text-white cs_mb_16 cs_fs_60 cs_fs_lg_34">
+                  <h1 className="text-white cs_mb_16 cs_fs_60 cs_fs_lg_32">
                     Inventive and interested <br />
                     in innovation
                   </h1>
@@ -106,7 +106,7 @@ const Homepage = () => {
                   <h2 className="text-white cs_mb_5 fw-normal cs_fs_18">
                     This Week Only for World Premier
                   </h2>
-                  <h1 className="text-white cs_mb_16 cs_fs_60 cs_fs_lg_34">
+                  <h1 className="text-white cs_mb_16 cs_fs_60 cs_fs_lg_32">
                     Inventive and interested <br />
                     in innovation
                   </h1>
@@ -171,7 +171,7 @@ const Homepage = () => {
             </svg>
           </div>
         </div>
-        <div className="cs_hero_shape_1 position-absolute bottom-0 d-flex align-items-end h-100 cs_zindex_1">
+        <div className="cs_hero_shape_1  position-absolute bottom-0 d-flex align-items-end h-100  cs_zindex_1">
           <svg
             width={434}
             height={759}
@@ -298,7 +298,7 @@ const Homepage = () => {
     </div>
   {/* Start Service Section */}
   <section
-    className="background-filled cs_pt_80 cs_pt_lg_75 cs_pb_100 cs_pb_lg_60 cs_gray_bg"
+    className="background-filled cs_pt_80 cs_pt_lg_75 cs_pb_100 cs_pb_lg_50 cs_gray_bg"
     src="assets/img/services_bg.png"
   >
     <div className="container">
@@ -714,7 +714,7 @@ occupancy the early stage of any risk. Also to protect the building property and
   </section>
   {/* End Service Section */}
   {/* Start About Section */}
-  <section className="cs_pt_80 cs_pt_lg_75 cs_pb_100 cs_pb_lg_60 position-relative">
+  <section className="cs_pt_80 cs_pt_lg_60 cs_pb_100 cs_pb_lg_60 position-relative">
     <div className="container">
       <div className="row align-items-center">
         <div className="col-lg-6 cs_mb_lg_55">
@@ -743,7 +743,7 @@ occupancy the early stage of any risk. Also to protect the building property and
                 alt="Icon"
                 className="cs_mb_5"
               />
-              <h3 className="text-white cs_fs_60 cs_fs_lg_34 fw-bold lh_1 mb-0 d-flex justify-content-between">
+              <h3 className="text-white cs_fs_60 cs_fs_lg_32 fw-bold lh_1 mb-0 d-flex justify-content-between">
                 <span data-count-to={30} className="odometer" />
                 <span className="fw-light">+</span>
               </h3>

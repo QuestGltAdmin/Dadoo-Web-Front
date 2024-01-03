@@ -3501,6 +3501,7 @@ label {
   .cs_hero_1-wrap .cs_social_btns {
     display: none !important;
   }
+  
 }
 
 .cs_hero.cs_style_2 {
@@ -5382,6 +5383,9 @@ html .ui-button.ui-state-disabled:active {
   font-size:18px;
 }
 .area-covered .counter-number{
-  font-size: 42px;
+  font-size: 28px;
+}
+.gradient-background{
+  z-index: 0 !important;
 }
 }
