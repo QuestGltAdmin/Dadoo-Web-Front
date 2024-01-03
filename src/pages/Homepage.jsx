@@ -171,7 +171,7 @@ const Homepage = () => {
             </svg>
           </div>
         </div>
-        <div className="cs_hero_shape_1  position-absolute bottom-0 d-flex align-items-end h-100  cs_zindex_1">
+        <div className="cs_hero_shape_1  position-absolute bottom-0 d-flex align-items-end h-100  cs_zindex_1 gradient-background">
           <svg
             width={434}
             height={759}

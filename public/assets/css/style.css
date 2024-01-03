@@ -5395,7 +5395,7 @@ html .ui-button.ui-state-disabled:active {
 .area-covered .counter-number{
   font-size: 28px;
 }
-.gradient-background{
-  z-index: 0 !important;
+.gradient-background svg{
+  display: none;
 }
 }
