@@ -5382,6 +5382,16 @@ html .ui-button.ui-state-disabled:active {
 .area-covered .area-text{
   font-size:18px;
 }
+.cs_header_search_form{
+  width: 240px;
+  padding: 8px !important;
+}
+.cs_header_search_form input{
+  padding: 5px 57px 5px 22px;
+}
+.cs_header_search_form .cs_header_search_sumbit_btn{
+  right: 10px;
+}
 .area-covered .counter-number{
   font-size: 28px;
 }
