@@ -58,7 +58,7 @@ const Team = () => {
     <section className="cs_pt_100 cs_pt_lg_80 cs_pb_80 cs_pb_lg_80">
       <div className="container">
         <div className="row">
-          <div className="col-lg-4">
+          <div className="col-lg-4 col-md-6">
             <div className="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
               <div className="cs_team_member position-relative cs_rounded_50">
                 <img
@@ -93,7 +93,7 @@ const Team = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-4">
+          <div className="col-lg-4 col-md-6">
             <div className="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
               <div className="cs_team_member position-relative cs_rounded_50">
                 <img
@@ -128,7 +128,7 @@ const Team = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-4">
+          <div className="col-lg-4 col-md-6">
             <div className="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
               <div className="cs_team_member position-relative cs_rounded_50">
                 <img
@@ -163,7 +163,7 @@ const Team = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-4">
+          <div className="col-lg-4 col-md-6">
             <div className="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
               <div className="cs_team_member position-relative cs_rounded_50">
                 <img
@@ -198,7 +198,7 @@ const Team = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-4">
+          <div className="col-lg-4 col-md-6">
             <div className="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
               <div className="cs_team_member position-relative cs_rounded_50">
                 <img
@@ -233,7 +233,7 @@ const Team = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-4">
+          <div className="col-lg-4 col-md-6">
             <div className="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
               <div className="cs_team_member position-relative cs_rounded_50">
                 <img
@@ -268,7 +268,7 @@ const Team = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-4">
+          <div className="col-lg-4 col-md-6">
             <div className="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
               <div className="cs_team_member position-relative cs_rounded_50">
                 <img
@@ -310,7 +310,7 @@ const Team = () => {
           <div className='col-md-12'>
             <h2 className='team-heading cs_fs_48 cs_fs_lg_36 mb-4'>Project & Field Team</h2>
           </div>
-        <div className="col-lg-4">
+        <div className="col-lg-4 col-md-6">
             <div className="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
               <div className="cs_team_member position-relative cs_rounded_50">
                 <img
@@ -345,7 +345,7 @@ const Team = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-4">
+          <div className="col-lg-4 col-md-6">
             <div className="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
               <div className="cs_team_member position-relative cs_rounded_50">
                 <img
@@ -380,7 +380,7 @@ const Team = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-4">
+          <div className="col-lg-4 col-md-6">
             <div className="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
               <div className="cs_team_member position-relative cs_rounded_50">
                 <img
@@ -415,7 +415,7 @@ const Team = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-4">
+          <div className="col-lg-4 col-md-6">
             <div className="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
               <div className="cs_team_member position-relative cs_rounded_50">
                 <img
