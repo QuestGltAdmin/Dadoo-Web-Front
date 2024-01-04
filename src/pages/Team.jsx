@@ -63,7 +63,7 @@ const Team = () => {
               <div className="cs_team_member position-relative cs_rounded_50">
                 <img
                   className="w-100 cs_rounded_50 bg-blackish"
-                  src="assets/img/home/team.png"
+                  src="assets/img/home/lokesh-dadu.png"
                   alt="Member"
                 />
                 {/* <div className="cs_social_btns d-flex flex-wrap cs_column_gap_15 cs_row_gap_15 cs_transition_5 cs_fs_20 cs_fs_lg_18 position-absolute">
