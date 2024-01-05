@@ -1,238 +1,283 @@
-import React from 'react'
-import Layout from '../component/Layout'
-import Countup from '../component/Countup'
-import CountUp from 'react-countup'
+import React, { useState } from "react";
+import Layout from "../component/Layout";
+import Countup from "../component/Countup";
+import CountUp from "react-countup";
 
 const Homepage = () => {
+
+  const [inputValue, setInputValue] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [formError, setFromError] = useState("");
+  const HandelData = async (e) => {
+    setInputValue({ ...inputValue, [e.target.name]: e.target.value });
+  };
+  const SubmitData = async () => {
+    let regex = new RegExp("[a-z0-9]+@[a-z]+.[a-z]{2,3}");
+    if (!inputValue.name) {
+      setFromError("Please enter your name");
+    } else if (!regex.test(inputValue.email)) {
+      setFromError("Please enter valid email");
+    } else if (!inputValue.message) {
+      setFromError("Please enter your message");
+    } else {
+      setFromError("");
+      const recipient = "secpl.indore@gmail.com";
+      const subject = "Contact Us Query";
+      const body = `Hi Daddo Group,${"\n"}${"\n"}A user trying to contact you via our website.${"\n"}${"\n"}Here below are the details${"\n"}${"\n"}Full Name : ${
+        inputValue.name
+      }${"\n"}Email : ${inputValue.email}${"\n"}Message : ${
+        inputValue.message
+      }${"\n"}${"\n"}Thanks & Regards`;
+      const encodedSubject = encodeURIComponent(subject);
+      const encodedBody = encodeURIComponent(body);
+
+      // Create the mailto link
+      const mailtoLink = `mailto:${recipient}?subject=${encodedSubject}&body=${encodedBody}`;
+
+      // Open the email client with the generated mailto link
+      window.location.href = mailtoLink;
+    }
+  };
+
   return (
     <>
       <Layout>
-  {/* Start Hero */}
-  <section className="cs_hero_1-wrap position-relative cs_hero_slider bg-primary">
-    <div className="cs_swiper_parallax_slider_wrap">
-      <div className="cs_parallax_slider loading">
-        <div className="swiper-wrapper">
-          <div className="swiper-slide">
-            <div className="cs_hero cs_style_1 d-flex align-items-center justify-content-center background-filled position-relative overflow-hidden">
-              <figure
-                className="cs_swiper_parallax_bg"
-                src="assets/img/hero_slider_1.jpeg"
-              >
-                <img
-                  src="assets/img/hero_slider_1.jpeg"
-                  alt="Slider"
-                  className="cs_entity_img"
-                />
-                <div className="bg-primary opacity-75 position-absolute w-100 h-100 start-0 top-0" />
-              </figure>
-              <div className="container">
-                <div className="cs_hero_text position-relative cs_zindex_5 d-inline-block">
-                  {/* <h2 className="text-white cs_mb_5 fw-normal cs_fs_18">
+        {/* Start Hero */}
+        <section className="cs_hero_1-wrap position-relative cs_hero_slider bg-primary">
+          <div className="cs_swiper_parallax_slider_wrap">
+            <div className="cs_parallax_slider loading">
+              <div className="swiper-wrapper">
+                <div className="swiper-slide">
+                  <div className="cs_hero cs_style_1 d-flex align-items-center justify-content-center background-filled position-relative overflow-hidden">
+                    <figure
+                      className="cs_swiper_parallax_bg"
+                      src="assets/img/hero_slider_1.jpeg"
+                    >
+                      <img
+                        src="assets/img/hero_slider_1.jpeg"
+                        alt="Slider"
+                        className="cs_entity_img"
+                      />
+                      <div className="bg-primary opacity-75 position-absolute w-100 h-100 start-0 top-0" />
+                    </figure>
+                    <div className="container">
+                      <div className="cs_hero_text position-relative cs_zindex_5 d-inline-block">
+                        {/* <h2 className="text-white cs_mb_5 fw-normal cs_fs_18">
                     This Week Only for World Premier
                   </h2> */}
-                  <h1 className="text-white cs_mb_16 cs_fs_60 cs_fs_lg_32">
-                  Pioneering Ultramodern <br></br>Architectural Innovation
-                  </h1>
-                  <p className="text-white cs_mb_20">
-                  We stay abreast of cutting-edge technological advancements to ensure that our<br></br> building epitomizes ultramodern design in this era.
-                  </p>
-                  <div className="cs_hero_btn">
-                    <a
-                      href='/contact'
-                      className="cs_btn cs_style_1 cs_fs_16 cs_rounded_5 cs_pl_30 cs_pr_30 cs_pt_10 cs_pb_10 overflow-hidden"
+                        <h1 className="text-white cs_mb_16 cs_fs_60 cs_fs_lg_32">
+                          Pioneering Ultramodern <br></br>Architectural
+                          Innovation
+                        </h1>
+                        <p className="text-white cs_mb_20">
+                          We stay abreast of cutting-edge technological
+                          advancements to ensure that our<br></br> building
+                          epitomizes ultramodern design in this era.
+                        </p>
+                        <div className="cs_hero_btn">
+                          <a
+                            href="/contact"
+                            className="cs_btn cs_style_1 cs_fs_16 cs_rounded_5 cs_pl_30 cs_pr_30 cs_pt_10 cs_pb_10 overflow-hidden"
+                          >
+                            <span>Get A Quote</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="swiper-slide">
+                  <div className="cs_hero cs_style_1 d-flex align-items-center justify-content-center background-filled position-relative overflow-hidden">
+                    <figure
+                      className="cs_swiper_parallax_bg"
+                      src="assets/img/hero_slider_2.jpeg"
                     >
-                      <span>Get A Quote</span>
-                    </a>
+                      <img
+                        src="assets/img/hero_slider_2.jpeg"
+                        alt="Slider"
+                        className="cs_entity_img"
+                      />
+                      <div className="bg-primary opacity-75 position-absolute w-100 h-100 start-0 top-0" />
+                    </figure>
+                    <div className="container">
+                      <div className="cs_hero_text position-relative cs_zindex_5 d-inline-block">
+                        <h2 className="text-white cs_mb_5 fw-normal cs_fs_18">
+                          This Week Only for World Premier
+                        </h2>
+                        <h1 className="text-white cs_mb_16 cs_fs_60 cs_fs_lg_32">
+                          Inventive and interested <br />
+                          in innovation
+                        </h1>
+                        <p className="text-white cs_mb_20">
+                          I have been a loyal customer of this auto parts
+                          company for years and I cannot <br />
+                          recommend them enough. Their extensive selection of
+                          high-quality parts and <br /> accessories.
+                        </p>
+                        <div className="cs_hero_btn">
+                          <a
+                            href="/contact"
+                            className="cs_btn cs_style_1 cs_fs_16 cs_rounded_5 cs_pl_30 cs_pr_30 cs_pt_10 cs_pb_10 overflow-hidden"
+                          >
+                            <span>Get A Quote</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="swiper-slide">
+                  <div className="cs_hero cs_style_1 d-flex align-items-center justify-content-center background-filled position-relative overflow-hidden">
+                    <figure
+                      className="cs_swiper_parallax_bg"
+                      src="assets/img/hero_slider_3.jpeg"
+                    >
+                      <img
+                        src="assets/img/hero_slider_3.jpeg"
+                        alt="Slider"
+                        className="cs_entity_img"
+                      />
+                      <div className="bg-primary opacity-75 position-absolute w-100 h-100 start-0 top-0" />
+                    </figure>
+                    <div className="container">
+                      <div className="cs_hero_text position-relative cs_zindex_5 d-inline-block">
+                        <h2 className="text-white cs_mb_5 fw-normal cs_fs_18">
+                          This Week Only for World Premier
+                        </h2>
+                        <h1 className="text-white cs_mb_16 cs_fs_60 cs_fs_lg_32">
+                          Inventive and interested <br />
+                          in innovation
+                        </h1>
+                        <p className="text-white cs_mb_20">
+                          I have been a loyal customer of this auto parts
+                          company for years and I cannot <br />
+                          recommend them enough. Their extensive selection of
+                          high-quality parts and <br /> accessories.
+                        </p>
+                        <div className="cs_hero_btn">
+                          <a
+                            href="/contact"
+                            className="cs_btn cs_style_1 cs_fs_16 cs_rounded_5 cs_pl_30 cs_pr_30 cs_pt_10 cs_pb_10 overflow-hidden"
+                          >
+                            <span>Get A Quote</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div className="swiper-slide">
-            <div className="cs_hero cs_style_1 d-flex align-items-center justify-content-center background-filled position-relative overflow-hidden">
-              <figure
-                className="cs_swiper_parallax_bg"
-                src="assets/img/hero_slider_2.jpeg"
-              >
-                <img
-                  src="assets/img/hero_slider_2.jpeg"
-                  alt="Slider"
-                  className="cs_entity_img"
-                />
-                <div className="bg-primary opacity-75 position-absolute w-100 h-100 start-0 top-0" />
-              </figure>
-              <div className="container">
-                <div className="cs_hero_text position-relative cs_zindex_5 d-inline-block">
-                  <h2 className="text-white cs_mb_5 fw-normal cs_fs_18">
-                    This Week Only for World Premier
-                  </h2>
-                  <h1 className="text-white cs_mb_16 cs_fs_60 cs_fs_lg_32">
-                    Inventive and interested <br />
-                    in innovation
-                  </h1>
-                  <p className="text-white cs_mb_20">
-                    I have been a loyal customer of this auto parts company for
-                    years and I cannot <br />
-                    recommend them enough. Their extensive selection of
-                    high-quality parts and <br /> accessories.
-                  </p>
-                  <div className="cs_hero_btn">
-                    <a
-                      href='/contact'
-                      className="cs_btn cs_style_1 cs_fs_16 cs_rounded_5 cs_pl_30 cs_pr_30 cs_pt_10 cs_pb_10 overflow-hidden"
-                    >
-                      <span>Get A Quote</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="swiper-slide">
-            <div className="cs_hero cs_style_1 d-flex align-items-center justify-content-center background-filled position-relative overflow-hidden">
-              <figure
-                className="cs_swiper_parallax_bg"
-                src="assets/img/hero_slider_3.jpeg"
-              >
-                <img
-                  src="assets/img/hero_slider_3.jpeg"
-                  alt="Slider"
-                  className="cs_entity_img"
-                />
-                <div className="bg-primary opacity-75 position-absolute w-100 h-100 start-0 top-0" />
-              </figure>
-              <div className="container">
-                <div className="cs_hero_text position-relative cs_zindex_5 d-inline-block">
-                  <h2 className="text-white cs_mb_5 fw-normal cs_fs_18">
-                    This Week Only for World Premier
-                  </h2>
-                  <h1 className="text-white cs_mb_16 cs_fs_60 cs_fs_lg_32">
-                    Inventive and interested <br />
-                    in innovation
-                  </h1>
-                  <p className="text-white cs_mb_20">
-                    I have been a loyal customer of this auto parts company for
-                    years and I cannot <br />
-                    recommend them enough. Their extensive selection of
-                    high-quality parts and <br /> accessories.
-                  </p>
-                  <div className="cs_hero_btn">
-                    <a
-                      href='/contact'
-                      className="cs_btn cs_style_1 cs_fs_16 cs_rounded_5 cs_pl_30 cs_pr_30 cs_pt_10 cs_pb_10 overflow-hidden"
-                    >
-                      <span>Get A Quote</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* If we need navigation buttons */}
-        <div
-          className="cs_slider_navigation d-flex cs_row_gap_15 flex-column position-absolute
+              {/* If we need navigation buttons */}
+              <div
+                className="cs_slider_navigation d-flex cs_row_gap_15 flex-column position-absolute
     cs_zindex_4"
-        >
-          <div className="cs_swiper_button_prev filter cs_height_45 cs_width_45 bg-white rounded-circle d-flex align-items-center justify-content-center bg-accent-hover cs_transition_4">
-            <svg
-              width={20}
-              height={8}
-              viewBox="0 0 20 8"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M0.461063 4.4077H19.538C19.7649 4.4077 19.9482 4.22437 19.9482 3.99745C19.9482 3.77052 19.7649 3.58719 19.538 3.58719H1.45209L3.94183 1.09745C4.10209 0.937189 4.10209 0.676933 3.94183 0.516677C3.78158 0.35642 3.52132 0.35642 3.36106 0.516677L0.170038 3.7077C0.0520878 3.82565 0.0174732 4.00129 0.0815754 4.15514C0.145678 4.3077 0.295677 4.4077 0.461063 4.4077Z"
-                fill="black"
-              />
-              <path
-                d="M3.65549 7.60253C3.76062 7.60253 3.86575 7.56278 3.94524 7.48202C4.10549 7.32176 4.10549 7.0615 3.94524 6.90125L0.750365 3.70637C0.590108 3.54612 0.329853 3.54612 0.169597 3.70637C0.00934029 3.86663 0.00934029 4.12689 0.169597 4.28714L3.36447 7.48202C3.44524 7.56278 3.55036 7.60253 3.65549 7.60253Z"
-                fill="black"
-              />
-            </svg>
-          </div>
-          <div className="cs_swiper_button_next filter cs_height_45 cs_width_45 bg-white rounded-circle d-flex align-items-center justify-content-center bg-accent-hover cs_transition_4">
-            <svg
-              width={20}
-              height={8}
-              viewBox="0 0 20 8"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M19.5389 4.4077H0.462014C0.235091 4.4077 0.0517578 4.22437 0.0517578 3.99745C0.0517578 3.77052 0.235091 3.58719 0.462014 3.58719H18.5479L16.0582 1.09745C15.8979 0.937189 15.8979 0.676933 16.0582 0.516677C16.2184 0.35642 16.4787 0.35642 16.6389 0.516677L19.83 3.7077C19.9479 3.82565 19.9825 4.00129 19.9184 4.15514C19.8543 4.3077 19.7043 4.4077 19.5389 4.4077Z"
-                fill="#18191D"
-              />
-              <path
-                d="M16.3445 7.60253C16.2394 7.60253 16.1342 7.56278 16.0548 7.48202C15.8945 7.32176 15.8945 7.0615 16.0548 6.90125L19.2496 3.70637C19.4099 3.54612 19.6701 3.54612 19.8304 3.70637C19.9907 3.86663 19.9907 4.12689 19.8304 4.28714L16.6355 7.48202C16.5548 7.56278 16.4496 7.60253 16.3445 7.60253Z"
-                fill="#18191D"
-              />
-            </svg>
-          </div>
-        </div>
-        <div className="cs_hero_shape_1  position-absolute bottom-0 d-flex align-items-end h-100  cs_zindex_1 gradient-background">
-          <svg
-            width={434}
-            height={759}
-            viewBox="0 0 434 759"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M240 0H660L430 759H0L240 0Z"
-              fill="url(#paint0_linear_81_287)"
-            />
-            <defs>
-              <linearGradient
-                id="paint0_linear_81_287"
-                x1={145}
-                y1="256.5"
-                x2={484}
-                y2={738}
-                gradientUnits="userSpaceOnUse"
               >
-                <stop stopColor="#D9D9D9" stopOpacity={0} offset="none" />
-                <stop offset={1} stopColor="#E9A132" />
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
-        <div className="cs_hero_shape_2 position-absolute start-0 cs_zindex_1">
-          <svg
-            width={572}
-            height={572}
-            viewBox="0 0 572 572"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M572 -6.10352e-05L6.10352e-05 572L1.10293e-05 -1.10293e-05L572 -6.10352e-05Z"
-              fill="url(#paint0_linear_81_258)"
-              fillOpacity="0.7"
-            />
-            <defs>
-              <linearGradient
-                id="paint0_linear_81_258"
-                x1="388.254"
-                y1="307.69"
-                x2="-127.973"
-                y2="-227.83"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop offset="0.0457759" stopColor="#18191D" stopOpacity={0} />
-                <stop
-                  offset="0.514455"
-                  stopColor="#FEC63F"
-                  stopOpacity="0.35"
-                />
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
-      </div>
-    </div>
-    {/* <div className="cs_social_btns d-flex flex-column cs_column_gap_15 cs_row_gap_15 cs_transition_5 position-absolute cs_zindex_5 ">
+                <div className="cs_swiper_button_prev filter cs_height_45 cs_width_45 bg-white rounded-circle d-flex align-items-center justify-content-center bg-accent-hover cs_transition_4">
+                  <svg
+                    width={20}
+                    height={8}
+                    viewBox="0 0 20 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0.461063 4.4077H19.538C19.7649 4.4077 19.9482 4.22437 19.9482 3.99745C19.9482 3.77052 19.7649 3.58719 19.538 3.58719H1.45209L3.94183 1.09745C4.10209 0.937189 4.10209 0.676933 3.94183 0.516677C3.78158 0.35642 3.52132 0.35642 3.36106 0.516677L0.170038 3.7077C0.0520878 3.82565 0.0174732 4.00129 0.0815754 4.15514C0.145678 4.3077 0.295677 4.4077 0.461063 4.4077Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M3.65549 7.60253C3.76062 7.60253 3.86575 7.56278 3.94524 7.48202C4.10549 7.32176 4.10549 7.0615 3.94524 6.90125L0.750365 3.70637C0.590108 3.54612 0.329853 3.54612 0.169597 3.70637C0.00934029 3.86663 0.00934029 4.12689 0.169597 4.28714L3.36447 7.48202C3.44524 7.56278 3.55036 7.60253 3.65549 7.60253Z"
+                      fill="black"
+                    />
+                  </svg>
+                </div>
+                <div className="cs_swiper_button_next filter cs_height_45 cs_width_45 bg-white rounded-circle d-flex align-items-center justify-content-center bg-accent-hover cs_transition_4">
+                  <svg
+                    width={20}
+                    height={8}
+                    viewBox="0 0 20 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M19.5389 4.4077H0.462014C0.235091 4.4077 0.0517578 4.22437 0.0517578 3.99745C0.0517578 3.77052 0.235091 3.58719 0.462014 3.58719H18.5479L16.0582 1.09745C15.8979 0.937189 15.8979 0.676933 16.0582 0.516677C16.2184 0.35642 16.4787 0.35642 16.6389 0.516677L19.83 3.7077C19.9479 3.82565 19.9825 4.00129 19.9184 4.15514C19.8543 4.3077 19.7043 4.4077 19.5389 4.4077Z"
+                      fill="#18191D"
+                    />
+                    <path
+                      d="M16.3445 7.60253C16.2394 7.60253 16.1342 7.56278 16.0548 7.48202C15.8945 7.32176 15.8945 7.0615 16.0548 6.90125L19.2496 3.70637C19.4099 3.54612 19.6701 3.54612 19.8304 3.70637C19.9907 3.86663 19.9907 4.12689 19.8304 4.28714L16.6355 7.48202C16.5548 7.56278 16.4496 7.60253 16.3445 7.60253Z"
+                      fill="#18191D"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div className="cs_hero_shape_1  position-absolute bottom-0 d-flex align-items-end h-100  cs_zindex_1 gradient-background">
+                <svg
+                  width={434}
+                  height={759}
+                  viewBox="0 0 434 759"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M240 0H660L430 759H0L240 0Z"
+                    fill="url(#paint0_linear_81_287)"
+                  />
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_81_287"
+                      x1={145}
+                      y1="256.5"
+                      x2={484}
+                      y2={738}
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stopColor="#D9D9D9" stopOpacity={0} offset="none" />
+                      <stop offset={1} stopColor="#E9A132" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <div className="cs_hero_shape_2 position-absolute start-0 cs_zindex_1">
+                <svg
+                  width={572}
+                  height={572}
+                  viewBox="0 0 572 572"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M572 -6.10352e-05L6.10352e-05 572L1.10293e-05 -1.10293e-05L572 -6.10352e-05Z"
+                    fill="url(#paint0_linear_81_258)"
+                    fillOpacity="0.7"
+                  />
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_81_258"
+                      x1="388.254"
+                      y1="307.69"
+                      x2="-127.973"
+                      y2="-227.83"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop
+                        offset="0.0457759"
+                        stopColor="#18191D"
+                        stopOpacity={0}
+                      />
+                      <stop
+                        offset="0.514455"
+                        stopColor="#FEC63F"
+                        stopOpacity="0.35"
+                      />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+          </div>
+          {/* <div className="cs_social_btns d-flex flex-column cs_column_gap_15 cs_row_gap_15 cs_transition_5 position-absolute cs_zindex_5 ">
       <a
         href="#"
         className="d-flex align-items-center justify-content-center cs_height_35 cs_width_35 text-white rounded-circle"
@@ -258,78 +303,75 @@ const Homepage = () => {
         <i className="fa-brands fa-dribbble" />
       </a>
     </div> */}
-  </section>
-  {/* End Hero */}
-  {/* Animated Text */}
-  <div
-    className="cs_moving_wrap background-filled text-uppercase text-white d-flex align-items-center"
-    src="assets/img/moving_text_shape.png"
-  >
-    <div className="cs_moving_text cs_fs_30 cs_fs_lg_24 d-flex align-items-center text-nowrap">
-      <span>Design</span>
-      <span>Planning</span>
-      <span>System Integrators </span>
-      <span>Audits</span>
-    </div>
-    <div className="cs_moving_text cs_fs_30 cs_fs_lg_24 d-flex align-items-center text-nowrap">
-      <span>Trainings</span>
-      <span>Design</span>
-      <span>Planning</span>
-      <span>System Integrators </span>
-    </div>
-    <div className="cs_moving_text cs_fs_30 cs_fs_lg_24 d-flex align-items-center text-nowrap">
-    <span>Trainings</span>
-      <span>Design</span>
-      <span>Planning</span>
-      <span>System Integrators </span>
-    </div>
-  </div>
-  {/* End Animated Text */}
-  <div
-    className="cs_moving_wrap background-filled  text-white "
-  >
-    <div className='area-covered'>
-                <p className='area-text'>Total area covered till now</p>
-                 <p className='counter-number'>
-
-                <CountUp end={23556000}/> sqft
-                </p> 
-              </div>
-    </div>
-  {/* Start Service Section */}
-  <section
-    className="background-filled cs_pt_80 cs_pt_lg_75 cs_pb_100 cs_pb_lg_50 cs_gray_bg"
-    src="assets/img/services_bg.png"
-  >
-    <div className="container">
-      <div className="cs_section_heading cs_style_1 d-flex align-items-center cs_mb_60 cs_mb_lg_40 cs_column_gap_15 cs_row_gap_15">
-        <div className="cs_section_heading_in">
-          <h3
-            className="cs_fs_20 cs_fs_lg_16 text-accent fw-normal cs_lh_base cs_mb_10 "
-            // data-wow-duration="0.8s"
-            // data-wow-delay="0.2s"
-          >
-            Our Service List
-          </h3>
-          <h2 className="cs_fs_48 cs_fs_lg_28 m-0">
-            We Provide The Solution <br />
-            For Our Clients
-          </h2>
+        </section>
+        {/* End Hero */}
+        {/* Animated Text */}
+        <div
+          className="cs_moving_wrap background-filled text-uppercase text-white d-flex align-items-center"
+          src="assets/img/moving_text_shape.png"
+        >
+          <div className="cs_moving_text cs_fs_30 cs_fs_lg_24 d-flex align-items-center text-nowrap">
+            <span>Design</span>
+            <span>Planning</span>
+            <span>System Integrators </span>
+            <span>Audits</span>
+          </div>
+          <div className="cs_moving_text cs_fs_30 cs_fs_lg_24 d-flex align-items-center text-nowrap">
+            <span>Trainings</span>
+            <span>Design</span>
+            <span>Planning</span>
+            <span>System Integrators </span>
+          </div>
+          <div className="cs_moving_text cs_fs_30 cs_fs_lg_24 d-flex align-items-center text-nowrap">
+            <span>Trainings</span>
+            <span>Design</span>
+            <span>Planning</span>
+            <span>System Integrators </span>
+          </div>
         </div>
-        <div className="cs_section_heading_right">
-          <p className="cs_section_text m-0">
-            {/* I have been a loyal customer of this auto parts company for years
+        {/* End Animated Text */}
+        <div className="cs_moving_wrap background-filled  text-white ">
+          <div className="area-covered">
+            <p className="area-text">Total area covered till now</p>
+            <p className="counter-number">
+              <CountUp end={23556000} /> sqft
+            </p>
+          </div>
+        </div>
+        {/* Start Service Section */}
+        <section
+          className="background-filled cs_pt_80 cs_pt_lg_75 cs_pb_100 cs_pb_lg_50 cs_gray_bg"
+          src="assets/img/services_bg.png"
+        >
+          <div className="container">
+            <div className="cs_section_heading cs_style_1 d-flex align-items-center cs_mb_60 cs_mb_lg_40 cs_column_gap_15 cs_row_gap_15">
+              <div className="cs_section_heading_in">
+                <h3
+                  className="cs_fs_20 cs_fs_lg_16 text-accent fw-normal cs_lh_base cs_mb_10 "
+                  // data-wow-duration="0.8s"
+                  // data-wow-delay="0.2s"
+                >
+                  Our Service List
+                </h3>
+                <h2 className="cs_fs_48 cs_fs_lg_28 m-0">
+                  We Provide The Solution <br />
+                  For Our Clients
+                </h2>
+              </div>
+              <div className="cs_section_heading_right">
+                <p className="cs_section_text m-0">
+                  {/* I have been a loyal customer of this auto parts company for years
             and I cannot recommend them enough. Their extensive selection of
             high-quality parts and accessories. */}
-          </p>
-        </div>
-      </div>
-      <div className="row">
-      <div className="col-xl-3 col-lg-6 col-md-6">
-          <div className="cs_service cs_style_1 cs_pt_25 cs_pl_20 cs_pr_20 cs_pb_15 bg-white cs_transition_4 shadow cs_mb_25">
-            <div className="cs_service_iconbox d-flex align-items-center cs_mb_20">
-              <div className="cs_service_icon d-flex align-items-center justify-content-center cs_rounded_5 cs_mr_15 cs_transition_4 flex-none">
-                {/* <svg
+                </p>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-xl-3 col-lg-6 col-md-6">
+                <div className="cs_service cs_style_1 cs_pt_25 cs_pl_20 cs_pr_20 cs_pb_15 bg-white cs_transition_4 shadow cs_mb_25">
+                  <div className="cs_service_iconbox d-flex align-items-center cs_mb_20">
+                    <div className="cs_service_icon d-flex align-items-center justify-content-center cs_rounded_5 cs_mr_15 cs_transition_4 flex-none">
+                      {/* <svg
                   width={41}
                   height={41}
                   viewBox="0 0 41 41"
@@ -349,21 +391,29 @@ const Homepage = () => {
                     fill="white"
                   />
                 </svg> */}
-                <img src='assets/img/home/service_icon5.svg' className='img-fluid'/>
-
-              </div>
-              <h2 className="cs_lh_base cs_fs_16  cs_fs_lg_16 m-0">
-                <a  className="inline-block fw-bold">
-                  Mechanical Engineering
-                </a>
-              </h2>
-            </div>
-            {/* <p className="cs_mb_24">
+                      <img
+                        src="assets/img/home/service_icon5.svg"
+                        className="img-fluid"
+                      />
+                    </div>
+                    <h2 className="cs_lh_base cs_fs_16  cs_fs_lg_16 m-0">
+                      <a className="inline-block fw-bold">
+                        Mechanical Engineering
+                      </a>
+                    </h2>
+                  </div>
+                  {/* <p className="cs_mb_24">
             This system is responsible for heating and cooling your home and includes products like thermostats and other home comfort controls.
             </p> */}
-            <p className='cs_mb_24'>This involves the design and management of heating, ventilation, and air conditioning (HVAC) systems. Mechanical engineers ensure that the indoor environment is comfortable and safe, with proper temperature control, humidity regulation, and air quality.</p>
-            <div className="cs_service_thumb position-relative cs_rounded_5">
-              {/* <a
+                  <p className="cs_mb_24">
+                    This involves the design and management of heating,
+                    ventilation, and air conditioning (HVAC) systems. Mechanical
+                    engineers ensure that the indoor environment is comfortable
+                    and safe, with proper temperature control, humidity
+                    regulation, and air quality.
+                  </p>
+                  <div className="cs_service_thumb position-relative cs_rounded_5">
+                    {/* <a
                 href="services-details.html"
                 className="cs_service_btn d-flex align-items-center justify-content-center rounded-circle position-absolute text-white"
               >
@@ -380,18 +430,21 @@ const Homepage = () => {
                   />
                 </svg>
               </a> */}
-              <div
-                className="cs_service_thumb-in position-relative-in background-filled h-100"
-                style={{backgroundImage:"url('/assets/img/home/service_img5.png')"}}
-              />
-            </div>
-          </div>
-        </div>
-        <div className="col-xl-3 col-lg-6 col-md-6">
-          <div className="cs_service cs_style_1 cs_pt_25 cs_pl_20 cs_pr_20 cs_pb_15 bg-white cs_transition_4 shadow cs_mb_25">
-            <div className="cs_service_iconbox d-flex align-items-center cs_mb_20">
-              <div className="cs_service_icon d-flex align-items-center justify-content-center cs_rounded_5 cs_mr_15 cs_transition_4 flex-none">
-                {/* <svg
+                    <div
+                      className="cs_service_thumb-in position-relative-in background-filled h-100"
+                      style={{
+                        backgroundImage:
+                          "url('/assets/img/home/service_img5.png')",
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="col-xl-3 col-lg-6 col-md-6">
+                <div className="cs_service cs_style_1 cs_pt_25 cs_pl_20 cs_pr_20 cs_pb_15 bg-white cs_transition_4 shadow cs_mb_25">
+                  <div className="cs_service_iconbox d-flex align-items-center cs_mb_20">
+                    <div className="cs_service_icon d-flex align-items-center justify-content-center cs_rounded_5 cs_mr_15 cs_transition_4 flex-none">
+                      {/* <svg
                   width={41}
                   height={41}
                   viewBox="0 0 41 41"
@@ -411,21 +464,28 @@ const Homepage = () => {
                     fill="white"
                   />
                 </svg> */}
-                <img src='assets/img/home/service_icon4.svg' className='img-fluid'/>
-
-              </div>
-              <h2 className="cs_lh_base cs_fs_16 cs_fs_lg_16 m-0">
-                <a href="" className="inline-block fw-bold">
-                  Electrical Engineering
-                </a>
-              </h2>
-            </div>
-            {/* <p className="cs_mb_24">
+                      <img
+                        src="assets/img/home/service_icon4.svg"
+                        className="img-fluid"
+                      />
+                    </div>
+                    <h2 className="cs_lh_base cs_fs_16 cs_fs_lg_16 m-0">
+                      <a href="" className="inline-block fw-bold">
+                        Electrical Engineering
+                      </a>
+                    </h2>
+                  </div>
+                  {/* <p className="cs_mb_24">
             Electrical Content Portal (ECP) is where you can download content,manufacturer parts, cable references, and files for 2D layouts.
             </p> */}
-            <p className="cs_mb_24">Electrical engineers handle the design, installation, and maintenance of electrical systems within buildings. This includes lighting, power distribution, communication systems, security systems, and more.</p>
-            <div className="cs_service_thumb position-relative cs_rounded_5">
-              {/* <a
+                  <p className="cs_mb_24">
+                    Electrical engineers handle the design, installation, and
+                    maintenance of electrical systems within buildings. This
+                    includes lighting, power distribution, communication
+                    systems, security systems, and more.
+                  </p>
+                  <div className="cs_service_thumb position-relative cs_rounded_5">
+                    {/* <a
                 href="services-details.html"
                 className="cs_service_btn d-flex align-items-center justify-content-center rounded-circle position-absolute text-white"
               >
@@ -442,18 +502,21 @@ const Homepage = () => {
                   />
                 </svg>
               </a> */}
-              <div
-                className="cs_service_thumb-in position-relative-in background-filled h-100"
-                style={{backgroundImage:"url('/assets/img/home/service_img4.png')"}}
-              />
-            </div>
-          </div>
-        </div>
-        <div className="col-xl-3 col-lg-6 col-md-6">
-          <div className="cs_service cs_style_1 cs_pt_25 cs_pl_20 cs_pr_20 cs_pb_15 bg-white cs_transition_4 shadow cs_mb_25">
-            <div className="cs_service_iconbox d-flex align-items-center cs_mb_20">
-              <div className="cs_service_icon d-flex align-items-center justify-content-center cs_rounded_5 cs_mr_15 cs_transition_4 flex-none">
-                {/* <svg
+                    <div
+                      className="cs_service_thumb-in position-relative-in background-filled h-100"
+                      style={{
+                        backgroundImage:
+                          "url('/assets/img/home/service_img4.png')",
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="col-xl-3 col-lg-6 col-md-6">
+                <div className="cs_service cs_style_1 cs_pt_25 cs_pl_20 cs_pr_20 cs_pb_15 bg-white cs_transition_4 shadow cs_mb_25">
+                  <div className="cs_service_iconbox d-flex align-items-center cs_mb_20">
+                    <div className="cs_service_icon d-flex align-items-center justify-content-center cs_rounded_5 cs_mr_15 cs_transition_4 flex-none">
+                      {/* <svg
                   width={40}
                   height={40}
                   viewBox="0 0 40 40"
@@ -492,21 +555,28 @@ const Homepage = () => {
                     </clipPath>
                   </defs>
                 </svg> */}
-                <img src='assets/img/home/service_icon2.svg' className='img-fluid'/>
-
-              </div>
-              <h2 className="cs_lh_base cs_fs_16 cs_fs_lg_16 m-0">
-                <a className="inline-block fw-bold">
-                  Plumbing Engineering
-                </a>
-              </h2>
-            </div>
-            {/* <p className="cs_mb_24">
+                      <img
+                        src="assets/img/home/service_icon2.svg"
+                        className="img-fluid"
+                      />
+                    </div>
+                    <h2 className="cs_lh_base cs_fs_16 cs_fs_lg_16 m-0">
+                      <a className="inline-block fw-bold">
+                        Plumbing Engineering
+                      </a>
+                    </h2>
+                  </div>
+                  {/* <p className="cs_mb_24">
             Plastic pipe is in wide use for domestic water supply and drain-waste-vent (DWV) pipe. 
             </p> */}
-            <p  className="cs_mb_24">Plumbing engineers focus on the design of water supply, drainage, and sewage systems. They ensure that water is distributed efficiently throughout the building while also managing waste disposal systems.</p>
-            <div className="cs_service_thumb position-relative cs_rounded_5">
-              {/* <a
+                  <p className="cs_mb_24">
+                    Plumbing engineers focus on the design of water supply,
+                    drainage, and sewage systems. They ensure that water is
+                    distributed efficiently throughout the building while also
+                    managing waste disposal systems.
+                  </p>
+                  <div className="cs_service_thumb position-relative cs_rounded_5">
+                    {/* <a
                 href="services-details.html"
                 className="cs_service_btn d-flex align-items-center justify-content-center rounded-circle position-absolute text-white"
               >
@@ -523,14 +593,17 @@ const Homepage = () => {
                   />
                 </svg>
               </a> */}
-              <div
-                className="cs_service_thumb-in position-relative-in background-filled h-100"
-                style={{backgroundImage:"url('/assets/img/home/service_img2.png')"}}
-              />
-            </div>
-          </div>
-        </div>
-        {/* <div className="col-xl-3 col-md-6">
+                    <div
+                      className="cs_service_thumb-in position-relative-in background-filled h-100"
+                      style={{
+                        backgroundImage:
+                          "url('/assets/img/home/service_img2.png')",
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+              {/* <div className="col-xl-3 col-md-6">
           <div className="cs_service cs_style_1 cs_pt_25 cs_pl_20 cs_pr_20 cs_pb_15 bg-white cs_transition_4 shadow cs_mb_25">
             <div className="cs_service_iconbox d-flex align-items-center cs_mb_20">
               <div className="cs_service_icon d-flex align-items-center justify-content-center cs_rounded_5 cs_mr_15 cs_transition_4 flex-none">
@@ -556,9 +629,8 @@ const Homepage = () => {
             </div>
           </div>
         </div> */}
-       
-       
-        {/* <div className="col-xl-3 col-md-6">
+
+              {/* <div className="col-xl-3 col-md-6">
           <div className="cs_service cs_style_1 cs_pt_25 cs_pl_20 cs_pr_20 cs_pb_15 bg-white cs_transition_4 shadow cs_mb_25">
             <div className="cs_service_iconbox d-flex align-items-center cs_mb_20">
               <div className="cs_service_icon d-flex align-items-center justify-content-center cs_rounded_5 cs_mr_15 cs_transition_4 flex-none">
@@ -584,7 +656,7 @@ const Homepage = () => {
             </div>
           </div>
         </div> */}
-        {/* <div className="col-xl-3 col-md-6">
+              {/* <div className="col-xl-3 col-md-6">
           <div className="cs_service cs_style_1 cs_pt_25 cs_pl_20 cs_pr_20 cs_pb_15 bg-white cs_transition_4 shadow cs_mb_25">
             <div className="cs_service_iconbox d-flex align-items-center cs_mb_20">
               <div className="cs_service_icon d-flex align-items-center justify-content-center cs_rounded_5 cs_mr_15 cs_transition_4 flex-none">
@@ -610,11 +682,11 @@ const Homepage = () => {
             </div>
           </div>
         </div> */}
-         <div className="col-xl-3 col-lg-6 col-md-6">
-          <div className="cs_service cs_style_1 cs_pt_25 cs_pl_20 cs_pr_20 cs_pb_15 bg-white cs_transition_4 shadow cs_mb_25">
-            <div className="cs_service_iconbox d-flex align-items-center cs_mb_20">
-              <div className="cs_service_icon d-flex align-items-center justify-content-center cs_rounded_5 cs_mr_15 cs_transition_4 flex-none">
-                {/* <svg
+              <div className="col-xl-3 col-lg-6 col-md-6">
+                <div className="cs_service cs_style_1 cs_pt_25 cs_pl_20 cs_pr_20 cs_pb_15 bg-white cs_transition_4 shadow cs_mb_25">
+                  <div className="cs_service_iconbox d-flex align-items-center cs_mb_20">
+                    <div className="cs_service_icon d-flex align-items-center justify-content-center cs_rounded_5 cs_mr_15 cs_transition_4 flex-none">
+                      {/* <svg
                   width={38}
                   height={40}
                   viewBox="0 0 38 40"
@@ -658,21 +730,28 @@ const Homepage = () => {
                     fill="white"
                   />
                 </svg> */}
-                <img src='assets/img/home/service_icon1.svg' className='img-fluid'/>
-              </div>
-              <h2 className="cs_lh_base cs_fs_16 cs_fs_lg_16 m-0">
-                <a  className="inline-block fw-bold">
-                  Fire Protection & Life Safety Engineering
-                </a>
-              </h2>
-            </div>
-            {/* <p className="cs_mb_24">
+                      <img
+                        src="assets/img/home/service_icon1.svg"
+                        className="img-fluid"
+                      />
+                    </div>
+                    <h2 className="cs_lh_base cs_fs_16 cs_fs_lg_16 m-0">
+                      <a className="inline-block fw-bold">
+                        Fire Protection & Life Safety Engineering
+                      </a>
+                    </h2>
+                  </div>
+                  {/* <p className="cs_mb_24">
             Fire protection has many aspects, including fire suppression, monitoring, inspections, and maintenance.
             </p> */}
-            <p className="cs_mb_24">Fire Protection & life safety engineers design the premises to detect the risk of fire hazard, to evacuate the building/
-occupancy the early stage of any risk. Also to protect the building property and control loss of life.</p>
-            <div className="cs_service_thumb position-relative cs_rounded_5">
-              {/* <a
+                  <p className="cs_mb_24">
+                    Fire Protection & life safety engineers design the premises
+                    to detect the risk of fire hazard, to evacuate the building/
+                    occupancy the early stage of any risk. Also to protect the
+                    building property and control loss of life.
+                  </p>
+                  <div className="cs_service_thumb position-relative cs_rounded_5">
+                    {/* <a
                 href="services-details.html"
                 className="cs_service_btn d-flex align-items-center justify-content-center rounded-circle position-absolute text-white"
               >
@@ -689,102 +768,112 @@ occupancy the early stage of any risk. Also to protect the building property and
                   />
                 </svg>
               </a> */}
-              <div
-                className="cs_service_thumb-in position-relative-in background-filled h-100"
-                style={{backgroundImage:"url('/assets/img/home/service_img1.png')"}}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="cs_service_1-info  text-center cs_mt_40 d-flex justify-content-center align-items-center flex-wrap d-none">
-        <h4 className="fw-normal m-0">
-          Digital agency services built specifically for your business
-        </h4>
-        <a
-          
-          className="cs_btn cs_style_1 cs_fs_16  overflow-hidden cs_fs_16 cs_rounded_25 cs_pl_20 cs_pr_20 cs_pt_7 cs_pb_7 wow zoomIn"
-          data-wow-duration="0.8s"
-          data-wow-delay="0.2s"
-        >
-          <span>Find More Services</span>
-        </a>
-      </div>
-    </div>
-  </section>
-  {/* End Service Section */}
-  {/* Start About Section */}
-  <section className="cs_pt_80 cs_pt_lg_60 cs_pb_100 cs_pb_lg_60 position-relative">
-    <div className="container">
-      <div className="row align-items-center">
-        <div className="col-lg-6 cs_mb_lg_55">
-          <div className="cs_experience cs_style_1 position-relative">
-            <div className="cs_experience_thumb">
-              <img
-                src="assets/img/home/experience_img.png"
-                alt="Thumb"
-                className="position-relative cs_zindex_3 cs_rounded_15"
-              />
-              <div className="cs_experience_shape">
-                <img
-                  src="assets/img/experience_shape_1.png"
-                  alt="Shape"
-                  className="moving_x"
-                />
+                    <div
+                      className="cs_service_thumb-in position-relative-in background-filled h-100"
+                      style={{
+                        backgroundImage:
+                          "url('/assets/img/home/service_img1.png')",
+                      }}
+                    />
+                  </div>
+                </div>
               </div>
             </div>
-            <div
-              className="cs_experience_box background-filled text-center bg-white cs_rounded_10 position-absolute bottom-0 end-0 cs_zindex_3 d-flex flex-column justify-content-center align-items-center"
-              
-              style={{backgroundImage:"url('assets/img/home/experience_bg.png')"}}
-            >
-              <img
-                src="assets/img/experience_icon.svg"
-                alt="Icon"
-                className="cs_mb_5"
-              />
-              <h3 className="text-white cs_fs_60 cs_fs_lg_32 fw-bold lh_1 mb-0 d-flex justify-content-between">
-                <span data-count-to={30} className="odometer" />
-                <span className="fw-light">+</span>
-              </h3>
-              <h2 className="cs_fs_18 fw-normal text-white m-0">
-                Work Experience
-              </h2>
+            <div className="cs_service_1-info  text-center cs_mt_40 d-flex justify-content-center align-items-center flex-wrap d-none">
+              <h4 className="fw-normal m-0">
+                Digital agency services built specifically for your business
+              </h4>
+              <a
+                className="cs_btn cs_style_1 cs_fs_16  overflow-hidden cs_fs_16 cs_rounded_25 cs_pl_20 cs_pr_20 cs_pt_7 cs_pb_7 wow zoomIn"
+                data-wow-duration="0.8s"
+                data-wow-delay="0.2s"
+              >
+                <span>Find More Services</span>
+              </a>
             </div>
           </div>
-        </div>
-        <div className="col-lg-6">
-          <div className="cs_about cs_style_1">
-             
-            <div className="cs_section_heading cs_style_1 d-flex align-items-center cs_mb_15">
-              <div className="cs_section_heading_in">
-                <h3
-                  className="text-left cs_fs_20 cs_fs_lg_16 text-accent fw-normal cs_lh_base cs_mb_10 wow fadeInLeft"
-                //   data-wow-duration="0.8s"
-                //   data-wow-delay="0.2s"
-                >
-                  About Us
-                </h3>
-                <h2 className="cs_fs_48 cs_fs_lg_28 cs_mb_20 text-left ">
-                  Get Ready for Success with{" "}
-                  <span className="text-accent">The Dadoo Group</span> Your Path to
-                  Growth.
-                </h2>
-                {/* <div className='area-covered'>
+        </section>
+        {/* End Service Section */}
+        {/* Start About Section */}
+        <section className="cs_pt_80 cs_pt_lg_60 cs_pb_100 cs_pb_lg_60 position-relative">
+          <div className="container">
+            <div className="row align-items-center">
+              <div className="col-lg-6 cs_mb_lg_55">
+                <div className="cs_experience cs_style_1 position-relative">
+                  <div className="cs_experience_thumb">
+                    <img
+                      src="assets/img/home/experience_img.png"
+                      alt="Thumb"
+                      className="position-relative cs_zindex_3 cs_rounded_15"
+                    />
+                    <div className="cs_experience_shape">
+                      <img
+                        src="assets/img/experience_shape_1.png"
+                        alt="Shape"
+                        className="moving_x"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    className="cs_experience_box background-filled text-center bg-white cs_rounded_10 position-absolute bottom-0 end-0 cs_zindex_3 d-flex flex-column justify-content-center align-items-center"
+                    style={{
+                      backgroundImage:
+                        "url('assets/img/home/experience_bg.png')",
+                    }}
+                  >
+                    <img
+                      src="assets/img/experience_icon.svg"
+                      alt="Icon"
+                      className="cs_mb_5"
+                    />
+                    <h3 className="text-white cs_fs_60 cs_fs_lg_32 fw-bold lh_1 mb-0 d-flex justify-content-between">
+                      <span data-count-to={30} className="odometer" />
+                      <span className="fw-light">+</span>
+                    </h3>
+                    <h2 className="cs_fs_18 fw-normal text-white m-0">
+                      Work Experience
+                    </h2>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-6">
+                <div className="cs_about cs_style_1">
+                  <div className="cs_section_heading cs_style_1 d-flex align-items-center cs_mb_15">
+                    <div className="cs_section_heading_in">
+                      <h3
+                        className="text-left cs_fs_20 cs_fs_lg_16 text-accent fw-normal cs_lh_base cs_mb_10 wow fadeInLeft"
+                        //   data-wow-duration="0.8s"
+                        //   data-wow-delay="0.2s"
+                      >
+                        About Us
+                      </h3>
+                      <h2 className="cs_fs_48 cs_fs_lg_28 cs_mb_20 text-left ">
+                        Get Ready for Success with{" "}
+                        <span className="text-accent">The Dadoo Group</span>{" "}
+                        Your Path to Growth.
+                      </h2>
+                      {/* <div className='area-covered'>
                 <p className='area-text'>Total area covered till now</p>
                  <p className='counter-number'>
 
                 <Countup animationTime={1} targetNumber={23556000} />sqft
                 </p> 
               </div> */}
-                <p className="m-0 text-left ">
-                 We follow the new trends of technology and make sure that the building becomes ultra modern in the age. The perfect foundation creates longitivity and efficient planning saves resources.<br></br>
-                 We connect with Architect at the start of the building design to plan the services as per the need of the occupancy. Over the 30 years of experiences and having worked with finest of the projects WE mark ourseves as the leader of the central India.
-                </p>
-              </div>
-            </div>
-             
-            {/* <div className="cs_progressbar cs_style_1 cs_mb_20">
+                      <p className="m-0 text-left ">
+                        We follow the new trends of technology and make sure
+                        that the building becomes ultra modern in the age. The
+                        perfect foundation creates longitivity and efficient
+                        planning saves resources.<br></br>
+                        We connect with Architect at the start of the building
+                        design to plan the services as per the need of the
+                        occupancy. Over the 30 years of experiences and having
+                        worked with finest of the projects WE mark ourseves as
+                        the leader of the central India.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* <div className="cs_progressbar cs_style_1 cs_mb_20">
               <div className="cs_progressbar_heading d-flex justify-content-between align-items-center cs_mb_8">
                 <h3 className="fw-medium m-0 cs_fs_18">Web development</h3>
                 <p className="cs_fs_14 cs_lh_base m-0">90%</p>
@@ -800,8 +889,8 @@ occupancy the early stage of any risk. Also to protect the building property and
                 />
               </div>
             </div> */}
-            {/* .cs_progressbar */}
-            {/* <div className="row cs_mb_15">
+                  {/* .cs_progressbar */}
+                  {/* <div className="row cs_mb_15">
               <div className="col-lg-6">
                 <div className="cs_about-icon-box position-relative cs_mb_25">
                   <span className="position-absolute cs_height_20 cs_width_20 top-0 start-0 cs_mt_5 bg-accent text-white cs_fs_10 d-flex align-items-center justify-content-center cs_rounded_30">
@@ -857,238 +946,238 @@ occupancy the early stage of any risk. Also to protect the building property and
                 <span className="cs_ml_15">Watch the video</span>
               </a>
             </div> */}
-          </div>
-        </div>
-      </div>
-    </div>
-    <div className="cs_section_shape-1 position-absolute semi_rotate">
-      <svg
-        width={182}
-        height={177}
-        viewBox="0 0 182 177"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M94.4478 96.1115C106.99 105.211 120.6 111.159 132.748 112.86C132.823 112.871 132.894 112.876 132.967 112.886L150.387 27.5688C151.002 24.552 147.98 22.0838 145.148 23.2887L63.8438 57.8735C67.5196 70.1011 78.6592 84.6548 94.4478 96.1115Z"
-          fill="#888888"
-          fillOpacity="0.2"
-        />
-        <path
-          d="M128.155 120.487C115.612 118.057 102.053 111.863 89.5833 102.815C72.3806 90.3334 60.5954 75.0018 56.1891 61.1295L14.8513 78.7143C11.6218 80.0876 11.7968 84.724 15.1212 85.8483L74.9037 106.09C78.4203 107.281 81.3895 109.706 83.2572 112.915L115.015 167.46C116.78 170.492 121.358 169.74 122.061 166.301L131.308 121.013C130.265 120.863 129.215 120.692 128.155 120.487Z"
-          fill="#888888"
-          fillOpacity="0.2"
-        />
-        <path
-          d="M129.41 114.012C116.866 111.583 103.307 105.387 90.8381 96.3405C61.4995 75.0532 47.8833 45.4701 59.84 28.9897C71.7975 12.512 104.146 16.278 133.483 37.5651C143.082 44.5285 151.409 52.7615 157.564 61.3736C158.895 63.2352 158.464 65.8208 156.603 67.1511C154.742 68.4799 152.156 68.0495 150.827 66.1896C145.184 58.2942 137.505 50.7138 128.621 44.2672C103.894 26.326 75.466 21.5559 66.5447 33.8531C57.6235 46.1491 70.9766 71.6938 95.7041 89.6352C108.246 98.7348 121.848 104.686 134.005 106.383C145.234 107.955 153.677 105.705 157.78 100.049C162.059 94.1524 160.568 86.183 158.563 80.5345C157.799 78.3788 158.926 76.0123 161.081 75.2472C163.236 74.4823 165.604 75.6089 166.369 77.7657C170.142 88.3972 169.474 98.04 164.484 104.915C158.497 113.168 147.265 116.603 132.859 114.587C131.719 114.43 130.568 114.237 129.41 114.012Z"
-          fill="#888888"
-          fillOpacity="0.2"
-        />
-      </svg>
-    </div>
-  </section>
-  {/* End About Section */}
-  {/* Start Latest Project */}
-  <section className="bg-gray cs_pt_100  cs_pt_lg_70 ">
-    <div className="cs_project_slider">
-      <div className="container">
-        <div className="cs_section_heading cs_style_1 d-flex align-items-center cs_mb_60 cs_mb_lg_40 cs_column_gap_15 cs_row_gap_15 cs_mb_60 cs_mb_lg_40">
-          <div className="cs_section_heading_in">
-            <h3
-              className="cs_fs_20 cs_fs_lg_16 text-accent fw-normal cs_lh_base cs_mb_10 wow fadeInLeft text-left"
-            //   data-wow-duration="0.8s"
-            //   data-wow-delay="0.2s"
-            >
-              Our Latest Project
-            </h3>
-            <h2 className="cs_fs_48 cs_fs_lg_28 m-0 text-left">
-              Take a look our at <br />
-              Completed Projects
-            </h2>
-          </div>
-          <div className="cs_section_heading_right">
-            <div className="d-flex cs_column_gap_15 justify-content-lg-end justify-content-start">
-              <div className="cs_slider_prev filter cs_height_45 cs_width_45 bg-white rounded-circle d-flex align-items-center justify-content-center bg-accent-hover cs_transition_4">
-                <svg
-                  width={20}
-                  height={8}
-                  viewBox="0 0 20 8"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M0.461063 4.4077H19.538C19.7649 4.4077 19.9482 4.22437 19.9482 3.99745C19.9482 3.77052 19.7649 3.58719 19.538 3.58719H1.45209L3.94183 1.09745C4.10209 0.937189 4.10209 0.676933 3.94183 0.516677C3.78158 0.35642 3.52132 0.35642 3.36106 0.516677L0.170038 3.7077C0.0520878 3.82565 0.0174732 4.00129 0.0815754 4.15514C0.145678 4.3077 0.295677 4.4077 0.461063 4.4077Z"
-                    fill="black"
-                  />
-                  <path
-                    d="M3.65549 7.60253C3.76062 7.60253 3.86575 7.56278 3.94524 7.48202C4.10549 7.32176 4.10549 7.0615 3.94524 6.90125L0.750365 3.70637C0.590108 3.54612 0.329853 3.54612 0.169597 3.70637C0.00934029 3.86663 0.00934029 4.12689 0.169597 4.28714L3.36447 7.48202C3.44524 7.56278 3.55036 7.60253 3.65549 7.60253Z"
-                    fill="black"
-                  />
-                </svg>
-              </div>
-              <div className="cs_slider_next filter cs_height_45 cs_width_45 bg-white rounded-circle d-flex align-items-center justify-content-center bg-accent-hover cs_transition_4">
-                <svg
-                  width={20}
-                  height={8}
-                  viewBox="0 0 20 8"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M19.5389 4.4077H0.462014C0.235091 4.4077 0.0517578 4.22437 0.0517578 3.99745C0.0517578 3.77052 0.235091 3.58719 0.462014 3.58719H18.5479L16.0582 1.09745C15.8979 0.937189 15.8979 0.676933 16.0582 0.516677C16.2184 0.35642 16.4787 0.35642 16.6389 0.516677L19.83 3.7077C19.9479 3.82565 19.9825 4.00129 19.9184 4.15514C19.8543 4.3077 19.7043 4.4077 19.5389 4.4077Z"
-                    fill="#18191D"
-                  />
-                  <path
-                    d="M16.3445 7.60253C16.2394 7.60253 16.1342 7.56278 16.0548 7.48202C15.8945 7.32176 15.8945 7.0615 16.0548 6.90125L19.2496 3.70637C19.4099 3.54612 19.6701 3.54612 19.8304 3.70637C19.9907 3.86663 19.9907 4.12689 19.8304 4.28714L16.6355 7.48202C16.5548 7.56278 16.4496 7.60253 16.3445 7.60253Z"
-                    fill="#18191D"
-                  />
-                </svg>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div className="cs_slider_activate">
-        <div className="cs_slide">
-          <div className="cs_portfolio cs_style_1 position-relative overflow-hidden">
-            <a
-              
-              className="cs_portfolio_overlay cs_transition_4 position-absolute h-100 w-100 start-0 top-0 cs_zindex_1 d-block"
-            />
-            <div
-              className="cs_portfolio_thumb d-block h-100 w-100 background-filled cs_transition_6"
-               style={{backgroundImage:"url('/assets/img/home/portfolio_1.png')"}}
-            />
-            <h3 className="text-left cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4">
-              <a >Apollo Sage Hospital,Bhopal</a>
-            </h3>
+          <div className="cs_section_shape-1 position-absolute semi_rotate">
+            <svg
+              width={182}
+              height={177}
+              viewBox="0 0 182 177"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M94.4478 96.1115C106.99 105.211 120.6 111.159 132.748 112.86C132.823 112.871 132.894 112.876 132.967 112.886L150.387 27.5688C151.002 24.552 147.98 22.0838 145.148 23.2887L63.8438 57.8735C67.5196 70.1011 78.6592 84.6548 94.4478 96.1115Z"
+                fill="#888888"
+                fillOpacity="0.2"
+              />
+              <path
+                d="M128.155 120.487C115.612 118.057 102.053 111.863 89.5833 102.815C72.3806 90.3334 60.5954 75.0018 56.1891 61.1295L14.8513 78.7143C11.6218 80.0876 11.7968 84.724 15.1212 85.8483L74.9037 106.09C78.4203 107.281 81.3895 109.706 83.2572 112.915L115.015 167.46C116.78 170.492 121.358 169.74 122.061 166.301L131.308 121.013C130.265 120.863 129.215 120.692 128.155 120.487Z"
+                fill="#888888"
+                fillOpacity="0.2"
+              />
+              <path
+                d="M129.41 114.012C116.866 111.583 103.307 105.387 90.8381 96.3405C61.4995 75.0532 47.8833 45.4701 59.84 28.9897C71.7975 12.512 104.146 16.278 133.483 37.5651C143.082 44.5285 151.409 52.7615 157.564 61.3736C158.895 63.2352 158.464 65.8208 156.603 67.1511C154.742 68.4799 152.156 68.0495 150.827 66.1896C145.184 58.2942 137.505 50.7138 128.621 44.2672C103.894 26.326 75.466 21.5559 66.5447 33.8531C57.6235 46.1491 70.9766 71.6938 95.7041 89.6352C108.246 98.7348 121.848 104.686 134.005 106.383C145.234 107.955 153.677 105.705 157.78 100.049C162.059 94.1524 160.568 86.183 158.563 80.5345C157.799 78.3788 158.926 76.0123 161.081 75.2472C163.236 74.4823 165.604 75.6089 166.369 77.7657C170.142 88.3972 169.474 98.04 164.484 104.915C158.497 113.168 147.265 116.603 132.859 114.587C131.719 114.43 130.568 114.237 129.41 114.012Z"
+                fill="#888888"
+                fillOpacity="0.2"
+              />
+            </svg>
           </div>
-        </div>
-        <div className="cs_slide">
-          <div className="cs_portfolio cs_style_1 position-relative overflow-hidden">
-            <a
-              
-              className="cs_portfolio_overlay cs_transition_4 position-absolute h-100 w-100 start-0 top-0 cs_zindex_1 d-block"
-            />
-            <div
-              className="cs_portfolio_thumb d-block h-100 w-100 background-filled cs_transition_6"
-              style={{backgroundImage:"url('/assets/img/home/portfolio_2.png')"}}
-            />
-            <h3 className="text-left cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4">
-              <a >Vishesh Jupiter Hospital, Indore</a>
-            </h3>
+        </section>
+        {/* End About Section */}
+        {/* Start Latest Project */}
+        <section className="bg-gray cs_pt_100  cs_pt_lg_70 ">
+          <div className="cs_project_slider">
+            <div className="container">
+              <div className="cs_section_heading cs_style_1 d-flex align-items-center cs_mb_60 cs_mb_lg_40 cs_column_gap_15 cs_row_gap_15 cs_mb_60 cs_mb_lg_40">
+                <div className="cs_section_heading_in">
+                  <h3
+                    className="cs_fs_20 cs_fs_lg_16 text-accent fw-normal cs_lh_base cs_mb_10 wow fadeInLeft text-left"
+                    //   data-wow-duration="0.8s"
+                    //   data-wow-delay="0.2s"
+                  >
+                    Our Latest Project
+                  </h3>
+                  <h2 className="cs_fs_48 cs_fs_lg_28 m-0 text-left">
+                    Take a look our at <br />
+                    Completed Projects
+                  </h2>
+                </div>
+                <div className="cs_section_heading_right">
+                  <div className="d-flex cs_column_gap_15 justify-content-lg-end justify-content-start">
+                    <div className="cs_slider_prev filter cs_height_45 cs_width_45 bg-white rounded-circle d-flex align-items-center justify-content-center bg-accent-hover cs_transition_4">
+                      <svg
+                        width={20}
+                        height={8}
+                        viewBox="0 0 20 8"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0.461063 4.4077H19.538C19.7649 4.4077 19.9482 4.22437 19.9482 3.99745C19.9482 3.77052 19.7649 3.58719 19.538 3.58719H1.45209L3.94183 1.09745C4.10209 0.937189 4.10209 0.676933 3.94183 0.516677C3.78158 0.35642 3.52132 0.35642 3.36106 0.516677L0.170038 3.7077C0.0520878 3.82565 0.0174732 4.00129 0.0815754 4.15514C0.145678 4.3077 0.295677 4.4077 0.461063 4.4077Z"
+                          fill="black"
+                        />
+                        <path
+                          d="M3.65549 7.60253C3.76062 7.60253 3.86575 7.56278 3.94524 7.48202C4.10549 7.32176 4.10549 7.0615 3.94524 6.90125L0.750365 3.70637C0.590108 3.54612 0.329853 3.54612 0.169597 3.70637C0.00934029 3.86663 0.00934029 4.12689 0.169597 4.28714L3.36447 7.48202C3.44524 7.56278 3.55036 7.60253 3.65549 7.60253Z"
+                          fill="black"
+                        />
+                      </svg>
+                    </div>
+                    <div className="cs_slider_next filter cs_height_45 cs_width_45 bg-white rounded-circle d-flex align-items-center justify-content-center bg-accent-hover cs_transition_4">
+                      <svg
+                        width={20}
+                        height={8}
+                        viewBox="0 0 20 8"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M19.5389 4.4077H0.462014C0.235091 4.4077 0.0517578 4.22437 0.0517578 3.99745C0.0517578 3.77052 0.235091 3.58719 0.462014 3.58719H18.5479L16.0582 1.09745C15.8979 0.937189 15.8979 0.676933 16.0582 0.516677C16.2184 0.35642 16.4787 0.35642 16.6389 0.516677L19.83 3.7077C19.9479 3.82565 19.9825 4.00129 19.9184 4.15514C19.8543 4.3077 19.7043 4.4077 19.5389 4.4077Z"
+                          fill="#18191D"
+                        />
+                        <path
+                          d="M16.3445 7.60253C16.2394 7.60253 16.1342 7.56278 16.0548 7.48202C15.8945 7.32176 15.8945 7.0615 16.0548 6.90125L19.2496 3.70637C19.4099 3.54612 19.6701 3.54612 19.8304 3.70637C19.9907 3.86663 19.9907 4.12689 19.8304 4.28714L16.6355 7.48202C16.5548 7.56278 16.4496 7.60253 16.3445 7.60253Z"
+                          fill="#18191D"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="cs_slider_activate">
+              <div className="cs_slide">
+                <div className="cs_portfolio cs_style_1 position-relative overflow-hidden">
+                  <a className="cs_portfolio_overlay cs_transition_4 position-absolute h-100 w-100 start-0 top-0 cs_zindex_1 d-block" />
+                  <div
+                    className="cs_portfolio_thumb d-block h-100 w-100 background-filled cs_transition_6"
+                    style={{
+                      backgroundImage:
+                        "url('/assets/img/home/portfolio_1.png')",
+                    }}
+                  />
+                  <h3 className="text-left cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4">
+                    <a>Apollo Sage Hospital,Bhopal</a>
+                  </h3>
+                </div>
+              </div>
+              <div className="cs_slide">
+                <div className="cs_portfolio cs_style_1 position-relative overflow-hidden">
+                  <a className="cs_portfolio_overlay cs_transition_4 position-absolute h-100 w-100 start-0 top-0 cs_zindex_1 d-block" />
+                  <div
+                    className="cs_portfolio_thumb d-block h-100 w-100 background-filled cs_transition_6"
+                    style={{
+                      backgroundImage:
+                        "url('/assets/img/home/portfolio_2.png')",
+                    }}
+                  />
+                  <h3 className="text-left cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4">
+                    <a>Vishesh Jupiter Hospital, Indore</a>
+                  </h3>
+                </div>
+              </div>
+              <div className="cs_slide">
+                <div className="cs_portfolio cs_style_1 position-relative overflow-hidden">
+                  <a className="cs_portfolio_overlay cs_transition_4 position-absolute h-100 w-100 start-0 top-0 cs_zindex_1 d-block" />
+                  <div
+                    className="cs_portfolio_thumb d-block h-100 w-100 background-filled cs_transition_6"
+                    style={{
+                      backgroundImage:
+                        "url('/assets/img/home/portfolio_3.png')",
+                    }}
+                  />
+                  <h3 className="text-left cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4">
+                    <a>Golden Leaves, Indore</a>
+                  </h3>
+                </div>
+              </div>
+              <div className="cs_slide">
+                <div className="cs_portfolio cs_style_1 position-relative overflow-hidden">
+                  <a className="cs_portfolio_overlay cs_transition_4 position-absolute h-100 w-100 start-0 top-0 cs_zindex_1 d-block" />
+                  <div
+                    className="cs_portfolio_thumb d-block h-100 w-100 background-filled cs_transition_6"
+                    style={{
+                      backgroundImage:
+                        "url('/assets/img/home/portfolio_4.png')",
+                    }}
+                  />
+                  <h3 className="text-left cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4">
+                    <a>Hotel Wow, Indore</a>
+                  </h3>
+                </div>
+              </div>
+              <div className="cs_slide">
+                <div className="cs_portfolio cs_style_1 position-relative overflow-hidden">
+                  <a className="cs_portfolio_overlay cs_transition_4 position-absolute h-100 w-100 start-0 top-0 cs_zindex_1 d-block" />
+                  <div
+                    className="cs_portfolio_thumb d-block h-100 w-100 background-filled cs_transition_6"
+                    style={{
+                      backgroundImage:
+                        "url('/assets/img/home/portfolio_5.png')",
+                    }}
+                  />
+                  <h3 className="text-left cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4">
+                    <a>The Emporio, Indore</a>
+                  </h3>
+                </div>
+              </div>
+              <div className="cs_slide">
+                <div className="cs_portfolio cs_style_1 position-relative overflow-hidden">
+                  <a className="cs_portfolio_overlay cs_transition_4 position-absolute h-100 w-100 start-0 top-0 cs_zindex_1 d-block" />
+                  <div
+                    className="cs_portfolio_thumb d-block h-100 w-100 background-filled cs_transition_6"
+                    style={{
+                      backgroundImage:
+                        "url('/assets/img/home/portfolio_6.png')",
+                    }}
+                  />
+                  <h3 className="text-left cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4">
+                    <a>Berlocher, Dewas</a>
+                  </h3>
+                </div>
+              </div>
+              <div className="cs_slide">
+                <div className="cs_portfolio cs_style_1 position-relative overflow-hidden">
+                  <a className="cs_portfolio_overlay cs_transition_4 position-absolute h-100 w-100 start-0 top-0 cs_zindex_1 d-block" />
+                  <div
+                    className="cs_portfolio_thumb d-block h-100 w-100 background-filled cs_transition_6"
+                    style={{
+                      backgroundImage:
+                        "url('/assets/img/home/portfolio_7.png')",
+                    }}
+                  />
+                  <h3 className="text-left cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4">
+                    <a>SRF Ltd.,Baghdoon DTA1, DTA2, Altech Jetapur</a>
+                  </h3>
+                </div>
+              </div>
+              <div className="cs_slide">
+                <div className="cs_portfolio cs_style_1 position-relative overflow-hidden">
+                  <a className="cs_portfolio_overlay cs_transition_4 position-absolute h-100 w-100 start-0 top-0 cs_zindex_1 d-block" />
+                  <div
+                    className="cs_portfolio_thumb d-block h-100 w-100 background-filled cs_transition_6"
+                    style={{
+                      backgroundImage:
+                        "url('/assets/img/home/portfolio_8.png')",
+                    }}
+                  />
+                  <h3 className="text-left cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4">
+                    <a>Indore Institute of Law</a>
+                  </h3>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="cs_slide">
-          <div className="cs_portfolio cs_style_1 position-relative overflow-hidden">
-            <a
-              
-              className="cs_portfolio_overlay cs_transition_4 position-absolute h-100 w-100 start-0 top-0 cs_zindex_1 d-block"
-            />
-            <div
-              className="cs_portfolio_thumb d-block h-100 w-100 background-filled cs_transition_6"
-              style={{backgroundImage:"url('/assets/img/home/portfolio_3.png')"}}
-            />
-            <h3 className="text-left cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4">
-              <a >Golden Leaves, Indore</a>
-            </h3>
-          </div>
-        </div>
-        <div className="cs_slide">
-          <div className="cs_portfolio cs_style_1 position-relative overflow-hidden">
-            <a
-              
-              className="cs_portfolio_overlay cs_transition_4 position-absolute h-100 w-100 start-0 top-0 cs_zindex_1 d-block"
-            />
-            <div
-              className="cs_portfolio_thumb d-block h-100 w-100 background-filled cs_transition_6"
-              style={{backgroundImage:"url('/assets/img/home/portfolio_4.png')"}}
-            />
-            <h3 className="text-left cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4">
-              <a >Hotel Wow, Indore</a>
-            </h3>
-          </div>
-        </div>
-        <div className="cs_slide">
-          <div className="cs_portfolio cs_style_1 position-relative overflow-hidden">
-            <a
-              
-              className="cs_portfolio_overlay cs_transition_4 position-absolute h-100 w-100 start-0 top-0 cs_zindex_1 d-block"
-            />
-            <div
-              className="cs_portfolio_thumb d-block h-100 w-100 background-filled cs_transition_6"
-              style={{backgroundImage:"url('/assets/img/home/portfolio_5.png')"}}
-            />
-            <h3 className="text-left cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4">
-              <a >The Emporio, Indore</a>
-            </h3>
-          </div>
-        </div>
-        <div className="cs_slide">
-          <div className="cs_portfolio cs_style_1 position-relative overflow-hidden">
-            <a
-              
-              className="cs_portfolio_overlay cs_transition_4 position-absolute h-100 w-100 start-0 top-0 cs_zindex_1 d-block"
-            />
-            <div
-              className="cs_portfolio_thumb d-block h-100 w-100 background-filled cs_transition_6"
-              style={{backgroundImage:"url('/assets/img/home/portfolio_6.png')"}}
-            />
-            <h3 className="text-left cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4">
-              <a >Berlocher, Dewas</a>
-            </h3>
-          </div>
-        </div>
-        <div className="cs_slide">
-          <div className="cs_portfolio cs_style_1 position-relative overflow-hidden">
-            <a
-              
-              className="cs_portfolio_overlay cs_transition_4 position-absolute h-100 w-100 start-0 top-0 cs_zindex_1 d-block"
-            />
-            <div
-              className="cs_portfolio_thumb d-block h-100 w-100 background-filled cs_transition_6"
-              style={{backgroundImage:"url('/assets/img/home/portfolio_7.png')"}}
-            />
-            <h3 className="text-left cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4">
-              <a >SRF Ltd.,Baghdoon DTA1, DTA2, Altech Jetapur</a>
-            </h3>
-          </div>
-        </div>
-        <div className="cs_slide">
-          <div className="cs_portfolio cs_style_1 position-relative overflow-hidden">
-            <a
-              
-              className="cs_portfolio_overlay cs_transition_4 position-absolute h-100 w-100 start-0 top-0 cs_zindex_1 d-block"
-            />
-            <div
-              className="cs_portfolio_thumb d-block h-100 w-100 background-filled cs_transition_6"
-              style={{backgroundImage:"url('/assets/img/home/portfolio_8.png')"}}
-            />
-            <h3 className="text-left cs_portfolio_title m-0 cs_fs_26 text-white cs_pl_50 cs_pb_45 cs_mr_50 position-relative cs_zindex_4 position-absolute start-0 bottom-0 w-100 cs_transition_4">
-              <a >Indore Institute of Law</a>
-            </h3>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  {/* End Latest Project */}
-  {/* Start Why Choose Us */}
-  <section className="position-relative cs_iconbox_2_wrap cs_pt_135 cs_pt_lg_75 cs_pb_100 cs_pb_lg_40 overflow-hidden">
-    <div className="container">
-      <div className="row">
-        <div className="col-xl-6">
-          <div className="position-relative cs_zindex_3">
-            <div className="cs_section_heading cs_style_1 d-flex align-items-center cs_mb_60 cs_mb_lg_40 cs_column_gap_15 cs_row_gap_15">
-              <div className="cs_section_heading_in">
-                <h3
-                  className="cs_fs_20 cs_fs_lg_16 text-accent fw-normal cs_lh_base cs_mb_10 wow fadeInLeft text-left"
-                //   data-wow-duration="0.8s"
-                //   data-wow-delay="0.2s"
-                >
-                  Why Choose Us
-                </h3>
-                {/* <h2 className="cs_fs_48 cs_fs_lg_28 cs_mb_20 text-white text-left">
+        </section>
+        {/* End Latest Project */}
+        {/* Start Why Choose Us */}
+        <section className="position-relative cs_iconbox_2_wrap cs_pt_135 cs_pt_lg_75 cs_pb_100 cs_pb_lg_40 overflow-hidden">
+          <div className="container">
+            <div className="row">
+              <div className="col-xl-6">
+                <div className="position-relative cs_zindex_3">
+                  <div className="cs_section_heading cs_style_1 d-flex align-items-center cs_mb_60 cs_mb_lg_40 cs_column_gap_15 cs_row_gap_15">
+                    <div className="cs_section_heading_in">
+                      <h3
+                        className="cs_fs_20 cs_fs_lg_16 text-accent fw-normal cs_lh_base cs_mb_10 wow fadeInLeft text-left"
+                        //   data-wow-duration="0.8s"
+                        //   data-wow-delay="0.2s"
+                      >
+                        Why Choose Us
+                      </h3>
+                      {/* <h2 className="cs_fs_48 cs_fs_lg_28 cs_mb_20 text-white text-left">
                   Developing a{" "}
                   <span className="text-accent">
                     design that <br />
@@ -1097,31 +1186,33 @@ occupancy the early stage of any risk. Also to protect the building property and
                   to use and <br />
                   navigate
                 </h2> */}
-                <h2 className="cs_fs_48 cs_fs_lg_28 cs_mb_20 text-white text-left">
-                 We <span className="text-accent">Plan & Design  </span> the systems which are cost effective and minimise the operation Cost.
-                  {/* <span className="text-accent">
+                      <h2 className="cs_fs_48 cs_fs_lg_28 cs_mb_20 text-white text-left">
+                        We <span className="text-accent">Plan & Design </span>{" "}
+                        the systems which are cost effective and minimise the
+                        operation Cost.
+                        {/* <span className="text-accent">
                     design that <br />
                     is easy
                   </span> */}
-                </h2>
-                
-                <p className="text-white m-0 text-left">
-                  {/* Providing legal advice, contract drafting, compliance
+                      </h2>
+
+                      <p className="text-white m-0 text-left">
+                        {/* Providing legal advice, contract drafting, compliance
                   assistance, intellectual <br /> property protection, and other
                   legal support for businesses. Creating visual <br /> content,
                   such as logos, brochures, infographics. */}
-                </p>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-sm-6">
-                <div className="cs_iconbox cs_style_1 d-flex align-items-center cs_mb_40">
-                  <div
-                    className="cs_iconbox_icon d-flex align-items-center justify-content-center cs_height_70 cs_width_70 cs_rounded_10 flex-none cs_mr_20 bg-accent cs_transition_4 wow zoomIn"
-                    // data-wow-duration="0.8s"
-                    // data-wow-delay="0.2s"
-                  >
-                    {/* <svg
+                      </p>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-sm-6">
+                      <div className="cs_iconbox cs_style_1 d-flex align-items-center cs_mb_40">
+                        <div
+                          className="cs_iconbox_icon d-flex align-items-center justify-content-center cs_height_70 cs_width_70 cs_rounded_10 flex-none cs_mr_20 bg-accent cs_transition_4 wow zoomIn"
+                          // data-wow-duration="0.8s"
+                          // data-wow-delay="0.2s"
+                        >
+                          {/* <svg
                       width={40}
                       height={40}
                       viewBox="0 0 40 40"
@@ -1169,26 +1260,27 @@ occupancy the early stage of any risk. Also to protect the building property and
                         fill="white"
                       />
                     </svg> */}
-                    <img src="assets/img/home/Buildingsafetyaudit.svg" className='img-fluid' alt="" />
-                   
-                    
-                    
-                  </div>
-                  <div>
-                    <h2 className="text-white m-0 cs_fs_20 cs_fs_lg_16 cs_lh_base text-left">
-                      Building Safety Audit
-                    </h2>
-                  </div>
-                </div>
-              </div>
-              <div className="col-sm-6">
-                <div className="cs_iconbox cs_style_1 d-flex align-items-center cs_mb_40">
-                  <div
-                    className="cs_iconbox_icon d-flex align-items-center justify-content-center cs_height_70 cs_width_70 cs_rounded_10 flex-none cs_mr_20 bg-accent cs_transition_4 wow zoomIn"
-                    // data-wow-duration="0.8s"
-                    // data-wow-delay="0.2s"
-                  >
-                    {/* <svg
+                          <img
+                            src="assets/img/home/Buildingsafetyaudit.svg"
+                            className="img-fluid"
+                            alt=""
+                          />
+                        </div>
+                        <div>
+                          <h2 className="text-white m-0 cs_fs_20 cs_fs_lg_16 cs_lh_base text-left">
+                            Building Safety Audit
+                          </h2>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-6">
+                      <div className="cs_iconbox cs_style_1 d-flex align-items-center cs_mb_40">
+                        <div
+                          className="cs_iconbox_icon d-flex align-items-center justify-content-center cs_height_70 cs_width_70 cs_rounded_10 flex-none cs_mr_20 bg-accent cs_transition_4 wow zoomIn"
+                          // data-wow-duration="0.8s"
+                          // data-wow-delay="0.2s"
+                        >
+                          {/* <svg
                       width={40}
                       height={40}
                       viewBox="0 0 40 40"
@@ -1207,24 +1299,27 @@ occupancy the early stage of any risk. Also to protect the building property and
                         </clipPath>
                       </defs>
                     </svg> */}
-                    <img src="assets/img/home/ProcessSafetyAudit.svg" className='img-fluid' alt="" />
-
-                  </div>
-                  <div>
-                    <h2 className="text-white m-0 cs_fs_20 cs_fs_lg_16 cs_lh_base text-left">
-                      Process Safety Audit
-                    </h2>
-                  </div>
-                </div>
-              </div>
-              <div className="col-sm-6">
-                <div className="cs_iconbox cs_style_1 d-flex align-items-center cs_mb_40">
-                  <div
-                    className="cs_iconbox_icon d-flex align-items-center justify-content-center cs_height_70 cs_width_70 cs_rounded_10 flex-none cs_mr_20 bg-accent cs_transition_4 wow zoomIn"
-                    // data-wow-duration="0.8s"
-                    // data-wow-delay="0.2s"
-                  >
-                    {/* <svg
+                          <img
+                            src="assets/img/home/ProcessSafetyAudit.svg"
+                            className="img-fluid"
+                            alt=""
+                          />
+                        </div>
+                        <div>
+                          <h2 className="text-white m-0 cs_fs_20 cs_fs_lg_16 cs_lh_base text-left">
+                            Process Safety Audit
+                          </h2>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-6">
+                      <div className="cs_iconbox cs_style_1 d-flex align-items-center cs_mb_40">
+                        <div
+                          className="cs_iconbox_icon d-flex align-items-center justify-content-center cs_height_70 cs_width_70 cs_rounded_10 flex-none cs_mr_20 bg-accent cs_transition_4 wow zoomIn"
+                          // data-wow-duration="0.8s"
+                          // data-wow-delay="0.2s"
+                        >
+                          {/* <svg
                       width={40}
                       height={40}
                       viewBox="0 0 40 40"
@@ -1296,24 +1391,27 @@ occupancy the early stage of any risk. Also to protect the building property and
                         fill="white"
                       />
                     </svg> */}
-                    <img src="assets/img/home/RecommendationsAndFinding.svg" className='img-fluid' alt="" />
-
-                  </div>
-                  <div>
-                    <h2 className="text-white m-0 cs_fs_20 cs_fs_lg_16 cs_lh_base text-left">
-                      Recommendations & Findings
-                    </h2>
-                  </div>
-                </div>
-              </div>
-              <div className="col-sm-6">
-                <div className="cs_iconbox cs_style_1 d-flex align-items-center cs_mb_40">
-                  <div
-                    className="cs_iconbox_icon d-flex align-items-center justify-content-center cs_height_70 cs_width_70 cs_rounded_10 flex-none cs_mr_20 bg-accent cs_transition_4  wow zoomIn"
-                    // data-wow-duration="0.8s"
-                    // data-wow-delay="0.2s"
-                  >
-                    {/* <svg
+                          <img
+                            src="assets/img/home/RecommendationsAndFinding.svg"
+                            className="img-fluid"
+                            alt=""
+                          />
+                        </div>
+                        <div>
+                          <h2 className="text-white m-0 cs_fs_20 cs_fs_lg_16 cs_lh_base text-left">
+                            Recommendations & Findings
+                          </h2>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-6">
+                      <div className="cs_iconbox cs_style_1 d-flex align-items-center cs_mb_40">
+                        <div
+                          className="cs_iconbox_icon d-flex align-items-center justify-content-center cs_height_70 cs_width_70 cs_rounded_10 flex-none cs_mr_20 bg-accent cs_transition_4  wow zoomIn"
+                          // data-wow-duration="0.8s"
+                          // data-wow-delay="0.2s"
+                        >
+                          {/* <svg
                       width={34}
                       height={40}
                       viewBox="0 0 34 40"
@@ -1329,59 +1427,67 @@ occupancy the early stage of any risk. Also to protect the building property and
                         fill="white"
                       />
                     </svg> */}
-                    <img src="assets/img/home/RectificationAndAnalysisReport.svg" className='img-fluid' alt="" />
-                    
-                  </div>
-                  <div>
-                    <h2 className="text-white m-0 cs_fs_20 cs_fs_lg_16 cs_lh_base text-left">
-                      Rectification and Analysis Report
-                    </h2>
+                          <img
+                            src="assets/img/home/RectificationAndAnalysisReport.svg"
+                            className="img-fluid"
+                            alt=""
+                          />
+                        </div>
+                        <div>
+                          <h2 className="text-white m-0 cs_fs_20 cs_fs_lg_16 cs_lh_base text-left">
+                            Rectification and Analysis Report
+                          </h2>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
+              <div className="col-xl-6" />
             </div>
           </div>
-        </div>
-        <div className="col-xl-6" />
-      </div>
-    </div>
-    <div
-      className="cs_iconbox_left-img position-absolute bottom-0 start-0 h-100 background-filled"
-      style={{backgroundImage:"url('/assets/img/why_choose_us_left_img.jpeg')"}}
-    />
-    <div
-      className="cs_iconbox_right-img position-absolute cs_zindex_1 bottom-0 end-0 background-filled"
-      style={{backgroundImage:"url('/assets/img/home/why_choose_us_right_img.png')"}}
-    />
-    <div className="cs_iconbox_logo position-absolute semi_rotate">
-      <svg
-        width={191}
-        height={197}
-        viewBox="0 0 191 197"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M100.397 107.26C113.305 117.648 127.237 124.564 139.602 126.736C139.678 126.749 139.75 126.756 139.825 126.77L155.856 32.5327C156.421 29.2004 153.306 26.3917 150.454 27.6622L68.5886 64.126C72.5569 77.7763 84.1472 94.1815 100.397 107.26Z"
-          fill="#888888"
-          fillOpacity="0.2"
-        />
-        <path
-          d="M134.283 136.497C121.573 133.528 107.766 126.385 95.0023 116.124C77.395 101.968 65.2019 84.7963 60.4863 69.405L19.093 87.8249C15.8591 89.2634 16.1251 94.3774 19.5029 95.6938L80.2458 119.392C83.8188 120.786 86.8631 123.528 88.8105 127.109L121.922 187.961C123.762 191.345 128.37 190.622 129.013 186.848L137.475 137.15C136.42 136.96 135.357 136.747 134.283 136.497Z"
-          fill="#888888"
-          fillOpacity="0.2"
-        />
-        <path
-          d="M135.873 127.406C123.172 124.44 109.376 117.306 96.6244 107.06C66.6205 82.949 52.3161 50.0723 64.0597 32.2106C75.8041 14.3519 108.507 19.2476 138.51 43.3581C148.326 51.2452 156.884 60.5001 163.258 70.1219C164.637 72.2018 164.251 75.0376 162.4 76.4586C160.549 77.878 157.932 77.3443 156.556 75.2663C150.711 66.4452 142.82 57.9237 133.733 50.622C108.446 30.3012 79.6787 24.3911 70.9164 37.7191C62.1543 51.0456 76.1154 79.4713 101.404 99.7925C114.23 110.099 128.065 116.965 140.36 119.115C151.717 121.106 160.191 118.825 164.221 112.695C168.424 106.304 166.766 97.4981 164.635 91.2345C163.822 88.8441 164.914 86.2656 167.073 85.4735C169.232 84.6816 171.642 85.9765 172.455 88.3683C176.466 100.157 175.977 110.755 171.077 118.207C165.196 127.151 153.932 130.671 139.362 128.118C138.21 127.918 137.045 127.679 135.873 127.406Z"
-          fill="#888888"
-          fillOpacity="0.2"
-        />
-      </svg>
-    </div>
-  </section>
-  {/* End Why Choose Us */}
-  {/* Start Testimonial Section */}
-  {/* <section
+          <div
+            className="cs_iconbox_left-img position-absolute bottom-0 start-0 h-100 background-filled"
+            style={{
+              backgroundImage: "url('/assets/img/why_choose_us_left_img.jpeg')",
+            }}
+          />
+          <div
+            className="cs_iconbox_right-img position-absolute cs_zindex_1 bottom-0 end-0 background-filled"
+            style={{
+              backgroundImage:
+                "url('/assets/img/home/why_choose_us_right_img.png')",
+            }}
+          />
+          <div className="cs_iconbox_logo position-absolute semi_rotate">
+            <svg
+              width={191}
+              height={197}
+              viewBox="0 0 191 197"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M100.397 107.26C113.305 117.648 127.237 124.564 139.602 126.736C139.678 126.749 139.75 126.756 139.825 126.77L155.856 32.5327C156.421 29.2004 153.306 26.3917 150.454 27.6622L68.5886 64.126C72.5569 77.7763 84.1472 94.1815 100.397 107.26Z"
+                fill="#888888"
+                fillOpacity="0.2"
+              />
+              <path
+                d="M134.283 136.497C121.573 133.528 107.766 126.385 95.0023 116.124C77.395 101.968 65.2019 84.7963 60.4863 69.405L19.093 87.8249C15.8591 89.2634 16.1251 94.3774 19.5029 95.6938L80.2458 119.392C83.8188 120.786 86.8631 123.528 88.8105 127.109L121.922 187.961C123.762 191.345 128.37 190.622 129.013 186.848L137.475 137.15C136.42 136.96 135.357 136.747 134.283 136.497Z"
+                fill="#888888"
+                fillOpacity="0.2"
+              />
+              <path
+                d="M135.873 127.406C123.172 124.44 109.376 117.306 96.6244 107.06C66.6205 82.949 52.3161 50.0723 64.0597 32.2106C75.8041 14.3519 108.507 19.2476 138.51 43.3581C148.326 51.2452 156.884 60.5001 163.258 70.1219C164.637 72.2018 164.251 75.0376 162.4 76.4586C160.549 77.878 157.932 77.3443 156.556 75.2663C150.711 66.4452 142.82 57.9237 133.733 50.622C108.446 30.3012 79.6787 24.3911 70.9164 37.7191C62.1543 51.0456 76.1154 79.4713 101.404 99.7925C114.23 110.099 128.065 116.965 140.36 119.115C151.717 121.106 160.191 118.825 164.221 112.695C168.424 106.304 166.766 97.4981 164.635 91.2345C163.822 88.8441 164.914 86.2656 167.073 85.4735C169.232 84.6816 171.642 85.9765 172.455 88.3683C176.466 100.157 175.977 110.755 171.077 118.207C165.196 127.151 153.932 130.671 139.362 128.118C138.21 127.918 137.045 127.679 135.873 127.406Z"
+                fill="#888888"
+                fillOpacity="0.2"
+              />
+            </svg>
+          </div>
+        </section>
+        {/* End Why Choose Us */}
+        {/* Start Testimonial Section */}
+        {/* <section
     className="background-filled cs_pt_140 cs_pt_lg_75 cs_pb_135 cs_pb_lg_75"
     style={{backgroundImage:"url('/assets/img/testimonial_bg.jpeg')"}}
   >
@@ -1672,35 +1778,35 @@ occupancy the early stage of any risk. Also to protect the building property and
       </div>
     </div>
   </section> */}
-  {/* End Testimonial Section */}
-  {/* Start Team Section */}
-  <section className="cs_pb_80 cs_pb_lg_55 cs_pt_80">
-    <div className="container">
-      <div className="cs_section_heading cs_style_1 d-flex align-items-center text-center cs_mb_60 cs_mb_lg_40">
-        <div className="cs_section_heading_in">
-          <h3
-            className="cs_fs_20 cs_fs_lg_16 text-accent fw-normal cs_lh_base cs_mb_10"
-            // data-wow-duration="0.8s"
-            // data-wow-delay="0.2s"
-          >
-            Meet Our Team Member
-          </h3>
-          <h2 className="cs_fs_48 cs_fs_lg_28 m-0">
-            Meet the professional team <br />
-            behind the success
-          </h2>
-        </div>
-      </div>
-      <div className="row justify-content-center">
-        <div className="col-lg-4 col-md-6">
-          <div className="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
-            <div className="cs_team_member position-relative cs_rounded_50">
-              <img
-                className="w-100 cs_rounded_50 bg-blackish"
-                src="assets/img/home/lokesh-dadu.png"
-                alt="Member"
-              />
-              {/* <div className="cs_social_btns d-flex flex-wrap cs_column_gap_15 cs_row_gap_15 cs_transition_5 cs_fs_20 cs_fs_lg_16 position-absolute">
+        {/* End Testimonial Section */}
+        {/* Start Team Section */}
+        <section className="cs_pb_80 cs_pb_lg_55 cs_pt_80">
+          <div className="container">
+            <div className="cs_section_heading cs_style_1 d-flex align-items-center text-center cs_mb_60 cs_mb_lg_40">
+              <div className="cs_section_heading_in">
+                <h3
+                  className="cs_fs_20 cs_fs_lg_16 text-accent fw-normal cs_lh_base cs_mb_10"
+                  // data-wow-duration="0.8s"
+                  // data-wow-delay="0.2s"
+                >
+                  Meet Our Team Member
+                </h3>
+                <h2 className="cs_fs_48 cs_fs_lg_28 m-0">
+                  Meet the professional team <br />
+                  behind the success
+                </h2>
+              </div>
+            </div>
+            <div className="row justify-content-center">
+              <div className="col-lg-4 col-md-6">
+                <div className="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
+                  <div className="cs_team_member position-relative cs_rounded_50">
+                    <img
+                      className="w-100 cs_rounded_50 bg-blackish"
+                      src="assets/img/home/lokesh-dadu.png"
+                      alt="Member"
+                    />
+                    {/* <div className="cs_social_btns d-flex flex-wrap cs_column_gap_15 cs_row_gap_15 cs_transition_5 cs_fs_20 cs_fs_lg_16 position-absolute">
                 <a
                   href="#"
                   className="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"
@@ -1720,14 +1826,16 @@ occupancy the early stage of any risk. Also to protect the building property and
                   <i className="fa-brands fa-dribbble" />
                 </a>
               </div> */}
-            </div>
-            <div className="cs_team_info cs_pt_127 cs_pl_15 cs_pr_15 cs_pb_25 cs_transition_4">
-              <h2 className="text-white m-0 cs_fs_26 cs_mb_3">Lokesh Dadoo</h2>
-              <p className="text-white m-0">Managing Partner</p>
-            </div>
-          </div>
-        </div>
-        {/* <div className="col-lg-4">
+                  </div>
+                  <div className="cs_team_info cs_pt_127 cs_pl_15 cs_pr_15 cs_pb_25 cs_transition_4">
+                    <h2 className="text-white m-0 cs_fs_26 cs_mb_3">
+                      Lokesh Dadoo
+                    </h2>
+                    <p className="text-white m-0">Managing Partner</p>
+                  </div>
+                </div>
+              </div>
+              {/* <div className="col-lg-4">
           <div className="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
             <div className="cs_team_member position-relative cs_rounded_50">
               <img
@@ -1743,15 +1851,15 @@ occupancy the early stage of any risk. Also to protect the building property and
             </div>
           </div>
         </div> */}
-        <div className="col-lg-4 col-md-6">
-          <div className="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
-            <div className="cs_team_member position-relative cs_rounded_50">
-              <img
-                className="w-100 cs_rounded_50 bg-blackish"
-                src="assets/img/home/mayanka-dadu.png"
-                alt="Member"
-              />
-              {/* <div className="cs_social_btns d-flex flex-wrap cs_column_gap_15 cs_row_gap_15 cs_transition_5 cs_fs_20 cs_fs_lg_16 position-absolute">
+              <div className="col-lg-4 col-md-6">
+                <div className="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
+                  <div className="cs_team_member position-relative cs_rounded_50">
+                    <img
+                      className="w-100 cs_rounded_50 bg-blackish"
+                      src="assets/img/home/mayanka-dadu.png"
+                      alt="Member"
+                    />
+                    {/* <div className="cs_social_btns d-flex flex-wrap cs_column_gap_15 cs_row_gap_15 cs_transition_5 cs_fs_20 cs_fs_lg_16 position-absolute">
                 <a
                   href="#"
                   className="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"
@@ -1771,402 +1879,403 @@ occupancy the early stage of any risk. Also to protect the building property and
                   <i className="fa-brands fa-dribbble" />
                 </a>
               </div> */}
-            </div>
-            <div className="cs_team_info cs_pt_127 cs_pl_15 cs_pr_15 cs_pb_25 cs_transition_4">
-              <h2 className="text-white m-0 cs_fs_26 cs_mb_3">Mayanka Dadu</h2>
-              <p className="text-white m-0">Partner - Design & Technical</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  {/* End Team Section */}
-  {/* Start Contact Section  */}
-  <section
-    className="background-filled bg-blackish overflow-hidden cs_pt_100  cs_pt_lg_70  cs_pt_lg_75 cs_pb_100 cs_pb_lg_60"
-    src="assets/img/cta_bg.jpeg"
-  >
-    <div className="container">
-      <div className="row align-items-center">
-        <div className="col-xl-5 col-lg-6">
-          <div className="cs_section_heading cs_style_1 d-flex align-items-center cs_mb_40">
-            <div className="cs_section_heading_in">
-              <h3
-                className="cs_fs_20 cs_fs_lg_16 text-accent fw-normal cs_lh_base cs_mb_10 "
-                // data-wow-duration="0.8s"
-                // data-wow-delay="0.2s"
-              >
-                Contact With Us
-              </h3>
-              <h2 className="cs_fs_48 cs_fs_lg_28 cs_mb_20 text-white">
-                Let’s Work Together?
-              </h2>
-              <p className="text-white m-0 text-left">
-                
-
-                One stop MEFP Solution -<br></br> Understanding your building <br></br>Building information Modelling Services
-              </p>
-            </div>
-          </div>
-          <div className="d-flex align-items-center cs_mb_30">
-            <div className="d-flex align-items-center justify-content-center cs_height_90 cs_width_90 cs_height_lg_70  cs_width_lg_70 cs_width_lg-80 cs_rounded_10 flex-none cs_mr_20 bg-accent">
-              <svg
-                width={40}
-                height={40}
-                viewBox="0 0 40 40"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M31.6128 24.7786C30.7939 23.9259 29.8062 23.47 28.7593 23.47C27.7209 23.47 26.7247 23.9175 25.8721 24.7701L23.2043 27.4295C22.9848 27.3113 22.7653 27.2015 22.5543 27.0918C22.2503 26.9398 21.9633 26.7963 21.7185 26.6443C19.2196 25.0572 16.9486 22.9888 14.7705 20.3126C13.7152 18.9787 13.006 17.8559 12.4911 16.7162C13.1833 16.083 13.8249 15.4245 14.4497 14.7914C14.6861 14.555 14.9224 14.3102 15.1588 14.0738C16.9317 12.3009 16.9317 10.0046 15.1588 8.23172L12.8541 5.92698C12.5924 5.66527 12.3222 5.39512 12.0689 5.12497C11.5624 4.60155 11.0305 4.06124 10.4818 3.5547C9.6629 2.74425 8.6836 2.31369 7.65364 2.31369C6.62368 2.31369 5.62749 2.74425 4.78327 3.5547C4.77482 3.56315 4.77482 3.56315 4.76638 3.57159L1.89601 6.46729C0.815398 7.5479 0.199112 8.86489 0.0640356 10.3929C-0.138579 12.8581 0.587457 15.1544 1.14465 16.6571C2.5123 20.3464 4.55533 23.7655 7.60299 27.4295C11.3007 31.8448 15.7498 35.3314 20.832 37.7881C22.7738 38.7083 25.3655 39.7974 28.2612 39.9831C28.4385 39.9916 28.6242 40 28.7931 40C30.7433 40 32.3811 39.2993 33.6643 37.9063C33.6727 37.8894 33.6896 37.881 33.6981 37.8641C34.1371 37.3322 34.6436 36.851 35.1755 36.3361C35.5385 35.9899 35.9099 35.6269 36.2729 35.247C37.1087 34.3774 37.5477 33.3644 37.5477 32.326C37.5477 31.2791 37.1003 30.2745 36.2476 29.4303L31.6128 24.7786ZM34.6351 33.6683C34.6267 33.6683 34.6267 33.6767 34.6351 33.6683C34.3059 34.0229 33.9682 34.3437 33.6052 34.6983C33.0564 35.2217 32.4993 35.7704 31.9758 36.3867C31.1232 37.2985 30.1185 37.729 28.8015 37.729C28.6749 37.729 28.5398 37.729 28.4132 37.7206C25.9058 37.5602 23.5758 36.5809 21.8282 35.7451C17.0499 33.4319 12.8541 30.1479 9.36742 25.9858C6.48861 22.5161 4.56377 19.308 3.28898 15.8635C2.50385 13.7614 2.21682 12.1236 2.34345 10.5787C2.42787 9.59093 2.80777 8.77203 3.50848 8.07132L6.3873 5.19251C6.80097 4.80416 7.23997 4.5931 7.67052 4.5931C8.20239 4.5931 8.63294 4.91391 8.9031 5.18406C8.91154 5.19251 8.91998 5.20095 8.92842 5.20939C9.4434 5.6906 9.93305 6.18869 10.448 6.72056C10.7097 6.99071 10.9799 7.26086 11.25 7.53946L13.5548 9.8442C14.4497 10.7391 14.4497 11.5664 13.5548 12.4613C13.31 12.7061 13.0736 12.951 12.8288 13.1873C12.1196 13.9134 11.4442 14.5888 10.7097 15.2473C10.6929 15.2641 10.676 15.2726 10.6675 15.2895C9.9415 16.0155 10.0766 16.7247 10.2285 17.2059C10.237 17.2312 10.2454 17.2565 10.2539 17.2818C10.8533 18.7339 11.6975 20.1016 12.9807 21.7309L12.9892 21.7394C15.3192 24.6097 17.7759 26.8469 20.4859 28.5607C20.832 28.7802 21.1866 28.9575 21.5243 29.1264C21.8282 29.2783 22.1153 29.4218 22.3601 29.5738C22.3938 29.5907 22.4276 29.616 22.4614 29.6329C22.7484 29.7764 23.0186 29.8439 23.2972 29.8439C23.9979 29.8439 24.4369 29.4049 24.5804 29.2614L27.4677 26.3742C27.7547 26.0871 28.2106 25.741 28.7424 25.741C29.2659 25.741 29.6964 26.0702 29.9581 26.3573C29.9666 26.3657 29.9666 26.3657 29.975 26.3742L34.6267 31.0259C35.4963 31.887 35.4963 32.7734 34.6351 33.6683Z"
-                  fill="white"
-                />
-                <path
-                  d="M21.6168 9.51496C23.8287 9.88642 25.838 10.9333 27.442 12.5373C29.046 14.1413 30.0844 16.1506 30.4643 18.3625C30.5572 18.9197 31.0384 19.308 31.5872 19.308C31.6547 19.308 31.7138 19.2996 31.7813 19.2911C32.4061 19.1898 32.8197 18.5989 32.7184 17.9741C32.2625 15.2979 30.9962 12.8581 29.0629 10.9248C27.1296 8.99154 24.6898 7.7252 22.0136 7.26932C21.3889 7.16801 20.8064 7.58168 20.6966 8.19797C20.5869 8.81425 20.9921 9.41365 21.6168 9.51496Z"
-                  fill="white"
-                />
-                <path
-                  d="M39.9542 17.6449C39.2028 13.238 37.126 9.22793 33.9349 6.03675C30.7437 2.84557 26.7336 0.768768 22.3267 0.017406C21.7104 -0.0923436 21.1279 0.32977 21.0182 0.946056C20.9169 1.57078 21.3305 2.1533 21.9553 2.26305C25.8894 2.92999 29.4773 4.79573 32.3308 7.64078C35.1843 10.4943 37.0416 14.0822 37.7086 18.0163C37.8014 18.5735 38.2826 18.9619 38.8314 18.9619C38.8989 18.9619 38.958 18.9534 39.0256 18.945C39.6418 18.8521 40.0639 18.2612 39.9542 17.6449Z"
-                  fill="white"
-                />
-              </svg>
-            </div>
-            <div>
-              <p className="text-accent cs_mb_7 text-left">Have Any Question?</p>
-              <h2 className="text-white m-0 fw-medium cs_fs_20 cs_fs_lg_16 cs_lh_base text-left">
-              <a className='text-white' href="tel:+91 9425900068">+ 91 9425900068</a>
-              </h2>
-            </div>
-          </div>
-          <div className="d-flex align-items-center cs_mb_30">
-            <div className="d-flex align-items-center justify-content-center cs_height_90 cs_width_90 cs_height_lg_70  cs_width_lg_70 cs_width_lg-80 cs_rounded_10 flex-none cs_mr_20 bg-accent">
-              <svg
-                width={40}
-                height={40}
-                viewBox="0 0 40 40"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M34.1388 5H5.86125C4.63868 5.00132 3.46656 5.48758 2.60207 6.35207C1.73758 7.21656 1.25132 8.38868 1.25 9.61125V30.3888C1.25132 31.6113 1.73758 32.7834 2.60207 33.6479C3.46656 34.5124 4.63868 34.9987 5.86125 35H34.1388C35.3613 34.9987 36.5334 34.5124 37.3979 33.6479C38.2624 32.7834 38.7487 31.6113 38.75 30.3888V9.61125C38.7487 8.38868 38.2624 7.21656 37.3979 6.35207C36.5334 5.48758 35.3613 5.00132 34.1388 5ZM5.86125 7.5H34.1388C34.6985 7.50066 35.2351 7.72331 35.6309 8.1191C36.0267 8.51489 36.2493 9.05151 36.25 9.61125V10.5675L20 21.0138L3.75 10.5675V9.61125C3.75066 9.05151 3.97331 8.51489 4.3691 8.1191C4.76489 7.72331 5.30151 7.50066 5.86125 7.5ZM34.1388 32.5H5.86125C5.30151 32.4993 4.76489 32.2767 4.3691 31.8809C3.97331 31.4851 3.75066 30.9485 3.75 30.3888V13.54L19.3237 23.5512C19.5254 23.681 19.7602 23.75 20 23.75C20.2398 23.75 20.4746 23.681 20.6763 23.5512L36.25 13.54V30.3888C36.2493 30.9485 36.0267 31.4851 35.6309 31.8809C35.2351 32.2767 34.6985 32.4993 34.1388 32.5Z"
-                  fill="white"
-                />
-              </svg>
-            </div>
-            <div>
-              <p className="text-accent cs_mb_7 text-left">Send Email</p>
-              <h2 className="text-white m-0 fw-medium cs_fs_20 cs_fs_lg_16 cs_lh_base text-left">
-              <a href="mailto:secpl.indore@gmail.com" className='text-white'> secpl.indore@gmail.com</a>
-
-              </h2>
-            </div>
-          </div>
-          <div className="d-flex align-items-center">
-            <div className="d-flex align-items-center justify-content-center cs_height_90 cs_width_90 cs_height_lg_70  cs_width_lg_70 cs_width_lg-80 cs_rounded_10 flex-none cs_mr_20 bg-accent">
-              <svg
-                width={40}
-                height={40}
-                viewBox="0 0 40 40"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M20.0002 0C12.0123 0 5.51367 6.49859 5.51367 14.4864C5.51367 24.3995 18.4777 38.9526 19.0296 39.5673C19.548 40.1447 20.4532 40.1437 20.9707 39.5673C21.5227 38.9526 34.4866 24.3995 34.4866 14.4864C34.4865 6.49859 27.988 0 20.0002 0ZM20.0002 36.6976C15.6371 31.5149 8.12242 21.29 8.12242 14.4866C8.12242 7.93703 13.4507 2.60875 20.0002 2.60875C26.5496 2.60875 31.8779 7.93703 31.8779 14.4865C31.8778 21.2902 24.3643 31.5133 20.0002 36.6976Z"
-                  fill="white"
-                />
-                <path
-                  d="M20.0004 7.19797C15.9814 7.19797 12.7119 10.4676 12.7119 14.4865C12.7119 18.5054 15.9815 21.775 20.0004 21.775C24.0192 21.775 27.2887 18.5054 27.2887 14.4865C27.2887 10.4676 24.0192 7.19797 20.0004 7.19797ZM20.0004 19.1662C17.4199 19.1662 15.3207 17.067 15.3207 14.4865C15.3207 11.906 17.42 9.80672 20.0004 9.80672C22.5807 9.80672 24.68 11.906 24.68 14.4865C24.68 17.067 22.5807 19.1662 20.0004 19.1662Z"
-                  fill="white"
-                />
-              </svg>
-            </div>
-            <div>
-              <p className="text-accent text-left cs_mb_7">Address</p>
-              <h2 className="text-white m-0 fw-medium cs_fs_20 cs_fs_lg_16 cs_lh_base text-left">
-              7 Sampat Hills Bicholi Mardana, Near Hotel President Park By pass, 452016,
-Indore MP India
-               
-              </h2>
-            </div>
-          </div>
-        </div>
-        <div className="col-xl-5 col-lg-6 offset-xl-1 cs_mt_lg_55">
-          <div className="cs_contact_wrap position-relative">
-            <form
-              action="#"
-              className="cs_contact_form bg-white cs_pt_54 cs_pl_50 cs_pr_50 cs_pb_50 cs_pl_lg_30 cs_pr_lg_30 position-relative cs_rounded_20"
-              src="assets/img/contact_bg_pattern.svg"
-            >
-              <div className="cs_section_heading cs_style_1 d-flex align-items-center text-center cs_mb_30">
-                <div className="cs_section_heading_in">
-                  <h2 className="cs_fs_48 cs_fs_lg_28 m-0">Contact Us</h2>
+                  </div>
+                  <div className="cs_team_info cs_pt_127 cs_pl_15 cs_pr_15 cs_pb_25 cs_transition_4">
+                    <h2 className="text-white m-0 cs_fs_26 cs_mb_3">
+                      Mayanka Dadu
+                    </h2>
+                    <p className="text-white m-0">
+                      Partner - Design & Technical
+                    </p>
+                  </div>
                 </div>
               </div>
-              <input
-                className="form-control cs_fs_14 cs_rounded_5 border-0 cs_mb_15 bg-gray"
-                type="text"
-                placeholder="Your Name"
-              />
-              <input
-                className="form-control cs_fs_14 cs_rounded_5 border-0 cs_mb_15 bg-gray"
-                type="email"
-                placeholder="Your Email"
-              />
-              <textarea
-                className="form-control cs_fs_14 cs_rounded_5 border-0 cs_mb_30 bg-gray"
-                placeholder="Message here ..."
-                cols={30}
-                rows={4}
-                defaultValue={""}
-              />
-              <button className="cs_btn cs_style_1 cs_fs_16 cs_rounded_5 cs_pl_30 cs_pr_30 cs_pt_10 cs_pb_10 overflow-hidden">
-                <span>Submit Now</span>
-              </button>
-            </form>
-            <div
-              className="cs_contact_image d-none d-xl-block "
-            //   data-wow-duration="0.8s"
-            //   data-wow-delay="0.4s"
-            >
-              <img src="assets/img/home/contact_img_1.png" alt="" />
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  {/* End Contact Section  */}
-  {/* Start Brands */}
-  <div className="cs_pt_140 cs_pt_lg_80 d-none">
-    <div className="container">
-      <div className="cs_brands d-flex justify-content-xl-between align-items-center cs_column_gap_25 cs_row_gap_25 flex-wrap justify-content-center">
-        <div className="cs_brand">
-          <img src="assets/img/brand_1.svg" alt="Brand" />
-        </div>
-        <div className="cs_brand">
-          <img src="assets/img/brand_2.svg" alt="Brand" />
-        </div>
-        <div className="cs_brand">
-          <img src="assets/img/brand_3.svg" alt="Brand" />
-        </div>
-        <div className="cs_brand">
-          <img src="assets/img/brand_4.svg" alt="Brand" />
-        </div>
-        <div className="cs_brand">
-          <img src="assets/img/brand_5.svg" alt="Brand" />
-        </div>
-      </div>
-    </div>
-  </div>
-  {/* End Brands */}
-  {/* Start Blog Section */}
-  <section className="cs_pt_115 cs_pt_lg_75 cs_pb_110 cs_pb_lg_50 d-none">
-    <div className="container">
-      <div className="cs_section_heading cs_style_1 d-flex align-items-center text-center cs_mb_60 cs_mb_lg_40">
-        <div className="cs_section_heading_in">
-          <h3
-            className="cs_fs_20 cs_fs_lg_16 text-accent fw-normal cs_lh_base cs_mb_10 "
-            // data-wow-duration="0.8s"
-            // data-wow-delay="0.2s"
-          >
-            Find The Blogs
-          </h3>
-          <h2 className="cs_fs_48 cs_fs_lg_28 m-0">
-            Find Out Latest News <br />
-            and Articles
-          </h2>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-lg-4">
-          <div className="cs_post cs_style_1 bg-white shadow-sm cs_mb_30">
-            <a
-             
-              className="cs_post_thumb d-block position-relative overflow-hidden"
-            >
-              <div
-                className="cs_post_thumb-in cs_transition_5 background-filled h-100 w-100"
-                src="assets/img/post_1.jpeg"
-              />
-            </a>
-            <div className="cs_post_in">
-              <div className="cs_post_info cs_pl_33 cs_pr_33 cs_pt_40 cs_pb_40">
-                <ul className="cs_post_meta d-flex flex-wrap cs_fs_12 p-0 cs_mb_16">
-                  <li>
-                    <span>
-                      <i className="fa-solid fa-user" /> By{" "}
-                    </span>
-                    <a href="">admin</a>
-                  </li>
-                  <li>
-                    <span>
-                      <i className="fa-solid fa-comment-dots" />
-                    </span>
-                    <a href="">3 comments</a>
-                  </li>
-                </ul>
-                <h2 className="cs_post_title cs_lh_base cs_fs_20 cs_fs_lg_16 cs_mb_10">
-                  <a >
-                    What services does your business provide?
-                  </a>
-                </h2>
-                <div className="cs_post_subtitle">
-                  We provide a range of digital marketing lutions including
-                  website design.
+        </section>
+        {/* End Team Section */}
+        {/* Start Contact Section  */}
+        <section
+          className="background-filled bg-blackish overflow-hidden cs_pt_100  cs_pt_lg_70  cs_pt_lg_75 cs_pb_100 cs_pb_lg_60"
+          src="assets/img/cta_bg.jpeg"
+        >
+          <div className="container">
+            <div className="row align-items-center">
+              <div className="col-xl-5 col-lg-6">
+                <div className="cs_section_heading cs_style_1 d-flex align-items-center cs_mb_40">
+                  <div className="cs_section_heading_in">
+                    <h3
+                      className="cs_fs_20 cs_fs_lg_16 text-accent fw-normal cs_lh_base cs_mb_10 "
+                      // data-wow-duration="0.8s"
+                      // data-wow-delay="0.2s"
+                    >
+                      Contact With Us
+                    </h3>
+                    <h2 className="cs_fs_48 cs_fs_lg_28 cs_mb_20 text-white">
+                      Let’s Work Together?
+                    </h2>
+                    <p className="text-white m-0 text-left">
+                      One stop MEFP Solution -<br></br> Understanding your
+                      building <br></br>Building information Modelling Services
+                    </p>
+                  </div>
+                </div>
+                <div className="d-flex align-items-center cs_mb_30">
+                  <div className="d-flex align-items-center justify-content-center cs_height_90 cs_width_90 cs_height_lg_70  cs_width_lg_70 cs_width_lg-80 cs_rounded_10 flex-none cs_mr_20 bg-accent">
+                    <svg
+                      width={40}
+                      height={40}
+                      viewBox="0 0 40 40"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M31.6128 24.7786C30.7939 23.9259 29.8062 23.47 28.7593 23.47C27.7209 23.47 26.7247 23.9175 25.8721 24.7701L23.2043 27.4295C22.9848 27.3113 22.7653 27.2015 22.5543 27.0918C22.2503 26.9398 21.9633 26.7963 21.7185 26.6443C19.2196 25.0572 16.9486 22.9888 14.7705 20.3126C13.7152 18.9787 13.006 17.8559 12.4911 16.7162C13.1833 16.083 13.8249 15.4245 14.4497 14.7914C14.6861 14.555 14.9224 14.3102 15.1588 14.0738C16.9317 12.3009 16.9317 10.0046 15.1588 8.23172L12.8541 5.92698C12.5924 5.66527 12.3222 5.39512 12.0689 5.12497C11.5624 4.60155 11.0305 4.06124 10.4818 3.5547C9.6629 2.74425 8.6836 2.31369 7.65364 2.31369C6.62368 2.31369 5.62749 2.74425 4.78327 3.5547C4.77482 3.56315 4.77482 3.56315 4.76638 3.57159L1.89601 6.46729C0.815398 7.5479 0.199112 8.86489 0.0640356 10.3929C-0.138579 12.8581 0.587457 15.1544 1.14465 16.6571C2.5123 20.3464 4.55533 23.7655 7.60299 27.4295C11.3007 31.8448 15.7498 35.3314 20.832 37.7881C22.7738 38.7083 25.3655 39.7974 28.2612 39.9831C28.4385 39.9916 28.6242 40 28.7931 40C30.7433 40 32.3811 39.2993 33.6643 37.9063C33.6727 37.8894 33.6896 37.881 33.6981 37.8641C34.1371 37.3322 34.6436 36.851 35.1755 36.3361C35.5385 35.9899 35.9099 35.6269 36.2729 35.247C37.1087 34.3774 37.5477 33.3644 37.5477 32.326C37.5477 31.2791 37.1003 30.2745 36.2476 29.4303L31.6128 24.7786ZM34.6351 33.6683C34.6267 33.6683 34.6267 33.6767 34.6351 33.6683C34.3059 34.0229 33.9682 34.3437 33.6052 34.6983C33.0564 35.2217 32.4993 35.7704 31.9758 36.3867C31.1232 37.2985 30.1185 37.729 28.8015 37.729C28.6749 37.729 28.5398 37.729 28.4132 37.7206C25.9058 37.5602 23.5758 36.5809 21.8282 35.7451C17.0499 33.4319 12.8541 30.1479 9.36742 25.9858C6.48861 22.5161 4.56377 19.308 3.28898 15.8635C2.50385 13.7614 2.21682 12.1236 2.34345 10.5787C2.42787 9.59093 2.80777 8.77203 3.50848 8.07132L6.3873 5.19251C6.80097 4.80416 7.23997 4.5931 7.67052 4.5931C8.20239 4.5931 8.63294 4.91391 8.9031 5.18406C8.91154 5.19251 8.91998 5.20095 8.92842 5.20939C9.4434 5.6906 9.93305 6.18869 10.448 6.72056C10.7097 6.99071 10.9799 7.26086 11.25 7.53946L13.5548 9.8442C14.4497 10.7391 14.4497 11.5664 13.5548 12.4613C13.31 12.7061 13.0736 12.951 12.8288 13.1873C12.1196 13.9134 11.4442 14.5888 10.7097 15.2473C10.6929 15.2641 10.676 15.2726 10.6675 15.2895C9.9415 16.0155 10.0766 16.7247 10.2285 17.2059C10.237 17.2312 10.2454 17.2565 10.2539 17.2818C10.8533 18.7339 11.6975 20.1016 12.9807 21.7309L12.9892 21.7394C15.3192 24.6097 17.7759 26.8469 20.4859 28.5607C20.832 28.7802 21.1866 28.9575 21.5243 29.1264C21.8282 29.2783 22.1153 29.4218 22.3601 29.5738C22.3938 29.5907 22.4276 29.616 22.4614 29.6329C22.7484 29.7764 23.0186 29.8439 23.2972 29.8439C23.9979 29.8439 24.4369 29.4049 24.5804 29.2614L27.4677 26.3742C27.7547 26.0871 28.2106 25.741 28.7424 25.741C29.2659 25.741 29.6964 26.0702 29.9581 26.3573C29.9666 26.3657 29.9666 26.3657 29.975 26.3742L34.6267 31.0259C35.4963 31.887 35.4963 32.7734 34.6351 33.6683Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M21.6168 9.51496C23.8287 9.88642 25.838 10.9333 27.442 12.5373C29.046 14.1413 30.0844 16.1506 30.4643 18.3625C30.5572 18.9197 31.0384 19.308 31.5872 19.308C31.6547 19.308 31.7138 19.2996 31.7813 19.2911C32.4061 19.1898 32.8197 18.5989 32.7184 17.9741C32.2625 15.2979 30.9962 12.8581 29.0629 10.9248C27.1296 8.99154 24.6898 7.7252 22.0136 7.26932C21.3889 7.16801 20.8064 7.58168 20.6966 8.19797C20.5869 8.81425 20.9921 9.41365 21.6168 9.51496Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M39.9542 17.6449C39.2028 13.238 37.126 9.22793 33.9349 6.03675C30.7437 2.84557 26.7336 0.768768 22.3267 0.017406C21.7104 -0.0923436 21.1279 0.32977 21.0182 0.946056C20.9169 1.57078 21.3305 2.1533 21.9553 2.26305C25.8894 2.92999 29.4773 4.79573 32.3308 7.64078C35.1843 10.4943 37.0416 14.0822 37.7086 18.0163C37.8014 18.5735 38.2826 18.9619 38.8314 18.9619C38.8989 18.9619 38.958 18.9534 39.0256 18.945C39.6418 18.8521 40.0639 18.2612 39.9542 17.6449Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-accent cs_mb_7 text-left">
+                      Have Any Question?
+                    </p>
+                    <h2 className="text-white m-0 fw-medium cs_fs_20 cs_fs_lg_16 cs_lh_base text-left">
+                      <a className="text-white" href="tel:+91 9425900068">
+                        + 91 9425900068
+                      </a>
+                    </h2>
+                  </div>
+                </div>
+                <div className="d-flex align-items-center cs_mb_30">
+                  <div className="d-flex align-items-center justify-content-center cs_height_90 cs_width_90 cs_height_lg_70  cs_width_lg_70 cs_width_lg-80 cs_rounded_10 flex-none cs_mr_20 bg-accent">
+                    <svg
+                      width={40}
+                      height={40}
+                      viewBox="0 0 40 40"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M34.1388 5H5.86125C4.63868 5.00132 3.46656 5.48758 2.60207 6.35207C1.73758 7.21656 1.25132 8.38868 1.25 9.61125V30.3888C1.25132 31.6113 1.73758 32.7834 2.60207 33.6479C3.46656 34.5124 4.63868 34.9987 5.86125 35H34.1388C35.3613 34.9987 36.5334 34.5124 37.3979 33.6479C38.2624 32.7834 38.7487 31.6113 38.75 30.3888V9.61125C38.7487 8.38868 38.2624 7.21656 37.3979 6.35207C36.5334 5.48758 35.3613 5.00132 34.1388 5ZM5.86125 7.5H34.1388C34.6985 7.50066 35.2351 7.72331 35.6309 8.1191C36.0267 8.51489 36.2493 9.05151 36.25 9.61125V10.5675L20 21.0138L3.75 10.5675V9.61125C3.75066 9.05151 3.97331 8.51489 4.3691 8.1191C4.76489 7.72331 5.30151 7.50066 5.86125 7.5ZM34.1388 32.5H5.86125C5.30151 32.4993 4.76489 32.2767 4.3691 31.8809C3.97331 31.4851 3.75066 30.9485 3.75 30.3888V13.54L19.3237 23.5512C19.5254 23.681 19.7602 23.75 20 23.75C20.2398 23.75 20.4746 23.681 20.6763 23.5512L36.25 13.54V30.3888C36.2493 30.9485 36.0267 31.4851 35.6309 31.8809C35.2351 32.2767 34.6985 32.4993 34.1388 32.5Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-accent cs_mb_7 text-left">Send Email</p>
+                    <h2 className="text-white m-0 fw-medium cs_fs_20 cs_fs_lg_16 cs_lh_base text-left">
+                      <a
+                        href="mailto:secpl.indore@gmail.com"
+                        className="text-white"
+                      >
+                        {" "}
+                        secpl.indore@gmail.com
+                      </a>
+                    </h2>
+                  </div>
+                </div>
+                <div className="d-flex align-items-center">
+                  <div className="d-flex align-items-center justify-content-center cs_height_90 cs_width_90 cs_height_lg_70  cs_width_lg_70 cs_width_lg-80 cs_rounded_10 flex-none cs_mr_20 bg-accent">
+                    <svg
+                      width={40}
+                      height={40}
+                      viewBox="0 0 40 40"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M20.0002 0C12.0123 0 5.51367 6.49859 5.51367 14.4864C5.51367 24.3995 18.4777 38.9526 19.0296 39.5673C19.548 40.1447 20.4532 40.1437 20.9707 39.5673C21.5227 38.9526 34.4866 24.3995 34.4866 14.4864C34.4865 6.49859 27.988 0 20.0002 0ZM20.0002 36.6976C15.6371 31.5149 8.12242 21.29 8.12242 14.4866C8.12242 7.93703 13.4507 2.60875 20.0002 2.60875C26.5496 2.60875 31.8779 7.93703 31.8779 14.4865C31.8778 21.2902 24.3643 31.5133 20.0002 36.6976Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M20.0004 7.19797C15.9814 7.19797 12.7119 10.4676 12.7119 14.4865C12.7119 18.5054 15.9815 21.775 20.0004 21.775C24.0192 21.775 27.2887 18.5054 27.2887 14.4865C27.2887 10.4676 24.0192 7.19797 20.0004 7.19797ZM20.0004 19.1662C17.4199 19.1662 15.3207 17.067 15.3207 14.4865C15.3207 11.906 17.42 9.80672 20.0004 9.80672C22.5807 9.80672 24.68 11.906 24.68 14.4865C24.68 17.067 22.5807 19.1662 20.0004 19.1662Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-accent text-left cs_mb_7">Address</p>
+                    <h2 className="text-white m-0 fw-medium cs_fs_20 cs_fs_lg_16 cs_lh_base text-left">
+                      7 Sampat Hills Bicholi Mardana, Near Hotel President Park
+                      By pass, 452016, Indore MP India
+                    </h2>
+                  </div>
                 </div>
               </div>
-              <a
-                
-                className="cs_post_btn d-flex justify-content-between align-items-center cs_pl_40 cs_pr_40 cs_pb_10 cs_pt_10"
-              >
-                <span className="cs_post_btn-text">Read More</span>
-                <div className="cs_post_btn-icon d-flex cs_transition_4">
-                  <svg
-                    width={24}
-                    height={24}
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+              <div className="col-xl-5 col-lg-6 offset-xl-1 cs_mt_lg_55">
+                <div className="cs_contact_wrap position-relative">
+                  <div
+                    action="#"
+                    className="cs_contact_form bg-white cs_pt_54 cs_pl_50 cs_pr_50 cs_pb_50 cs_pl_lg_30 cs_pr_lg_30 position-relative cs_rounded_20"
+                    src="assets/img/contact_bg_pattern.svg"
                   >
-                    <path
-                      d="M11.9999 0.224976C6.52011 0.224976 1.63131 4.16368 0.485006 9.52707C-0.0876941 12.207 0.298106 15.0567 1.57581 17.4816C2.80551 19.8153 4.82151 21.7014 7.23351 22.7703C9.74241 23.8824 12.6227 24.0762 15.2597 23.3178C17.8037 22.5864 20.0594 20.9811 21.5951 18.8262C24.806 14.3211 24.3767 7.99288 20.5991 3.95608C18.3851 1.59028 15.2405 0.224976 11.9999 0.224976ZM17.6486 12.6291L14.4386 15.9165C13.6259 16.749 12.3413 15.4878 13.1507 14.6592L14.7704 13.0005H7.09461C6.54951 13.0005 6.09471 12.5454 6.09471 12.0006C6.09471 11.4558 6.54981 11.0007 7.09461 11.0007H14.732L13.0802 9.34918C12.2594 8.52838 13.532 7.25548 14.3528 8.07628L17.6411 11.3643C17.9897 11.7126 17.993 12.2766 17.6486 12.6291Z"
-                      fill="currentColor"
+                    <div className="cs_section_heading cs_style_1 d-flex align-items-center text-center cs_mb_30">
+                      <div className="cs_section_heading_in">
+                        <h2 className="cs_fs_48 cs_fs_lg_28 m-0">Contact Us</h2>
+                      </div>
+                    </div>
+                    <input
+                      className="form-control cs_fs_14 cs_rounded_5 border-0 cs_mb_15 bg-gray"
+                      type="text"
+                      placeholder="Your Name"
+                      name="name"
+                      onChange={HandelData}
+                      value={inputValue.name}
                     />
-                  </svg>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="col-lg-4">
-          <div className="cs_post cs_style_1 bg-white shadow-sm cs_mb_30">
-            <a
-              
-              className="cs_post_thumb d-block position-relative overflow-hidden"
-            >
-              <div
-                className="cs_post_thumb-in cs_transition_5 background-filled h-100 w-100"
-                src="assets/img/post_2.jpeg"
-              />
-            </a>
-            <div className="cs_post_in">
-              <div className="cs_post_info cs_pl_33 cs_pr_33 cs_pt_40 cs_pb_40">
-                <ul className="cs_post_meta d-flex flex-wrap cs_fs_12 p-0 cs_mb_16">
-                  <li>
-                    <span>
-                      <i className="fa-solid fa-user" /> By{" "}
-                    </span>
-                    <a href="">admin</a>
-                  </li>
-                  <li>
-                    <span>
-                      <i className="fa-solid fa-comment-dots" />
-                    </span>
-                    <a href="">3 comments</a>
-                  </li>
-                </ul>
-                <h2 className="cs_post_title cs_lh_base cs_fs_20 cs_fs_lg_16 cs_mb_10">
-                  <a >
-                    Introducing the latest tech features for you
-                  </a>
-                </h2>
-                <div className="cs_post_subtitle">
-                  We provide a range of digital marketing lutions including
-                  website design.
+                    <input
+                      className="form-control cs_fs_14 cs_rounded_5 border-0 cs_mb_15 bg-gray"
+                      type="email"
+                      placeholder="Your Email"
+                      name="email"
+                      onChange={HandelData}
+                      value={inputValue.email}
+                    />
+                    <textarea
+                      className="form-control cs_fs_14 cs_rounded_5 border-0 cs_mb_30 bg-gray"
+                      placeholder="Message here ..."
+                      cols={30}
+                      rows={4}
+                      defaultValue={""}
+                      name="message"
+                      onChange={HandelData}
+                      value={inputValue.message}
+                    />
+                    <p className="error-msg">{formError}</p>
+                    <button
+                      className="cs_btn cs_style_1 cs_fs_16 cs_rounded_5 cs_pl_30 cs_pr_30 cs_pt_10 cs_pb_10 overflow-hidden"
+                      onClick={() => {
+                        SubmitData();
+                      }}
+                    >
+                      <span>Submit Now</span>
+                    </button>
+                  </div>
+                  <div
+                    className="cs_contact_image d-none d-xl-block "
+                    //   data-wow-duration="0.8s"
+                    //   data-wow-delay="0.4s"
+                  >
+                    <img src="assets/img/home/contact_img_1.png" alt="" />
+                  </div>
                 </div>
               </div>
-              <a
-              
-                className="cs_post_btn d-flex justify-content-between align-items-center cs_pl_40 cs_pr_40 cs_pb_10 cs_pt_10"
-              >
-                <span className="cs_post_btn-text">Read More</span>
-                <div className="cs_post_btn-icon d-flex cs_transition_4">
-                  <svg
-                    width={24}
-                    height={24}
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M11.9999 0.224976C6.52011 0.224976 1.63131 4.16368 0.485006 9.52707C-0.0876941 12.207 0.298106 15.0567 1.57581 17.4816C2.80551 19.8153 4.82151 21.7014 7.23351 22.7703C9.74241 23.8824 12.6227 24.0762 15.2597 23.3178C17.8037 22.5864 20.0594 20.9811 21.5951 18.8262C24.806 14.3211 24.3767 7.99288 20.5991 3.95608C18.3851 1.59028 15.2405 0.224976 11.9999 0.224976ZM17.6486 12.6291L14.4386 15.9165C13.6259 16.749 12.3413 15.4878 13.1507 14.6592L14.7704 13.0005H7.09461C6.54951 13.0005 6.09471 12.5454 6.09471 12.0006C6.09471 11.4558 6.54981 11.0007 7.09461 11.0007H14.732L13.0802 9.34918C12.2594 8.52838 13.532 7.25548 14.3528 8.07628L17.6411 11.3643C17.9897 11.7126 17.993 12.2766 17.6486 12.6291Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                </div>
-              </a>
+            </div>
+          </div>
+        </section>
+        {/* End Contact Section  */}
+        {/* Start Brands */}
+        <div className="cs_pt_140 cs_pt_lg_80 d-none">
+          <div className="container">
+            <div className="cs_brands d-flex justify-content-xl-between align-items-center cs_column_gap_25 cs_row_gap_25 flex-wrap justify-content-center">
+              <div className="cs_brand">
+                <img src="assets/img/brand_1.svg" alt="Brand" />
+              </div>
+              <div className="cs_brand">
+                <img src="assets/img/brand_2.svg" alt="Brand" />
+              </div>
+              <div className="cs_brand">
+                <img src="assets/img/brand_3.svg" alt="Brand" />
+              </div>
+              <div className="cs_brand">
+                <img src="assets/img/brand_4.svg" alt="Brand" />
+              </div>
+              <div className="cs_brand">
+                <img src="assets/img/brand_5.svg" alt="Brand" />
+              </div>
             </div>
           </div>
         </div>
-        <div className="col-lg-4">
-          <div className="cs_post cs_style_1 bg-white shadow-sm cs_mb_30">
-            <a
-              
-              className="cs_post_thumb d-block position-relative overflow-hidden"
-            >
-              <div
-                className="cs_post_thumb-in cs_transition_5 background-filled h-100 w-100"
-                src="assets/img/post_3.jpeg"
-              />
-            </a>
-            <div className="cs_post_in">
-              <div className="cs_post_info cs_pl_33 cs_pr_33 cs_pt_40 cs_pb_40">
-                <ul className="cs_post_meta d-flex flex-wrap cs_fs_12 p-0 cs_mb_16">
-                  <li>
-                    <span>
-                      <i className="fa-solid fa-user" /> By{" "}
-                    </span>
-                    <a href="">admin</a>
-                  </li>
-                  <li>
-                    <span>
-                      <i className="fa-solid fa-comment-dots" />
-                    </span>
-                    <a href="">3 comments</a>
-                  </li>
-                </ul>
-                <h2 className="cs_post_title cs_lh_base cs_fs_20 cs_fs_lg_16 cs_mb_10">
-                  <a >
-                    The creative studio programm coming soon
-                  </a>
+        {/* End Brands */}
+        {/* Start Blog Section */}
+        <section className="cs_pt_115 cs_pt_lg_75 cs_pb_110 cs_pb_lg_50 d-none">
+          <div className="container">
+            <div className="cs_section_heading cs_style_1 d-flex align-items-center text-center cs_mb_60 cs_mb_lg_40">
+              <div className="cs_section_heading_in">
+                <h3
+                  className="cs_fs_20 cs_fs_lg_16 text-accent fw-normal cs_lh_base cs_mb_10 "
+                  // data-wow-duration="0.8s"
+                  // data-wow-delay="0.2s"
+                >
+                  Find The Blogs
+                </h3>
+                <h2 className="cs_fs_48 cs_fs_lg_28 m-0">
+                  Find Out Latest News <br />
+                  and Articles
                 </h2>
-                <div className="cs_post_subtitle">
-                  We provide a range of digital marketing lutions including
-                  website design.
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-lg-4">
+                <div className="cs_post cs_style_1 bg-white shadow-sm cs_mb_30">
+                  <a className="cs_post_thumb d-block position-relative overflow-hidden">
+                    <div
+                      className="cs_post_thumb-in cs_transition_5 background-filled h-100 w-100"
+                      src="assets/img/post_1.jpeg"
+                    />
+                  </a>
+                  <div className="cs_post_in">
+                    <div className="cs_post_info cs_pl_33 cs_pr_33 cs_pt_40 cs_pb_40">
+                      <ul className="cs_post_meta d-flex flex-wrap cs_fs_12 p-0 cs_mb_16">
+                        <li>
+                          <span>
+                            <i className="fa-solid fa-user" /> By{" "}
+                          </span>
+                          <a href="">admin</a>
+                        </li>
+                        <li>
+                          <span>
+                            <i className="fa-solid fa-comment-dots" />
+                          </span>
+                          <a href="">3 comments</a>
+                        </li>
+                      </ul>
+                      <h2 className="cs_post_title cs_lh_base cs_fs_20 cs_fs_lg_16 cs_mb_10">
+                        <a>What services does your business provide?</a>
+                      </h2>
+                      <div className="cs_post_subtitle">
+                        We provide a range of digital marketing lutions
+                        including website design.
+                      </div>
+                    </div>
+                    <a className="cs_post_btn d-flex justify-content-between align-items-center cs_pl_40 cs_pr_40 cs_pb_10 cs_pt_10">
+                      <span className="cs_post_btn-text">Read More</span>
+                      <div className="cs_post_btn-icon d-flex cs_transition_4">
+                        <svg
+                          width={24}
+                          height={24}
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11.9999 0.224976C6.52011 0.224976 1.63131 4.16368 0.485006 9.52707C-0.0876941 12.207 0.298106 15.0567 1.57581 17.4816C2.80551 19.8153 4.82151 21.7014 7.23351 22.7703C9.74241 23.8824 12.6227 24.0762 15.2597 23.3178C17.8037 22.5864 20.0594 20.9811 21.5951 18.8262C24.806 14.3211 24.3767 7.99288 20.5991 3.95608C18.3851 1.59028 15.2405 0.224976 11.9999 0.224976ZM17.6486 12.6291L14.4386 15.9165C13.6259 16.749 12.3413 15.4878 13.1507 14.6592L14.7704 13.0005H7.09461C6.54951 13.0005 6.09471 12.5454 6.09471 12.0006C6.09471 11.4558 6.54981 11.0007 7.09461 11.0007H14.732L13.0802 9.34918C12.2594 8.52838 13.532 7.25548 14.3528 8.07628L17.6411 11.3643C17.9897 11.7126 17.993 12.2766 17.6486 12.6291Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </div>
+                    </a>
+                  </div>
                 </div>
               </div>
-              <a
-                
-                className="cs_post_btn d-flex justify-content-between align-items-center cs_pl_40 cs_pr_40 cs_pb_10 cs_pt_10"
-              >
-                <span className="cs_post_btn-text">Read More</span>
-                <div className="cs_post_btn-icon d-flex cs_transition_4">
-                  <svg
-                    width={24}
-                    height={24}
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M11.9999 0.224976C6.52011 0.224976 1.63131 4.16368 0.485006 9.52707C-0.0876941 12.207 0.298106 15.0567 1.57581 17.4816C2.80551 19.8153 4.82151 21.7014 7.23351 22.7703C9.74241 23.8824 12.6227 24.0762 15.2597 23.3178C17.8037 22.5864 20.0594 20.9811 21.5951 18.8262C24.806 14.3211 24.3767 7.99288 20.5991 3.95608C18.3851 1.59028 15.2405 0.224976 11.9999 0.224976ZM17.6486 12.6291L14.4386 15.9165C13.6259 16.749 12.3413 15.4878 13.1507 14.6592L14.7704 13.0005H7.09461C6.54951 13.0005 6.09471 12.5454 6.09471 12.0006C6.09471 11.4558 6.54981 11.0007 7.09461 11.0007H14.732L13.0802 9.34918C12.2594 8.52838 13.532 7.25548 14.3528 8.07628L17.6411 11.3643C17.9897 11.7126 17.993 12.2766 17.6486 12.6291Z"
-                      fill="currentColor"
+              <div className="col-lg-4">
+                <div className="cs_post cs_style_1 bg-white shadow-sm cs_mb_30">
+                  <a className="cs_post_thumb d-block position-relative overflow-hidden">
+                    <div
+                      className="cs_post_thumb-in cs_transition_5 background-filled h-100 w-100"
+                      src="assets/img/post_2.jpeg"
                     />
-                  </svg>
+                  </a>
+                  <div className="cs_post_in">
+                    <div className="cs_post_info cs_pl_33 cs_pr_33 cs_pt_40 cs_pb_40">
+                      <ul className="cs_post_meta d-flex flex-wrap cs_fs_12 p-0 cs_mb_16">
+                        <li>
+                          <span>
+                            <i className="fa-solid fa-user" /> By{" "}
+                          </span>
+                          <a href="">admin</a>
+                        </li>
+                        <li>
+                          <span>
+                            <i className="fa-solid fa-comment-dots" />
+                          </span>
+                          <a href="">3 comments</a>
+                        </li>
+                      </ul>
+                      <h2 className="cs_post_title cs_lh_base cs_fs_20 cs_fs_lg_16 cs_mb_10">
+                        <a>Introducing the latest tech features for you</a>
+                      </h2>
+                      <div className="cs_post_subtitle">
+                        We provide a range of digital marketing lutions
+                        including website design.
+                      </div>
+                    </div>
+                    <a className="cs_post_btn d-flex justify-content-between align-items-center cs_pl_40 cs_pr_40 cs_pb_10 cs_pt_10">
+                      <span className="cs_post_btn-text">Read More</span>
+                      <div className="cs_post_btn-icon d-flex cs_transition_4">
+                        <svg
+                          width={24}
+                          height={24}
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11.9999 0.224976C6.52011 0.224976 1.63131 4.16368 0.485006 9.52707C-0.0876941 12.207 0.298106 15.0567 1.57581 17.4816C2.80551 19.8153 4.82151 21.7014 7.23351 22.7703C9.74241 23.8824 12.6227 24.0762 15.2597 23.3178C17.8037 22.5864 20.0594 20.9811 21.5951 18.8262C24.806 14.3211 24.3767 7.99288 20.5991 3.95608C18.3851 1.59028 15.2405 0.224976 11.9999 0.224976ZM17.6486 12.6291L14.4386 15.9165C13.6259 16.749 12.3413 15.4878 13.1507 14.6592L14.7704 13.0005H7.09461C6.54951 13.0005 6.09471 12.5454 6.09471 12.0006C6.09471 11.4558 6.54981 11.0007 7.09461 11.0007H14.732L13.0802 9.34918C12.2594 8.52838 13.532 7.25548 14.3528 8.07628L17.6411 11.3643C17.9897 11.7126 17.993 12.2766 17.6486 12.6291Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </div>
+                    </a>
+                  </div>
                 </div>
-              </a>
+              </div>
+              <div className="col-lg-4">
+                <div className="cs_post cs_style_1 bg-white shadow-sm cs_mb_30">
+                  <a className="cs_post_thumb d-block position-relative overflow-hidden">
+                    <div
+                      className="cs_post_thumb-in cs_transition_5 background-filled h-100 w-100"
+                      src="assets/img/post_3.jpeg"
+                    />
+                  </a>
+                  <div className="cs_post_in">
+                    <div className="cs_post_info cs_pl_33 cs_pr_33 cs_pt_40 cs_pb_40">
+                      <ul className="cs_post_meta d-flex flex-wrap cs_fs_12 p-0 cs_mb_16">
+                        <li>
+                          <span>
+                            <i className="fa-solid fa-user" /> By{" "}
+                          </span>
+                          <a href="">admin</a>
+                        </li>
+                        <li>
+                          <span>
+                            <i className="fa-solid fa-comment-dots" />
+                          </span>
+                          <a href="">3 comments</a>
+                        </li>
+                      </ul>
+                      <h2 className="cs_post_title cs_lh_base cs_fs_20 cs_fs_lg_16 cs_mb_10">
+                        <a>The creative studio programm coming soon</a>
+                      </h2>
+                      <div className="cs_post_subtitle">
+                        We provide a range of digital marketing lutions
+                        including website design.
+                      </div>
+                    </div>
+                    <a className="cs_post_btn d-flex justify-content-between align-items-center cs_pl_40 cs_pr_40 cs_pb_10 cs_pt_10">
+                      <span className="cs_post_btn-text">Read More</span>
+                      <div className="cs_post_btn-icon d-flex cs_transition_4">
+                        <svg
+                          width={24}
+                          height={24}
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11.9999 0.224976C6.52011 0.224976 1.63131 4.16368 0.485006 9.52707C-0.0876941 12.207 0.298106 15.0567 1.57581 17.4816C2.80551 19.8153 4.82151 21.7014 7.23351 22.7703C9.74241 23.8824 12.6227 24.0762 15.2597 23.3178C17.8037 22.5864 20.0594 20.9811 21.5951 18.8262C24.806 14.3211 24.3767 7.99288 20.5991 3.95608C18.3851 1.59028 15.2405 0.224976 11.9999 0.224976ZM17.6486 12.6291L14.4386 15.9165C13.6259 16.749 12.3413 15.4878 13.1507 14.6592L14.7704 13.0005H7.09461C6.54951 13.0005 6.09471 12.5454 6.09471 12.0006C6.09471 11.4558 6.54981 11.0007 7.09461 11.0007H14.732L13.0802 9.34918C12.2594 8.52838 13.532 7.25548 14.3528 8.07628L17.6411 11.3643C17.9897 11.7126 17.993 12.2766 17.6486 12.6291Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  {/* End Blog Section */}
-
+        </section>
+        {/* End Blog Section */}
       </Layout>
     </>
-  )
-}
+  );
+};
 
-export default Homepage
+export default Homepage;
