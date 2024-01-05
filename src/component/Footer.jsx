@@ -141,7 +141,7 @@ const Footer = () => {
     <div className="cs_copyright text-center cs_fs_124 cs_lh_lg cs_pt_36 cs_pb_36">
       <div className="container">
         <p className="m-0">
-          Copyright © 2023 <a href="">The Dadoo Group</a>. All rights reserved.
+          Copyright © 2024 <a href="">The Dadoo Group</a>. All rights reserved.
         </p>
       </div>
     </div>
