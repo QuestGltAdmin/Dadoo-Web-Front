@@ -16,7 +16,7 @@ const Team = () => {
         <nav aria-label="breadcrumb">
           <ol className="breadcrumb text-white cs_fs_18 cs_mb_5">
             <li className="breadcrumb-item">
-              <a href="index.html">Home</a>
+              <a href="">Home</a>
             </li>
             <li className="breadcrumb-item active">Team</li>
           </ol>
@@ -133,7 +133,7 @@ const Team = () => {
               <div className="cs_team_member position-relative cs_rounded_50">
                 <img
                   className="w-100 cs_rounded_50 bg-blackish"
-                  src="assets/img/home/team.png"
+                  src="assets/img/home/mayanka-dadu.png"
                   alt="Member"
                 />
                 {/* <div className="cs_social_btns d-flex flex-wrap cs_column_gap_15 cs_row_gap_15 cs_transition_5 cs_fs_20 cs_fs_lg_18 position-absolute">

@@ -1835,7 +1835,7 @@ occupancy the early stage of any risk. Also to protect the building property and
             <div>
               <p className="text-accent cs_mb_7 text-left">Have Any Question?</p>
               <h2 className="text-white m-0 fw-medium cs_fs_20 cs_fs_lg_16 cs_lh_base text-left">
-              + 91 9425900068
+              <a className='text-white' href="tel:+91 9425900068">+ 91 9425900068</a>
               </h2>
             </div>
           </div>
@@ -1857,7 +1857,8 @@ occupancy the early stage of any risk. Also to protect the building property and
             <div>
               <p className="text-accent cs_mb_7 text-left">Send Email</p>
               <h2 className="text-white m-0 fw-medium cs_fs_20 cs_fs_lg_16 cs_lh_base text-left">
-              secpl.indore@gmail.com
+              <a href="mailto:secpl.indore@gmail.com" className='text-white'> secpl.indore@gmail.com</a>
+
               </h2>
             </div>
           </div>

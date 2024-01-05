@@ -15,7 +15,7 @@ const Footer = () => {
             Have Any Question?
           </h3>
           <h2 className="text-white fw-medium m-0 cs_fs_22">
-            + 91 9425900068
+            <a className='text-white' href="tel:+91 9425900068">+ 91 9425900068</a>
           </h2>
         </div>
         <div
@@ -109,16 +109,16 @@ const Footer = () => {
             </div> */}
           </div>
           <div className="col-lg-3">
-            <div className="cs_footer_item cs_pt_20 cs_pb_20">
+            {/* <div className="cs_footer_item cs_pt_20 cs_pb_20">
               <div className="cs_newsletter cs_style_1">
                 <h2 className="cs_newsletter_title text-white cs_fs_22 cs_mb_9">
                   Newsletter
                 </h2>
-                {/* <p className="cs_newsletter_subtitle cs_mb_26">
+                <p className="cs_newsletter_subtitle cs_mb_26">
                   {" "}
                   At vero eos et accusamus et iusto odio as part dignissimos
                   ducimus qui blandit.{" "}
-                </p> */}
+                </p>
                 <form
                   action="#"
                   className="cs_newsletter_form position-relative"
@@ -133,7 +133,7 @@ const Footer = () => {
                   </button>
                 </form>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -141,7 +141,7 @@ const Footer = () => {
     <div className="cs_copyright text-center cs_fs_124 cs_lh_lg cs_pt_36 cs_pb_36">
       <div className="container">
         <p className="m-0">
-          Copyright © 2023 <a href="index.html">The Dadoo Group</a>. All rights reserved.
+          Copyright © 2023 <a href="">The Dadoo Group</a>. All rights reserved.
         </p>
       </div>
     </div>

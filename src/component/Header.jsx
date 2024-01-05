@@ -14,7 +14,7 @@ const Header = () => {
         <header className="cs_site_header cs_style_1 cs_sticky_header cs_site_header_full_width">
           <div className="cs_top_header">
             <div className="container">
-              <div className="cs_top_header_in">
+              <div className="cs_top_header_in justify-content-center">
                 <div className="cs_top_header_left">
                   <ul className="cs_top_nav d-flex flex-wrap align-items-center cs_fs_12 text-white m-0 p-0">
                     <li>
@@ -26,7 +26,7 @@ Indore MP India
                     </li>
                   </ul>
                 </div>
-                <div className="cs_top_header_right">
+                {/* <div className="cs_top_header_right">
                   <ul className="cs_top_nav d-flex flex-wrap align-items-center cs_fs_12 text-white m-0 p-0">
                     <li>
                       <a href="/contact">Help</a>
@@ -38,7 +38,7 @@ Indore MP India
                       <a href="/contact">Contact</a>
                     </li>
                   </ul>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -46,7 +46,7 @@ Indore MP India
             <div className="container">
               <div className="cs_main_header_in">
                 <div className="cs_main_header_left">
-                  <a className="cs_site_branding" href="index.html">
+                  <a className="cs_site_branding" href="">
                     <img src="assets/img/dadoo-full-logo.png" className='img-fluid' alt="Logo" />
                   </a>
                   <div className="cs_nav cs_primary_font fw-medium">
@@ -138,7 +138,7 @@ Indore MP India
                 </div>
                 <div className="cs_main_header_right">
                   <div className="cs_toolbox">
-                    <div className="cs_header_search_wrap position-relative">
+                    {/* <div className="cs_header_search_wrap position-relative">
                       <span className="cs_header_search_btn d-flex">
                         <svg
                           width={25}
@@ -170,7 +170,7 @@ Indore MP India
                           </svg>
                         </button>
                       </form>
-                    </div>
+                    </div> */}
                     <div className="cs_header_contact">
                       <div className="cs_header_contact_icon text-accent">
                         <svg
@@ -207,7 +207,7 @@ Indore MP India
                           Need help? Call us:
                         </h3>
                         <h3 className="text-white m-0 cs_fs_13">
-                        + 91 9425900068
+                        <a className='text-white' href="tel:+91 9425900068">+ 91 9425900068</a>
                         </h3>
                       </div>
                     </div>

@@ -159,7 +159,7 @@ const Contact = () => {
                                         <div>
                                             <p className="text-accent cs_mb_7 text-left">Have Any Question?</p>
                                             <h2 className="m-0 fw-medium cs_fs_22 cs_fs_lg_16 cs_lh_base text-left">
-                                            + 91 9425900068
+                                            <a className='text-white' href="tel:+91 9425900068">+ 91 9425900068</a>
                                             </h2>
                                         </div>
                                     </div>
@@ -181,7 +181,7 @@ const Contact = () => {
                                         <div>
                                             <p className="text-accent cs_mb_7 text-left">Send Email</p>
                                             <h2 className="m-0 fw-medium cs_fs_22 cs_fs_lg_16 cs_lh_base text-left">
-                                            secpl.indore@gmail.com
+                                           <a href="mailto:secpl.indore@gmail.com"> secpl.indore@gmail.com</a>
                                             </h2>
                                         </div>
                                     </div>
