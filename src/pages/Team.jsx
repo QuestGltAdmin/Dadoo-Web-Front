@@ -57,7 +57,8 @@ const Team = () => {
     {/* Start Our Latest Project */}
     <section className="cs_pt_100 cs_pt_lg_80 cs_pb_80 cs_pb_lg_80">
       <div className="container">
-        <div className="row">
+        <div className="row justify-content-center mb-4">
+        
           <div className="col-lg-4 col-md-6">
             <div className="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
               <div className="cs_team_member position-relative cs_rounded_50">
@@ -93,41 +94,7 @@ const Team = () => {
               </div>
             </div>
           </div>
-          <div className="col-lg-4 col-md-6">
-            <div className="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
-              <div className="cs_team_member position-relative cs_rounded_50">
-                <img
-                  className="w-100 cs_rounded_50 bg-blackish"
-                  src="assets/img/home/team.png"
-                  alt="Member"
-                />
-                {/* <div className="cs_social_btns d-flex flex-wrap cs_column_gap_15 cs_row_gap_15 cs_transition_5 cs_fs_20 cs_fs_lg_18 position-absolute">
-                  <a
-                    href="#"
-                    className="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"
-                  >
-                    <i className="fa-brands fa-facebook-f" />
-                  </a>
-                  <a
-                    href="#"
-                    className="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"
-                  >
-                    <i className="fa-brands fa-twitter" />
-                  </a>
-                  <a
-                    href="#"
-                    className="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"
-                  >
-                    <i className="fa-brands fa-dribbble" />
-                  </a>
-                </div> */}
-              </div>
-              <div className="cs_team_info cs_pt_127 cs_pl_15 cs_pr_15 cs_pb_25 cs_transition_4">
-                <h2 className="text-white m-0 cs_fs_26 cs_mb_3">Ritu Dadoo</h2>
-                <p className="text-white m-0">Partner  Finance</p>
-              </div>
-            </div>
-          </div>
+          
           <div className="col-lg-4 col-md-6">
             <div className="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
               <div className="cs_team_member position-relative cs_rounded_50">
@@ -163,35 +130,36 @@ const Team = () => {
               </div>
             </div>
           </div>
+          </div>
+          <div className='row justify-content-center mb-4'>
+          <div className='col-md-12'>
+            <h2 className='team-heading cs_fs_48 cs_fs_lg_36 mb-4'> Team</h2>
+          </div>
           <div className="col-lg-4 col-md-6">
             <div className="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
-              <div className="cs_team_member position-relative cs_rounded_50">
+              {/* <div className="cs_team_member position-relative cs_rounded_50">
                 <img
                   className="w-100 cs_rounded_50 bg-blackish"
                   src="assets/img/home/team.png"
                   alt="Member"
                 />
-                {/* <div className="cs_social_btns d-flex flex-wrap cs_column_gap_15 cs_row_gap_15 cs_transition_5 cs_fs_20 cs_fs_lg_18 position-absolute">
-                  <a
-                    href="#"
-                    className="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"
-                  >
-                    <i className="fa-brands fa-facebook-f" />
-                  </a>
-                  <a
-                    href="#"
-                    className="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"
-                  >
-                    <i className="fa-brands fa-twitter" />
-                  </a>
-                  <a
-                    href="#"
-                    className="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"
-                  >
-                    <i className="fa-brands fa-dribbble" />
-                  </a>
-                </div> */}
+                
+              </div> */}
+              <div className="cs_team_info cs_pt_127 cs_pl_15 cs_pr_15 cs_pb_25 cs_transition_4">
+                <h2 className="text-white m-0 cs_fs_26 cs_mb_3">Ritu Dadoo</h2>
+                <p className="text-white m-0">Partner  Finance</p>
               </div>
+            </div>
+          </div>
+          <div className="col-lg-4 col-md-6">
+            <div className="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
+              {/* <div className="cs_team_member position-relative cs_rounded_50">
+                <img
+                  className="w-100 cs_rounded_50 bg-blackish"
+                  src="assets/img/home/team.png"
+                  alt="Member"
+                />
+              </div> */}
               <div className="cs_team_info cs_pt_127 cs_pl_15 cs_pr_15 cs_pb_25 cs_transition_4">
                 <h2 className="text-white m-0 cs_fs_26 cs_mb_3">Vijay</h2>
                 <p className="text-white m-0">Purchase & Admin</p>
@@ -200,33 +168,13 @@ const Team = () => {
           </div>
           <div className="col-lg-4 col-md-6">
             <div className="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
-              <div className="cs_team_member position-relative cs_rounded_50">
+              {/* <div className="cs_team_member position-relative cs_rounded_50">
                 <img
                   className="w-100 cs_rounded_50 bg-blackish"
                   src="assets/img/home/team.png"
                   alt="Member"
                 />
-                {/* <div className="cs_social_btns d-flex flex-wrap cs_column_gap_15 cs_row_gap_15 cs_transition_5 cs_fs_20 cs_fs_lg_18 position-absolute">
-                  <a
-                    href="#"
-                    className="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"
-                  >
-                    <i className="fa-brands fa-facebook-f" />
-                  </a>
-                  <a
-                    href="#"
-                    className="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"
-                  >
-                    <i className="fa-brands fa-twitter" />
-                  </a>
-                  <a
-                    href="#"
-                    className="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"
-                  >
-                    <i className="fa-brands fa-dribbble" />
-                  </a>
-                </div> */}
-              </div>
+              </div> */}
               <div className="cs_team_info cs_pt_127 cs_pl_15 cs_pr_15 cs_pb_25 cs_transition_4">
                 <h2 className="text-white m-0 cs_fs_26 cs_mb_3">Rakesh</h2>
                 <p className="text-white m-0">Mech. Head</p>
@@ -235,33 +183,13 @@ const Team = () => {
           </div>
           <div className="col-lg-4 col-md-6">
             <div className="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
-              <div className="cs_team_member position-relative cs_rounded_50">
+              {/* <div className="cs_team_member position-relative cs_rounded_50">
                 <img
                   className="w-100 cs_rounded_50 bg-blackish"
                   src="assets/img/home/team.png"
                   alt="Member"
                 />
-                {/* <div className="cs_social_btns d-flex flex-wrap cs_column_gap_15 cs_row_gap_15 cs_transition_5 cs_fs_20 cs_fs_lg_18 position-absolute">
-                  <a
-                    href="#"
-                    className="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"
-                  >
-                    <i className="fa-brands fa-facebook-f" />
-                  </a>
-                  <a
-                    href="#"
-                    className="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"
-                  >
-                    <i className="fa-brands fa-twitter" />
-                  </a>
-                  <a
-                    href="#"
-                    className="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"
-                  >
-                    <i className="fa-brands fa-dribbble" />
-                  </a>
-                </div> */}
-              </div>
+              </div> */}
               <div className="cs_team_info cs_pt_127 cs_pl_15 cs_pr_15 cs_pb_25 cs_transition_4">
                 <h2 className="text-white m-0 cs_fs_26 cs_mb_3">Somesh</h2>
                 <p className="text-white m-0">Plumbing Head</p>
@@ -270,33 +198,13 @@ const Team = () => {
           </div>
           <div className="col-lg-4 col-md-6">
             <div className="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
-              <div className="cs_team_member position-relative cs_rounded_50">
+              {/* <div className="cs_team_member position-relative cs_rounded_50">
                 <img
                   className="w-100 cs_rounded_50 bg-blackish"
                   src="assets/img/home/team.png"
                   alt="Member"
                 />
-                {/* <div className="cs_social_btns d-flex flex-wrap cs_column_gap_15 cs_row_gap_15 cs_transition_5 cs_fs_20 cs_fs_lg_18 position-absolute">
-                  <a
-                    href="#"
-                    className="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"
-                  >
-                    <i className="fa-brands fa-facebook-f" />
-                  </a>
-                  <a
-                    href="#"
-                    className="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"
-                  >
-                    <i className="fa-brands fa-twitter" />
-                  </a>
-                  <a
-                    href="#"
-                    className="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"
-                  >
-                    <i className="fa-brands fa-dribbble" />
-                  </a>
-                </div> */}
-              </div>
+              </div> */}
               <div className="cs_team_info cs_pt_127 cs_pl_15 cs_pr_15 cs_pb_25 cs_transition_4">
                 <h2 className="text-white m-0 cs_fs_26 cs_mb_3">Sanjay</h2>
                 <p className="text-white m-0">Electrical Head</p>
@@ -306,39 +214,19 @@ const Team = () => {
 
           
         </div>
-        <div className='row'>
+        <div className='row justify-content-center'>
           <div className='col-md-12'>
             <h2 className='team-heading cs_fs_48 cs_fs_lg_36 mb-4'>Project & Field Team</h2>
           </div>
         <div className="col-lg-4 col-md-6">
             <div className="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
-              <div className="cs_team_member position-relative cs_rounded_50">
+              {/* <div className="cs_team_member position-relative cs_rounded_50">
                 <img
                   className="w-100 cs_rounded_50 bg-blackish"
                   src="assets/img/home/team.png"
                   alt="Member"
                 />
-                {/* <div className="cs_social_btns d-flex flex-wrap cs_column_gap_15 cs_row_gap_15 cs_transition_5 cs_fs_20 cs_fs_lg_18 position-absolute">
-                  <a
-                    href="#"
-                    className="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"
-                  >
-                    <i className="fa-brands fa-facebook-f" />
-                  </a>
-                  <a
-                    href="#"
-                    className="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"
-                  >
-                    <i className="fa-brands fa-twitter" />
-                  </a>
-                  <a
-                    href="#"
-                    className="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"
-                  >
-                    <i className="fa-brands fa-dribbble" />
-                  </a>
-                </div> */}
-              </div>
+              </div> */}
               <div className="cs_team_info cs_pt_127 cs_pl_15 cs_pr_15 cs_pb_25 cs_transition_4">
                 <h2 className="text-white m-0 cs_fs_26 cs_mb_3">Ashish</h2>
                 <p className="text-white m-0">Site Supervision, Material Handling</p>
@@ -347,33 +235,13 @@ const Team = () => {
           </div>
           <div className="col-lg-4 col-md-6">
             <div className="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
-              <div className="cs_team_member position-relative cs_rounded_50">
+              {/* <div className="cs_team_member position-relative cs_rounded_50">
                 <img
                   className="w-100 cs_rounded_50 bg-blackish"
                   src="assets/img/home/team.png"
                   alt="Member"
                 />
-                {/* <div className="cs_social_btns d-flex flex-wrap cs_column_gap_15 cs_row_gap_15 cs_transition_5 cs_fs_20 cs_fs_lg_18 position-absolute">
-                  <a
-                    href="#"
-                    className="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"
-                  >
-                    <i className="fa-brands fa-facebook-f" />
-                  </a>
-                  <a
-                    href="#"
-                    className="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"
-                  >
-                    <i className="fa-brands fa-twitter" />
-                  </a>
-                  <a
-                    href="#"
-                    className="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"
-                  >
-                    <i className="fa-brands fa-dribbble" />
-                  </a>
-                </div> */}
-              </div>
+              </div> */}
               <div className="cs_team_info cs_pt_127 cs_pl_15 cs_pr_15 cs_pb_25 cs_transition_4">
                 <h2 className="text-white m-0 cs_fs_26 cs_mb_3">Dhanraj</h2>
                 <p className="text-white m-0">Dispatches & Maintenance</p>
@@ -382,33 +250,13 @@ const Team = () => {
           </div>
           <div className="col-lg-4 col-md-6">
             <div className="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
-              <div className="cs_team_member position-relative cs_rounded_50">
+              {/* <div className="cs_team_member position-relative cs_rounded_50">
                 <img
                   className="w-100 cs_rounded_50 bg-blackish"
                   src="assets/img/home/team.png"
                   alt="Member"
                 />
-                {/* <div className="cs_social_btns d-flex flex-wrap cs_column_gap_15 cs_row_gap_15 cs_transition_5 cs_fs_20 cs_fs_lg_18 position-absolute">
-                  <a
-                    href="#"
-                    className="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"
-                  >
-                    <i className="fa-brands fa-facebook-f" />
-                  </a>
-                  <a
-                    href="#"
-                    className="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"
-                  >
-                    <i className="fa-brands fa-twitter" />
-                  </a>
-                  <a
-                    href="#"
-                    className="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"
-                  >
-                    <i className="fa-brands fa-dribbble" />
-                  </a>
-                </div> */}
-              </div>
+              </div> */}
               <div className="cs_team_info cs_pt_127 cs_pl_15 cs_pr_15 cs_pb_25 cs_transition_4">
                 <h2 className="text-white m-0 cs_fs_26 cs_mb_3">Dinesh</h2>
                 <p className="text-white m-0">Logistic Support</p>
@@ -417,33 +265,13 @@ const Team = () => {
           </div>
           <div className="col-lg-4 col-md-6">
             <div className="cs_team cs_style_1 text-center cs_mb_25 overflow-hidden cs_rounded_50">
-              <div className="cs_team_member position-relative cs_rounded_50">
+              {/* <div className="cs_team_member position-relative cs_rounded_50">
                 <img
                   className="w-100 cs_rounded_50 bg-blackish"
                   src="assets/img/home/team.png"
                   alt="Member"
                 />
-                {/* <div className="cs_social_btns d-flex flex-wrap cs_column_gap_15 cs_row_gap_15 cs_transition_5 cs_fs_20 cs_fs_lg_18 position-absolute">
-                  <a
-                    href="#"
-                    className="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"
-                  >
-                    <i className="fa-brands fa-facebook-f" />
-                  </a>
-                  <a
-                    href="#"
-                    className="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"
-                  >
-                    <i className="fa-brands fa-twitter" />
-                  </a>
-                  <a
-                    href="#"
-                    className="d-flex align-items-center justify-content-center cs_height_45 cs_width_45 border-0 text-white rounded-circle"
-                  >
-                    <i className="fa-brands fa-dribbble" />
-                  </a>
-                </div> */}
-              </div>
+              </div> */}
               <div className="cs_team_info cs_pt_127 cs_pl_15 cs_pr_15 cs_pb_25 cs_transition_4">
                 <h2 className="text-white m-0 cs_fs_26 cs_mb_3">Thomas</h2>
                 <p className="text-white m-0">Installation & Projects</p>
