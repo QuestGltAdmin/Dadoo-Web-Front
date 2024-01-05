@@ -46,7 +46,7 @@ Indore MP India
             <div className="container">
               <div className="cs_main_header_in">
                 <div className="cs_main_header_left">
-                  <a className="cs_site_branding" href="">
+                  <a className="cs_site_branding" href="/">
                     <img src="assets/img/dadoo-full-logo.png" className='img-fluid' alt="Logo" />
                   </a>
                   <div className="cs_nav cs_primary_font fw-medium">
